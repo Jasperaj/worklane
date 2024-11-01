@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Header -->
+<div id="header-placeholder"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Hub</title>
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Styling for Sidebar and Main Content */
+    #sidebar {
+      float: left;
+      width: 20%;
+      background-color: #f4f4f4;
+      padding: 15px;
+      height: 100vh;
+      box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    #main-content {
+      float: left;
+      width: 75%;
+      padding: 20px;
+    }
+    #topic-boxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .content-box {
+      flex: 1 1 calc(33.333% - 20px); /* 3 boxes per row, with spacing */
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      background-color: #f8f9fa;
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+      min-width: 200px;
+      max-width: 300px; /* Optional, to control the max width of each box */
+    }
+    .content-box:hover {
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .content-box h3 {
+      margin-top: 0;
+      color: #0c2e8a; /* Adjust to match main theme color */
+    }
+    .content-box p {
+      color: #666;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .content-box {
+        flex: 1 1 calc(50% - 20px); /* 2 columns per row on medium screens */
+      }
+    }
+    @media (max-width: 576px) {
+      .content-box {
+        flex: 1 1 100%; /* 1 column per row on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Sidebar with Table of Contents -->
+  <aside id="sidebar">
+    <h2>Knowledge Hub</h2>
+    <ul id="category-list">
+      <li><a href="../Education Hub/bank-statement-pdf-to-excel.html" data-file="../Education Hub/bank-statement-pdf-to-excel.html">Bank Statement PDF to Excel</a></li>
+      <li><a href="#" data-file="financial-analysis.html">Financial Analysis</a></li>
+      <li><a href="#" data-file="taxation-basics.html">TDS Compliance & Rates in Nepal</a></li>
+      <li><a href="#" data-file="compliance.html">Taxation - Income Tax Compliance in Nepal</a></li>
+      <li><a href="#" data-file="compliance.html">Taxation - VAT Compliance & Rates in Nepal</a></li>
+      <li><a href="#" data-file="compliance.html">Startup - Foreign Direct Investment in Nepal</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Accountant Checklist</a></li>
+      <li><a href="#" data-file="compliance.html">Taxation - Filing Date Extension</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Introduction to Tally Accounting Software</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Introduction to Tigg Accounting Software</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Introduction to Busy Accounting Software</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Introduction to Zero Accounting Software</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Introduction to Quickbook Accounting Software</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Tally Lesson 1 - Import Masters</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Tally Lesson 2 - Import Transactions</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Tally Lesson 3 - Connect with Excel</a></li>
+      <li><a href="#" data-file="compliance.html">Accounting - Tally Lesson 4 - Connect with Google Sheets</a></li>
+      <li><a href="#" data-file="compliance.html">Taxation - Budget 2080-81 Highlights</a></li>
+      <li><a href="#" data-file="compliance.html">Taxation - Budget 2079-80 Highlights</a></li>
+      <li><a href="#" data-file="compliance.html">Taxation - Budget 2078-79 Highlights</a></li>
+      <li><a href="#" data-file="compliance.html">Finance - Basics of Microsoft Excel</a></li>
+      <li><a href="#" data-file="compliance.html">Finance - Important Formulas of Microsoft Excel</a></li>
+      <li><a href="#" data-file="compliance.html">Finance - Microsoft Excel Lesson 1 - Data extract from Tally</a></li>
+      <li><a href="#" data-file="compliance.html">Finance - Microsoft Excel Lesson 2 - Synced Report Preparation</a></li>
+      <li><a href="#" data-file="compliance.html">Finance - Microsoft Excel Lesson 3 - Data Cleaning with Power Query</a></li>
+      <li><a href="#" data-file="compliance.html">Finance - Microsoft Excel Lesson 4 - Data Connection with Power Query</a></li>
+      <li><a href="../Education Hub/intro-to-python.html" data-file="../Education Hub/intro-to-python.html">Technology - Lesson 1 - Introduction to Python</a></li>
+      <li><a href="../Education Hub/python-in-finance.html" data-file="python-in-finance.html">Technology - Lesson 2 - Python in Finance</a></li>
+      <li><a href="../Education Hub/python-with-colab.html" data-file="compliance.html">Technology - Lesson 3 - Python through Google Colab</a></li>
+      <li><a href="../Education Hub/bank-statement-pdf-to-excel.html" data-file="compliance.html">Technology - Lesson 3i - Python - Bank Statement PDF to Excel</a></li>
+      <li><a href="../Education Hub/python-vat-pdf-to-excel.html" data-file="compliance.html">Technology - Lesson 3ii - Python - VAT Return PDFs to VAT Summary</a></li>
+    </ul>
+  </aside>
+
+  <!-- Main Content Area with Topic Boxes -->
+  <main id="main-content">
+    <h1>Welcome to the Knowledge Hub</h1>
+    <p>Select a topic from the left to view the content.</p>
+
+    <!-- Content Boxes for Each Topic in a 3-Column Layout -->
+    <div id="topic-boxes">
+      <!-- Topic boxes will be dynamically generated here -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript to load content boxes dynamically from JSON -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const topics = [
+        {
+          "file": "bank-statement-pdf-to-excel.html",
+          "title": "Bank Statement PDF to Excel",
+          "description": "Learn how to convert NIC Asia Bank's PDF statements into Excel format for easy data handling."
+        },
+        {
+          "file": "financial-analysis.html",
+          "title": "Financial Analysis",
+          "description": "Understand the basics of financial analysis, including key metrics and indicators."
+        },
+        {
+          "file": "taxation-basics.html",
+          "title": "Basics of Taxation",
+          "description": "An overview of the fundamental principles of taxation, useful for businesses and individuals."
+        },
+        {
+          "file": "compliance.html",
+          "title": "Compliance & Regulations",
+          "description": "Detailed guide on compliance requirements and regulatory standards for businesses."
+        }
+      ];
+
+      const topicBoxesContainer = document.getElementById("topic-boxes");
+
+      // Populate topic boxes dynamically
+      topics.forEach(topic => {
+        const box = document.createElement("div");
+        box.classList.add("content-box");
+        box.innerHTML = `
+          <h3>${topic.title}</h3>
+          <p>${topic.description}</p>
+        `;
+        box.addEventListener("click", () => {
+          window.location.href = `Education Hub/${topic.file}`;
+        });
+        topicBoxesContainer.appendChild(box);
+      });
+    });
+  </script>
+
+  <!-- Load Header and Footer -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        });
+
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        });
+    });
+  </script>
+
+</body>
+</html>

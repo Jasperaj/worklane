@@ -1,0 +1,172 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+#header {
+  display: block;
+  padding: 30px 0;
+  height: 84px;
+  transition: all 0.5s;
+  z-index: 997;
+  background: #fff;
+  box-shadow: 0px 6px 9px 0px rgba(0, 0, 0, 0.06);
+}
+
+#header #logo {
+  float: left;
+}
+
+#header #logo h1 {
+  font-size: 36px;
+  margin: 0;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+#header #logo h1 a {
+  color: #0274b3;
+  text-decoration: none;
+}
+
+#header #logo img {
+  max-height: 45px;
+  margin-right: 10px;
+}
+
+#nav-menu-container {
+  float: right;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style-type: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu > li {
+  margin-left: 15px;
+}
+
+.nav-menu a {
+  padding: 10px 8px;
+  text-decoration: none;
+  color: #555;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+
+.nav-menu li:hover > a,
+.nav-menu .menu-active > a {
+  color: #0274b3;
+}
+
+/* Responsive Header Layout Adjustments */
+@media (max-width: 768px) {
+  #header {
+    padding: 20px 0;
+  }
+  #header #logo h1 {
+    font-size: 28px;
+  }
+  #nav-menu-container {
+    display: none;
+  }
+  #mobile-nav-toggle {
+    display: inline;
+  }
+}
+
+/*--------------------------------------------------------------
+# Hero Section - Intro
+--------------------------------------------------------------*/
+
+#intro {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  background: url("../img/intro-carousel/1.jpg") no-repeat;
+  background-size: cover;
+}
+
+#intro .intro-content {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+#intro .intro-content h2 {
+  color: #0274b3;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+#intro .intro-content h2 span {
+  color: #50C878;
+  text-decoration: underline;
+}
+
+#intro .intro-content p {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+#intro .intro-content .btn-get-started,
+#intro .intro-content .btn-projects {
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 32px;
+  border-radius: 2px;
+  transition: 0.5s;
+  color: #fff;
+  background: #0274b3;
+  border: 2px solid #0274b3;
+  margin: 10px;
+}
+
+#intro .intro-content .btn-get-started:hover,
+#intro .intro-content .btn-projects:hover {
+  background: none;
+  color: #0274b3;
+}
+
+/* Hero Section Overlay */
+#intro #intro-carousel::before {
+  content: '';
+  background-color: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 7;
+}
+
+code {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  line-height: 1.5; /* Adjusts line spacing for better readability */
+  font-size: 1em; /* Ensures the font size is appropriate for readability */
+}
+
+

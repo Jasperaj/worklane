@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology - Lesson 3ii - Python - VAT Return PDFs to VAT Summary</title>
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Sidebar styling */
+    #sidebar {
+      width: 20%;
+      float: left;
+      padding: 15px;
+      background-color: #f4f4f4;
+      height: 100vh;
+      box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    #sidebar h2 {
+      font-size: 1.5em;
+      color: #0c2e8a;
+    }
+    #sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    #sidebar ul li a {
+      color: #0c2e8a;
+      text-decoration: none;
+      display: block;
+      padding: 8px 0;
+    }
+    #sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main content area styling */
+    #main-content {
+      width: 75%;
+      float: left;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    pre, code {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      line-height: 1.8;
+      font-size: 1em;
+    }
+    h1, h2 {
+      color: #0c2e8a;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Sidebar with Categories -->
+  <aside id="sidebar">
+    <h2>Technology Categories</h2>
+    <ul>
+      <li><a href="../technology/vat-pdf-to-summary.html">VAT Return PDFs to VAT Summary</a></li>
+      <!-- Add additional lessons here if needed -->
+    </ul>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+    <h1>Technology - Lesson 3ii - Python - VAT Return PDFs to VAT Summary</h1>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>This lesson covers how to convert VAT return PDF files into a summarized VAT report using Python. In this tutorial, we will use several Python libraries to read, process, and summarize data from VAT return PDFs, outputting it into an Excel file for further analysis. This process is valuable for finance teams who need to streamline VAT reporting without manual data entry.</p>
+      <p>We will use Google Colab to run this code, which is convenient for this type of project because no local installation is needed. However, remember that Google Colab provides a temporary environment, so libraries need to be reinstalled each session.</p>
+    </section>
+
+    <section>
+      <h2>Libraries Needed</h2>
+      <ul>
+        <li><code>camelot-py</code>: For extracting tables from PDFs.</li>
+        <li><code>PyPDF2</code>: To handle PDF file reading and manipulation.</li>
+        <li><code>pandas</code>: For data manipulation and cleaning.</li>
+      </ul>
+      <p>To install these libraries in Google Colab, use the following commands:</p>
+      <div class="code-box">
+        <pre><code>!pip install "camelot-py[cv]" -q
+!apt-get install ghostscript -q
+!pip install "PyPDF2~=2.0" -q</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Uploading VAT PDF Files</h2>
+      <p>Upload the VAT return PDF files to your Colab environment. It’s helpful to name the files with a prefix such as <code>01, 02, 03,</code> etc., so they are ordered by month in descending order. Store the files in a folder outside of "Sample Data" for easy access.</p>
+    </section>
+
+    <section>
+      <h2>Code Explanation</h2>
+      <p>Below is the code for processing VAT PDF files and generating a summary. This code is designed to be run in Google Colab, and each section is explained in detail.</p>
+
+      <h3>1. Install Required Libraries</h3>
+      <div class="code-box">
+        <pre><code>!pip install "camelot-py[cv]" -q
+!apt-get install ghostscript -q
+!pip install "PyPDF2~=2.0" -q</code></pre>
+      </div>
+
+      <h3>2. Import Libraries</h3>
+      <p>After installing, import the necessary libraries:</p>
+      <div class="code-box">
+        <pre><code>import camelot as cam
+import glob
+import pandas as pd</code></pre>
+      </div>
+
+      <h3>3. Define Categories for VAT Summary</h3>
+      <p>Define the categories that will be used in the VAT summary. These are the headers for different types of transactions found in VAT reports:</p>
+      <div class="code-box">
+        <pre><code>cat = ['Particulars',
+       'Sales',
+       'Taxable Sales',
+       'Export',
+       'Non-Taxable-sales',
+       'Purchase/Import',
+       'Taxable Purchase',
+       'Taxable Import',
+       'Non-Taxable Purchase',
+       'Non-Taxable Import' ,
+       'Others',
+       'Other Adjustment',
+       'Total',
+       'Debit-Credit',
+       'Previous Month VAT Credit',
+       'Net VAT Payable',
+       'VAT Refund Claim',
+       'VAT Refund Claim Basis']</code></pre>
+      </div>
+
+      <h3>4. Upload and Process VAT PDFs</h3>
+      <p>Process each VAT PDF file, extract data, and adjust values as needed:</p>
+      <div class="code-box">
+        <pre><code># Process each PDF file
+df = pd.DataFrame(cat)
+for filenames in sorted(glob.glob('*.pdf')):
+  print(filenames)
+  table = cam.read_pdf(filenames, pages = '1', flavor = 'lattice', encoding = 'utf-8')
+  tab = table[0].df
+  # Adjust extracted data
+  try:
+    tab.iloc[6,-2] = tab.iloc[6,3]
+  except:
+    tab.iloc[6,-2] = 0
+  try:
+    tab.iloc[7,-2] = tab.iloc[7,3]
+  except:
+    tab.iloc[7,-2] = 0
+  # Additional adjustments and reading for credit table
+  try:
+    credit_table = cam.read_pdf(filenames, pages = '1', flavor = 'stream', encoding = 'utf-8')[0].df
+    credit_amount = credit_table.iloc[15,4]
+  except:
+    credit_amount = ""
+  vat_claim = credit_table.iloc[15,3]
+  tab.loc[14,2] = credit_amount
+  tab.loc[17,2] = vat_claim
+  df['{} Gross Amount'.format(filenames[:7])],df['{} Tax'.format(filenames[:7])] = [tab[2],tab.iloc[:,-2]]</code></pre>
+      </div>
+
+      <h3>5. Clean and Structure Data</h3>
+      <p>Clean and format the extracted data, then separate it into gross amount and VAT amount dataframes:</p>
+      <div class="code-box">
+        <pre><code># Clean and structure data
+df = df.replace('^0 .*',0, regex=True)
+df = df.replace('_vat_return_work','')
+df =  df.fillna(0)
+df = df.rename(columns={0: 'Particulars'})
+df1 = df.iloc[1:].T
+
+# Separate gross and VAT data
+df_gross = df1.filter(like="Gross Amount",axis=0)
+df_vat = df1.filter(like="Tax",axis=0)
+
+# Clean data
+df_gross.columns =  cat[1:]
+df_gross = df_gross.add_suffix('_amount')
+df_vat.columns =  cat[1:]
+df_vat = df_vat.add_suffix('_vat')</code></pre>
+      </div>
+
+      <h3>6. Combine Data and Save to Excel</h3>
+      <p>Combine gross and VAT data, clean it further, and save the final summary to an Excel file:</p>
+      <div class="code-box">
+        <pre><code># Combine and save
+result = pd.concat([df_gross,df_vat], axis=1)
+result = result.reindex(sorted(result.columns), axis=1).fillna(0)
+cols = result.columns
+result[cols] = result[cols].apply(pd.to_numeric, errors='coerce')
+
+result.to_excel('{}_{}.xlsx'.format(output_name, fiscal_year))
+print("Complete !!! Download the saved file")</code></pre>
+      </div>
+
+      <h3>7. Clean Up PDF Files</h3>
+      <p>Optionally, delete the PDF files after processing:</p>
+      <div class="code-box">
+        <pre><code>import os
+for file in glob.glob("*.pdf"):
+  os.remove(file)</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>This tutorial demonstrated a process to convert VAT return PDFs into a summarized Excel report using Python and Google Colab. The provided code allows for the extraction, cleaning, and structuring of VAT data, making it easier to analyze and report on monthly VAT activities.</p>
+      <p>In upcoming lessons, we’ll expand on this process with additional finance-related automations and data analyses.</p>
+    </section>
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript to Load Header and Footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("../header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading header:", error));
+
+      fetch("../footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    });
+  </script>
+</body>
+</html>

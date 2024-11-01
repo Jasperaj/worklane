@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<div id="header-placeholder"></div>
+
+
+
+
+  <!-- News & Events Section -->
+  <section id="news" style="padding: 60px 0; background-color: #f7f9fc;">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2>News & Events</h2>
+        <p>Stay updated with the latest news and events at Unifour Consultancy.</p>
+      </div>
+
+      <div class="row">
+        <!-- News Item 1 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card news-card">
+            <img src="img/news-1.jpg" class="card-img-top" alt="News Image">
+            <div class="card-body">
+              <h5 class="card-title">Annual Financial Summit 2024</h5>
+              <p class="card-text">Join us for the Annual Financial Summit, where industry experts share insights on the future of finance.</p>
+              <a href="news-details/annual-summit.html" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Item 2 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card news-card">
+            <img src="img/news-2.jpg" class="card-img-top" alt="News Image">
+            <div class="card-body">
+              <h5 class="card-title">New Partnership Announcement</h5>
+              <p class="card-text">Unifour Consultancy partners with leading tech firm to enhance financial technology solutions.</p>
+              <a href="news-details/partnership.html" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- News Item 3 -->
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card news-card">
+            <img src="img/news-3.jpg" class="card-img-top" alt="News Image">
+            <div class="card-body">
+              <h5 class="card-title">Free Webinar: Financial Compliance</h5>
+              <p class="card-text">Sign up for our free webinar on financial compliance, covering new regulations and best practices.</p>
+              <a href="news-details/webinar.html" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSS for News & Events Section -->
+  <style>
+    #news {
+      padding: 60px 0;
+      background-color: #f7f9fc;
+    }
+
+    #news .section-header {
+      margin-bottom: 30px;
+    }
+
+    #news h2 {
+      font-size: 32px;
+      color: #000033; /* Dark blue */
+      margin-bottom: 10px;
+    }
+
+    .news-card {
+      background: #fff;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .news-card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .news-card .card-title {
+      font-size: 18px;
+      color: #000033; /* Dark blue */
+      font-weight: bold;
+    }
+
+    .news-card .card-text {
+      font-size: 14px;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .news-card .btn-primary {
+      background-color: #000033; /* Dark blue */
+      border: none;
+      padding: 8px 15px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .news-card .btn-primary:hover {
+      background-color: #000000; /* Black on hover */
+    }
+  </style>
+
+
+<div id="footer-placeholder"></div>
+
+
+
+
+
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+// JavaScript to load header and footer
+document.addEventListener("DOMContentLoaded", function() {
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+});
+</script>
+
+
+</body>
+</html>

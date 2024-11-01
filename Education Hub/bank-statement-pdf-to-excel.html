@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extracting NIC Asia Bank Statement Data in Google Colab</title>
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Sidebar styling */
+    #sidebar {
+      width: 20%;
+      float: left;
+      padding: 15px;
+      background-color: #f4f4f4;
+      height: 100vh;
+      box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    #sidebar h2 {
+      font-size: 1.5em;
+      color: #0c2e8a;
+    }
+    #sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    #sidebar ul li a {
+      color: #0c2e8a;
+      text-decoration: none;
+      display: block;
+      padding: 8px 0;
+    }
+    #sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main content area styling */
+    #main-content {
+      width: 75%;
+      float: left;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    pre, code {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      line-height: 1.8; /* Adjusts line spacing for better readability */
+      font-size: 1em; /* Ensures the font size is appropriate for readability */   
+    }
+    h1, h2 {
+      color: #0c2e8a;
+    }
+    .code-box {
+      background-color: #f1f1f1;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    /* Placeholder for image styling */
+    .image-placeholder {
+      width: 100%;
+      height: 200px;
+      background-color: #e9ecef;
+      color: #666;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      border: 1px dashed #ccc;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Sidebar with Categories -->
+  <aside id="sidebar">
+    <h2>Knowledge Hub Categories</h2>
+    <ul>
+      <li><a href="../knowledge-hub.html">Bank Statement PDF to Excel</a></li>
+      <li><a href="../financial-analysis.html">Financial Analysis</a></li>
+      <li><a href="../taxation-basics.html">Basics of Taxation</a></li>
+      <li><a href="../compliance.html">Compliance & Regulations</a></li>
+      <!-- Add additional categories here if needed -->
+    </ul>
+  </aside>
+
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+    <h1>Extracting NIC Asia Bank Statement Data from PDF to Excel</h1>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>This guide explains how to extract table data from NIC Asia Bank PDF bank statements and save it as an Excel file. Using Google Colab for this process avoids the need to install anything on your local machine, allowing you to upload the bank statement PDF or connect a Google Drive folder to save the output file.</p>
+    </section>
+
+    <section>
+      <h2>1. Opening Google Colab and Mounting Google Drive</h2>
+      <p>To get started, open Google Colab and mount your Google Drive to access files in it. This will allow you to save the output Excel file directly to Google Drive.</p>
+      <div class="code-box">
+        <pre><code>from google.colab import drive
+drive.mount('/content/drive')</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Installing Required Modules</h2>
+      <p>In Google Colab, install the necessary packages: <code>camelot-py[cv]</code> for reading tables in PDFs, <code>PyPDF2</code> for handling PDFs, and <code>ghostscript</code> for rendering support.</p>
+      <div class="code-box">
+        <pre><code>!pip install "camelot-py[cv]" -q
+!apt-get install ghostscript -q
+!pip install "PyPDF2~=2.0" -q</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Uploading the Bank Statement PDF</h2>
+      <p>To upload the PDF file directly, go to the file explorer in Google Colab (left sidebar) and select <strong>Upload</strong>. Alternatively, place your PDF files in a Google Drive folder and access them as shown in the code below:</p>
+      <div class="code-box">
+        <pre><code>folder_path = '/content/drive/My Drive/Bank Statements/NIC Asia/'
+pdf_file = folder_path + 'YourBankStatement.pdf'  # Change to your PDF file's name</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Extracting Data from Each Page</h2>
+      <p>The script below reads each page of the PDF, extracts tables using <code>camelot</code>, and filters out unnecessary rows until it finds the table headers. The code processes multiple pages and consolidates the data.</p>
+      <div class="code-box">
+        <pre><code>import camelot
+import pandas as pd
+from PyPDF2 import PdfReader
+
+# Initialize an empty DataFrame to combine data from all pages
+df = pd.DataFrame()
+
+with open(pdf_file, 'rb') as f:
+    reader = PdfReader(f)
+    num_pages = reader.getNumPages()
+
+    for page_number in range(num_pages):
+        tables = camelot.read_pdf(pdf_file, pages=str(page_number + 1), flavor='stream')
+        page_df = tables[0].df
+
+        while page_df.iloc[0, 0] != 'S.N':
+            page_df = page_df.iloc[1:]
+
+        page_df.columns = page_df.iloc[0]
+        page_df = page_df.iloc[1:]
+        df = pd.concat([df, page_df], ignore_index=True)</code></pre>
+      </div>
+    </section>
+
+    <!-- Placeholder for Fake Bank Statement Image -->
+    <div class="image-placeholder">Fake Bank Statement PDF Example</div>
+
+    <section>
+      <h2>5. Data Cleaning</h2>
+      <p>Now that the data is combined, clean it by removing rows with "Opening Balance" or "Closing Balance" and converting dates to a consistent format. Sort the data by transaction date for easier analysis.</p>
+      <div class="code-box">
+        <pre><code>df = df[~df['Description'].str.contains('Opening Balance|Closing Balance')]
+df['Transaction Date'] = pd.to_datetime(df['Transaction Date'], format="%Y-%m-%d %H:%M:%S")
+df = df.sort_values('Transaction Date', ascending=True)</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>6. Additional Data Processing</h2>
+      <p>Next, perform additional cleaning, such as removing extra columns after the "Balance" column and converting numeric columns. A cross-check formula can be created to verify balance calculations based on previous balances, withdrawals, and deposits.</p>
+      <div class="code-box">
+        <pre><code>if df.columns[-1] != 'Balance':
+    df = df.iloc[:, :-1]
+
+numeric_columns = ['Withdraw', 'Deposit', 'Balance']
+for col in numeric_columns:
+    df[col] = df[col].str.replace(',', '').str.replace('-', '0').astype(float)
+
+df['Cross Check Balance'] = df['Balance'].shift(1) + df['Deposit'] - df['Withdraw']</code></pre>
+      </div>
+    </section>
+
+    <!-- Placeholder for Final Output Excel Screenshot -->
+    <div class="image-placeholder">Processed Excel Output Example</div>
+
+    <section>
+      <h2>7. Saving the Output to Google Drive or Downloading Locally</h2>
+      <p>Once processing is complete, save the DataFrame as an Excel file directly to Google Drive or download it locally.</p>
+      <div class="code-box">
+        <pre><code>output_file = folder_path + "NIC_Bank_Statement_Processed.xlsx"
+df.to_excel(output_file, index=False)
+
+from google.colab import files
+files.download(output_file)</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>This guide walks you through extracting data from NIC Asia Bank PDF statements and processing it into a clean Excel format using Google Colab. This method ensures that you don’t need any local installations, and files can be easily saved to Google Drive or downloaded for local use.</p>
+    </section>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript to Load Header and Footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("../header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading header:", error));
+
+      fetch("../footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    });
+  </script>
+</body>
+</html>

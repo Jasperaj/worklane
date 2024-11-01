@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="header-placeholder"></div>
+
+
+<!-- Hero Section -->
+<section id="intro" style="position: relative; height: 75vh; background: url('img/mainbackground.jpg') top center / cover no-repeat;">
+  <div class="overlay"></div> <!-- Added overlay for transparency -->
+  <div class="intro-content text-center">
+    <h2>Empowering <span class="underline-animate">Your Business</span><br></h2>
+    <p>with tailored, technology-driven accounting, auditing, and compliance solutions.</p>
+    <div>
+      <a href="#about" class="btn-get-started scrollto animate-btn">Why Worklane ?</a>
+      <a href="#services" class="btn-projects scrollto animate-btn">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Overlay to control transparency */
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity for a light transparent overlay */
+    z-index: 1;
+  }
+
+  .intro-content {
+    position: relative;
+    z-index: 2; /* Keeps content above the overlay */
+  }
+
+  /* Underline Animation */
+  @keyframes underlineAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  .underline-animate {
+    position: relative;
+    display: inline-block;
+  }
+
+  .underline-animate::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 3px;
+    background-color: #28a745; /* Green color */
+    width: 0;
+    animation: underlineAnimation 2s ease-in-out infinite alternate;
+  }
+
+  /* Up and Down Animation for Buttons */
+  @keyframes upDownAnimation {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  .animate-btn {
+    animation: upDownAnimation 2s ease-in-out infinite;
+  }
+
+    /* Service Card Styling */
+    .service-item {
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+    }
+    .service-item:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    /* Modal Styling */
+    .modal-body img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    /* WhatsApp Button */
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe57;
+      text-decoration: none;
+      color: white;
+    }
+    /* Overlay to control transparency */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.7);
+      z-index: 1;
+    }
+    .intro-content {
+      position: relative;
+      z-index: 2;
+    }
+    /* Hover Effect for Contact Cards */
+    .contact-email:hover, .contact-whatsapp:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+
+</style>
+
+
+
+
+
+<div style="margin-top: 100px;"></div>
+<main id="main">
+  <!-- About Section -->
+  <section id="about" class="wow fadeInUp">
+<div class="container">
+  <div class="section-header" style="margin-bottom: 40px;">
+    <h2 style="text-align: center; color: #0274b3;">About Us</h2>
+<p>Founded in 2018 by four partners, <strong><span style="color:#0274b3;">Worklane - Financial Advisory</span></strong> brings together a unique combination of experience, knowledge, and skills in financial consultancy to deliver comprehensive solutions to our clients. Our name reflects both the unity of our partnership and the four essential pillars that support a strong financial position in today's dynamic business environment.</p>
+
+<h3 style="text-align: center; color: #0274b3;">Why Us</h3>
+
+<p>In an era where information is the most valuable resource, we empower our clients by extracting meaningful financial insights from vast amounts of data. This enables them to make informed and effective financial decisions. By seamlessly blending our expertise in <strong><span style="color:#0274b3;">Accounting</span></strong> and <strong><span style="color:#0274b3;">Finance</span></strong> with advanced <strong><span style="color:#0274b3;">Technology</span></strong>, we provide not only the necessary information but also actionable insights that help our clients thrive - all while ensuring full <strong><span style="color:#0274b3;">Compliance</span></strong> with statutory regulations.</p>
+
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 about-img">
+      <img src="img/about-img.jpg" alt="How We Work" style="width: 100%; height: auto;">
+    </div>
+
+    <div class="col-lg-6 content">
+      <h3 style="font-style: italic;">Our Four Pillars of Excellence</h3>
+      <ul style="list-style-type: none; padding: 0;">
+        <li style="margin-top: 20px; line-height: 1.6;">
+          <i class="ion-android-checkmark-circle"></i>
+          <span class="tooltip-target">Accounting
+            <span class="tooltip-text">Meticulous and accurate accounting services, including bookkeeping, transaction recording, and financial statement preparation. With a focus on precision, we ensure reliable financial data to guide strategic decisions, enhancing transparency and integrity in financial operations.</span>
+          </span>
+        </li>
+
+        <li style="margin-top: 30px; line-height: 1.6;">
+          <i class="ion-android-checkmark-circle"></i>
+          <span class="tooltip-target">Finance
+            <span class="tooltip-text">Finance is at the core of our expertise. We go beyond numbers to offer strategic financial planning, budgeting, and forecasting, empowering clients to achieve sustainable growth and informed investments.</span>
+          </span>
+        </li>
+
+        <li style="margin-top: 30px; line-height: 1.6;">
+          <i class="ion-android-checkmark-circle"></i>
+          <span class="tooltip-target">Compliance
+            <span class="tooltip-text">Stay compliant with evolving regulations, mitigate risks, and maintain good governance practices. Our focus on compliance ensures clients remain free of legal risks, allowing them to focus on their core operations.</span>
+          </span>
+        </li>
+
+        <li style="margin-top: 30px; line-height: 1.6;">
+          <i class="ion-android-checkmark-circle"></i>
+          <span class="tooltip-target">Technology Driven
+            <span class="tooltip-text">The modern business landscape requires innovative technologies. We are technology driven to automate tasks, enhance analytics, and improve productivity, helping clients embrace digital transformation.</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CSS for Tooltip Styling and Adjustments -->
+  <style>
+    .tooltip-target {
+      position: relative;
+      cursor: pointer;
+      color: #0274b3;
+      font-style: italic;
+      margin-left: 5px;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 320px; /* Increased width for better readability */
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: justify;
+      font-size: 1rem;
+      padding: 15px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      position: absolute;
+      z-index: 1;
+      top: 150%; /* Adjusted to position below the text */
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      font-style: italic;
+    }
+
+    /* Tooltip Arrow */
+    .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px;
+      border-style: solid;
+      border-color: transparent transparent #f9f9f9 transparent;
+    }
+
+    /* Show Tooltip on Hover */
+    .tooltip-target:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    /* Adding spacing to align text with image */
+    .section-header, .row .content ul {
+      margin-bottom: 20px;
+    }
+  </style>
+</div>
+
+
+
+
+
+
+  <!-- Quote Section -->
+
+  <div class="quote-section" style="text-align: center; margin-top: 30px; padding: 20px; font-style: italic; border-top: 1px solid #ddd;">
+
+    <p>"If we want to build deep expertise we must take pains to document how we work, to define how we will work in the future and to continuously refine and improve our approach."</p>
+    <p style="font-weight: bold; margin-top: 10px;">&mdash; Blair Enns, The Win Without Pitching Manifesto</p>
+
+  </div>
+
+</div>
+
+
+<div style="margin-top: 50px;"></div>
+  <!-- Services Section -->
+  <section id="services" class="wow fadeInUp">
+    <div class="container">
+      <div class="section-header">
+        <h2 style="text-align: center; color: #0274b3;">Our Services</h2>
+      </div>
+      <div class="row">
+
+
+        <!-- Card 1: Business Registration & Permissions -->
+        <div class="col-lg-6 col-md-6 service-item" data-toggle="modal" data-target="#modal1" style="padding-bottom: 20px;">
+          <div class="card service-card" style="box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+            <div class="card-body">
+              <div class="icon mb-3"><i class="fa fa-bank" style="font-size: 2em; color: #0c2e8a;"></i></div>
+              <h4 class="card-title" style="color: #0274b3;">Business Registration & Permissions</h4>
+              <p class="card-text">We assist with company registration, VAT registration, and securing permits to establish your business effectively.</p>
+            </div>
+          </div>
+        </div>
+	
+        <!-- Modal 1 -->
+        <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal1Label">Business Registration & Permissions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img src="../img/business-registration.jpg" alt="Business Registration Image" style="max-width: 20%; height: auto;">
+                <p>Complete Business Registration service, including:</p>
+                <ul>
+                  <li>Company Registration and document preparation</li>
+                  <li>PAN / VAT Registration along with local municipalities registration</li>
+                  <li>Permit and Approval from government departments</li>
+                  <li>FDI Approval</li>
+                </ul>
+                <a href="https://wa.me/9843016533" class="whatsapp-btn" target="_blank">
+                  <i class="fa fa-whatsapp"></i> Connect on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <!-- Card 2: Accounting & Bookkeeping -->
+        <div class="col-lg-6 col-md-6 service-item" data-toggle="modal" data-target="#modal2" style="padding-bottom: 20px;">
+          <div class="card service-card" style="box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+            <div class="card-body">
+              <div class="icon mb-3"><i class="fa fa-bank" style="font-size: 2em; color: #0c2e8a;"></i></div>
+              <h4 class="card-title" style="color: #0274b3;">Accounting & Bookkeeping</h4>
+              <p class="card-text">Comprehensive accounting services include meticulous bookkeeping and accurate financial record management.</p>
+            </div>
+          </div>
+        </div>
+	
+        <!-- Modal 2 -->
+        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal2Label">Accounting and Book-Keeping</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+        	<img src="../img/book-keeping.jpg" alt="Accounting Image" class="mb-3" style="max-width: 20%; height: auto;">
+                <p>Our accounting and bookkeeping services ensure:</p>
+                <ul>
+                  <li>Company record Initial Setup</li>
+                  <li>Chart of Accounts formation</li>
+                  <li>Sales, Purchase, Journal, Receipt & Payment vouching</li>
+                  <li>Bank Reconciliation / Party Balance Reconciliation</li>
+                  <li>Periodic record updation for timely compliances</li>
+                </ul>
+                <a href="https://wa.me/9843016533" class="whatsapp-btn" target="_blank">
+                  <i class="fa fa-whatsapp"></i> Connect on WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!-- Card 3: Financial Reporting & Analysis -->
+<div class="col-lg-6 col-md-6 service-item" data-toggle="modal" data-target="#modal3" style="padding-bottom: 20px;">
+  <div class="card service-card" style="box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+    <div class="card-body" style="margin-bottom: 10px;">
+      <div class="icon mb-3"><i class="fa fa-line-chart" style="font-size: 2em; color: #0c2e8a;"></i></div>
+      <h4 class="card-title" style="color: #0274b3;">Financial Reporting & Analysis</h4>
+      <p class="card-text">We provide financial statements, monthly reports, and internal audits to help you analyze and optimize business performance.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal3Label">Financial Reporting & Analysis</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="../img/financial-reporting.jpg" alt="Financial Reporting Image" class="mb-3" style="max-width: 40%; height: auto;">
+        <p>Our financial reporting and analysis services provide valuable insights, including:</p>
+        <ul>
+          <li>Preparation of accurate financial statements</li>
+          <li>Monthly profitability report</li>
+          <li>In-depth Internal Audits</li>
+          <li>In-depth Stock reporting</li>
+          <li>Cost Benefit Analysis</li>
+        </ul>
+        <a href="https://wa.me/9843016533" class="whatsapp-btn" target="_blank">
+          <i class="fa fa-whatsapp"></i> Connect on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 4: Periodic Statutory Compliance -->
+<div class="col-lg-6 col-md-6 service-item" data-toggle="modal" data-target="#modal4" style="padding-bottom: 20px;">
+  <div class="card service-card" style="box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+    <div class="card-body" style="margin-bottom: 10px;">
+      <div class="icon mb-3"><i class="fa fa-calendar-check-o" style="font-size: 2em; color: #0c2e8a;"></i></div>
+      <h4 class="card-title" style="color: #0274b3;">Periodic Statutory Compliance</h4>
+      <p class="card-text">We manage all compliance needs including TDS, VAT, income tax filings, customs, and excise, keeping you compliant year-round.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modal4Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal4Label">Periodic Statutory Compliance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="../img/compliance.jpg" alt="Compliance Image" class="mb-3" style="max-width: 30%; height: auto;">
+        <p>Our statutory compliance services ensure timely and accurate filings:</p>
+        <ul>
+          <li>Timely Income tax, TDS, and VAT Filing</li>
+          <li>Customs and excise compliance</li>
+          <li>Annual regulatory reporting</li>
+        </ul>
+        <a href="https://wa.me/9843016533" class="whatsapp-btn" target="_blank">
+          <i class="fa fa-whatsapp"></i> Connect on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 5: Advisory Services -->
+<div class="col-lg-6 col-md-6 service-item" data-toggle="modal" data-target="#modal5" style="padding-bottom: 20px;">
+  <div class="card service-card" style="box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+    <div class="card-body" style="margin-bottom: 10px;">
+      <div class="icon mb-3"><i class="fa fa-lightbulb-o" style="font-size: 2em; color: #0c2e8a;"></i></div>
+      <h4 class="card-title" style="color: #0274b3;">Advisory Services</h4>
+      <p class="card-text">Our advisory services include branch registration, FDI registration, and support for foreign branches and liaison offices.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modal5Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal5Label">Advisory Services</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="../img/advisory.jpg" alt="Advisory Services Image" class="mb-3"  style="max-width: 40%; height: auto;">
+        <p>Our advisory services support strategic business decisions through:</p>
+        <ul>
+          <li>Regular update on regulatory changes</li>
+          <li>Branch and FDI registration</li>
+          <li>Support for liaison offices</li>
+          <li>Budget Highlights and its impact in your business</li>
+        </ul>
+        <a href="https://wa.me/9843016533" class="whatsapp-btn" target="_blank">
+          <i class="fa fa-whatsapp"></i> Connect on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 6: Ancillary Services -->
+<div class="col-lg-6 col-md-6 service-item" data-toggle="modal" data-target="#modal6" style="padding-bottom: 20px;">
+  <div class="card service-card" style="box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+    <div class="card-body" style="margin-bottom: 10px;">
+      <div class="icon mb-3"><i class="fa fa-cogs" style="font-size: 2em; color: #0c2e8a;"></i></div>
+      <h4 class="card-title" style="color: #0274b3;">Ancillary Services</h4>
+      <p class="card-text">We provide tax assessment support, physical verification, reconciliation services, and more based on your business needs.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="modal6Label" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal6Label">Ancillary Services</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="../img/ancillary-services.jpg" alt="Ancillary Services Image" class="mb-3" style="max-width: 30%; height: auto;">
+        <p>Our ancillary services cover various aspects to support your business operations:</p>
+        <ul>
+          <li>Company Valuation</li>
+          <li>Tax assessment support</li>
+          <li>Physical inventory verification</li>
+          <li>Financial reconciliation services</li>
+        </ul>
+        <a href="https://wa.me/9843016533" class="whatsapp-btn" target="_blank">
+          <i class="fa fa-whatsapp"></i> Connect on WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+
+<div style="margin-top: 100px;"></div>
+<!-- Contact Section -->
+<section id="contact" class="wow fadeInUp">
+  <div class="container">
+    <div class="section-header">
+      <h2 style="text-align: center; color: #0274b3;">Contact Us</h2>
+    </div>
+    <div class="row contact-info">
+      <!-- Email Contact -->
+      <div class="col-md-6">
+        <div class="contact-email" style="text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 30px; transition: transform 0.3s, box-shadow 0.3s; min-height: 200px;">
+          <a href="mailto:Worklaneconsultancy@gmail.com" style="text-decoration: none; color: inherit;">
+            <i class="ion-ios-email-outline" style="font-size: 2em; color: #0c2e8a;"></i>
+            <h3 style="color: #0c2e8a;">Email</h3>
+          </a>
+        </div>
+      </div>
+      <!-- WhatsApp Contact -->
+      <div class="col-md-6">
+        <div class="contact-whatsapp" style="text-align: center; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); border-radius: 10px; padding: 30px; transition: transform 0.3s, box-shadow 0.3s; min-height: 200px;">
+          <a href="https://wa.me/9843016533" style="text-decoration: none; color: inherit;">
+            <i class="fa fa-whatsapp" style="font-size: 2em; color: #25D366;"></i>
+            <h3 style="color: #25D366;">Whatsapp</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Hover Effect for Contact Cards */
+  .contact-email:hover, .contact-whatsapp:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+</style>
+
+
+  </main>
+<div style="margin-top: 50px;"></div>
+
+
+
+
+<div id="footer-placeholder"></div>
+
+
+
+
+
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+// JavaScript to load header and footer
+document.addEventListener("DOMContentLoaded", function() {
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<div id="header-placeholder"></div>
+<!-- Download Section -->
+<section id="downloads" style="padding: 60px 0; background-color: #f9f9f9;">
+  <div class="container">
+    <div class="section-header text-center">
+      <h2>Downloads</h2>
+      <p>Download useful resources, templates, and guides to support your business.</p>
+    </div>
+
+    <div class="download-list">
+      <!-- Download Item 1 -->
+      <div class="download-item">
+        <h4>Accounting Template</h4>
+        <p>A comprehensive template to manage your accounting tasks efficiently.</p>
+        <a href="file-path/accounting-template.xlsx" download class="download-btn">Download</a>
+      </div>
+
+      <!-- Download Item 2 -->
+      <div class="download-item">
+        <h4>Audit Checklist</h4>
+        <p>A checklist for auditing processes to ensure compliance and efficiency.</p>
+        <a href="file-path/audit-checklist.pdf" download class="download-btn">Download</a>
+      </div>
+
+      <!-- Download Item 3 -->
+      <div class="download-item">
+        <h4>Tax Calculation Guide</h4>
+        <p>A step-by-step guide to help you with tax calculations.</p>
+        <a href="file-path/demo.xlsx" download class="download-btn">Download</a>
+      </div>
+
+      <!-- Download Item 4 -->
+      <div class="download-item">
+        <h4>Business Report Template</h4>
+        <p>A professional template for creating comprehensive business reports.</p>
+        <a href="file-path/business-report-template.docx" download class="download-btn">Download</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS for the Download Section -->
+<style>
+  #downloads {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+  }
+
+  #downloads .section-header {
+    margin-bottom: 30px;
+  }
+
+  #downloads h2 {
+    font-size: 32px;
+    color: #000033; /* Dark blue */
+    margin-bottom: 10px;
+  }
+
+  #downloads .download-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .download-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .download-item h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #000033; /* Dark blue */
+  }
+
+  .download-item p {
+    margin-bottom: 10px;
+    color: #444;
+  }
+
+  .download-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #000033; /* Dark blue */
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .download-btn:hover {
+    background-color: #000000; /* Black on hover */
+  }
+</style>
+
+
+
+<div id="footer-placeholder"></div>
+
+
+
+
+
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+// JavaScript to load header and footer
+document.addEventListener("DOMContentLoaded", function() {
+  fetch("header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+});
+</script>
+
+
+</body>
+</html>

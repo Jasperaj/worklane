@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python through Google Colab</title>
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Sidebar styling */
+    #sidebar {
+      width: 20%;
+      float: left;
+      padding: 15px;
+      background-color: #f4f4f4;
+      height: 100vh;
+      box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    #sidebar h2 {
+      font-size: 1.5em;
+      color: #0c2e8a;
+    }
+    #sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    #sidebar ul li a {
+      color: #0c2e8a;
+      text-decoration: none;
+      display: block;
+      padding: 8px 0;
+    }
+    #sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main content area styling */
+    #main-content {
+      width: 75%;
+      float: left;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    pre, code {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      line-height: 1.8;
+      font-size: 1em;
+    }
+    h1, h2 {
+      color: #0c2e8a;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Sidebar with Categories -->
+  <aside id="sidebar">
+    <h2>Python Categories</h2>
+    <ul>
+      <li><a href="../python/google-colab.html">Python through Google Colab</a></li>
+      <!-- Add additional lessons here if needed -->
+    </ul>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+    <h1>Python through Google Colab</h1>
+
+    <section>
+      <h2>Introduction to Google Colab</h2>
+      <p>Google Colab, or Colaboratory, is a free, cloud-based Jupyter notebook environment provided by Google. It allows us to write and execute Python code directly in a browser without needing any local installations. Colab is particularly beneficial for users who want to perform data analysis, machine learning, and finance-related coding projects without setting up a local environment.</p>
+    </section>
+
+    <section>
+      <h2>Why Use Google Colab?</h2>
+      <ul>
+        <li><strong>Free Access:</strong> Google Colab is free to use and provides access to powerful hardware, including GPUs and TPUs.</li>
+        <li><strong>No Installation Required:</strong> You don’t need to install Python or any libraries locally. Everything runs in the cloud.</li>
+        <li><strong>Collaborative:</strong> You can share Colab notebooks with others, allowing for collaborative projects and easy sharing of code.</li>
+        <li><strong>Integration with Google Drive:</strong> Colab can connect to Google Drive, making it easy to save data and access files stored there.</li>
+      </ul>
+      <p>One limitation to note is that Google Colab provides a temporary environment. Each time you start a new session, you need to reinstall any modules or libraries that aren’t pre-installed. We’ll use Google Colab for all future Python projects in finance for its flexibility and ease of access.</p>
+    </section>
+
+    <section>
+      <h2>Getting Started with Google Colab</h2>
+      <h3>1. Installing Libraries</h3>
+      <p>In Google Colab, you can install libraries with <code>pip</code> commands as you would locally. However, as mentioned, the environment resets when the session is closed. Here’s how you install a library:</p>
+      <div class="code-box">
+        <pre><code>!pip install pandas numpy matplotlib</code></pre>
+      </div>
+      <p>This command installs Pandas, NumPy, and Matplotlib, which are commonly used libraries in finance.</p>
+
+      <h3>2. Saving and Accessing Data</h3>
+      <p>Google Colab allows you to save files directly to Google Drive. You can also upload files manually or save outputs locally. Here’s how to connect Google Colab to Google Drive:</p>
+      <div class="code-box">
+        <pre><code>from google.colab import drive
+drive.mount('/content/drive')</code></pre>
+      </div>
+      <p>After running this code, you’ll be prompted to grant access. Your Google Drive will then be available in the <code>/content/drive</code> directory, allowing you to save files directly to Drive.</p>
+
+      <h3>3. Inputting Secret Keys</h3>
+      <p>For finance-related projects, you may need to use secret keys or API keys to access financial data from third-party sources. Google Colab provides a secure way to handle these keys:</p>
+      <div class="code-box">
+        <pre><code># Example of securely storing an API key in a variable
+api_key = "YOUR_SECRET_API_KEY"</code></pre>
+      </div>
+      <p>Alternatively, you can use Colab’s “Secrets” feature through Google Cloud or store the keys in a text file in Google Drive, read them directly in Colab, and delete the file afterward for added security.</p>
+
+      <h3>4. Data Analysis Example</h3>
+      <p>Here’s an example of using Pandas to analyze financial data in Google Colab. This code assumes you have a CSV file with stock price data saved in Google Drive:</p>
+      <div class="code-box">
+        <pre><code>import pandas as pd
+
+# Load data from Google Drive
+file_path = '/content/drive/My Drive/finance_data.csv'
+data = pd.read_csv(file_path)
+
+# Display the first few rows
+print(data.head())</code></pre>
+      </div>
+      <p>This code snippet loads a CSV file from Google Drive and displays the first few rows, making it easy to inspect the data.</p>
+
+      <h3>5. Visualizing Data with Matplotlib</h3>
+      <p>Google Colab supports data visualization, making it easy to plot graphs and analyze trends. Here’s an example:</p>
+      <div class="code-box">
+        <pre><code>import matplotlib.pyplot as plt
+
+# Plot stock prices
+plt.plot(data['Date'], data['Close'])
+plt.xlabel('Date')
+plt.ylabel('Stock Price')
+plt.title('Stock Price Over Time')
+plt.show()</code></pre>
+      </div>
+      <p>This code creates a line chart of stock prices over time, a common visualization in financial analysis.</p>
+
+      <h3>6. Using GPUs and TPUs (Optional)</h3>
+      <p>Google Colab allows you to use GPUs and TPUs for more computationally intensive tasks. To enable GPU or TPU, go to <strong>Runtime &gt; Change runtime type</strong> and select the desired hardware accelerator.</p>
+    </section>
+
+    <section>
+      <h2>Conclusion</h2>
+      <p>Google Colab is an incredibly powerful and flexible environment for running Python code, especially for finance projects that require quick data analysis and visualization without the hassle of local installation. We’ll use Google Colab for all future Python-related projects in finance, taking advantage of its simplicity and cloud-based power.</p>
+      <p>In upcoming posts, we’ll dive deeper into specific financial analyses, from portfolio optimization to risk management, all through Google Colab.</p>
+    </section>
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript to Load Header and Footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("../header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading header:", error));
+
+      fetch("../footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    });
+  </script>
+</body>
+</html>

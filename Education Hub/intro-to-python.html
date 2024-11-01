@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technology - Lesson 1 - Introduction to Python</title>
+  <link href="../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Sidebar styling */
+    #sidebar {
+      width: 20%;
+      float: left;
+      padding: 15px;
+      background-color: #f4f4f4;
+      height: 100vh;
+      box-shadow: 1px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    #sidebar h2 {
+      font-size: 1.5em;
+      color: #0c2e8a;
+    }
+    #sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    #sidebar ul li a {
+      color: #0c2e8a;
+      text-decoration: none;
+      display: block;
+      padding: 8px 0;
+    }
+    #sidebar ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Main content area styling */
+    #main-content {
+      width: 75%;
+      float: left;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    pre, code {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+      line-height: 1.8; /* Adjusts line spacing for better readability */
+      font-size: 1em; /* Ensures the font size is appropriate for readability */   
+    }
+    h1, h2 {
+      color: #0c2e8a;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <!-- Sidebar with Categories -->
+  <aside id="sidebar">
+    <h2>Technology Categories</h2>
+    <ul>
+      <li><a href="../technology/introduction-to-python.html">Introduction to Python</a></li>
+      <!-- Add additional lessons here if needed -->
+    </ul>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+    <h1>Technology - Lesson 1: Introduction to Python</h1>
+
+    <section>
+      <h2>Introduction</h2>
+      <p>Python is a powerful, high-level programming language widely used for web development, data analysis, artificial intelligence, scientific computing, and automation. Known for its readability and simplicity, Python is often the first language new programmers learn due to its extensive support libraries and community.</p>
+    </section>
+
+    <section>
+      <h2>Downloading and Installing Python</h2>
+      <p>To start using Python, download and install it on your computer. Here’s how:</p>
+      <ul>
+        <li>Go to the official Python website at <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a>.</li>
+        <li>Select the version appropriate for your operating system (Windows, macOS, or Linux).</li>
+        <li>Follow the on-screen instructions to install Python, making sure to check the box that adds Python to your system PATH during installation on Windows.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>System Requirements</h2>
+      <p>Python has minimal system requirements and runs on most operating systems. Here are some basic requirements:</p>
+      <ul>
+        <li><strong>Operating System:</strong> Python supports Windows, macOS, and Linux.</li>
+        <li><strong>Disk Space:</strong> At least 200 MB of free space.</li>
+        <li><strong>RAM:</strong> 512 MB or more is recommended.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Launching Python</h2>
+      <p>After installation, you can launch Python in several ways:</p>
+      <ul>
+        <li>On Windows, open the Command Prompt and type <code>python</code> to start the Python interpreter.</li>
+        <li>On macOS and Linux, open a terminal window and type <code>python3</code> if Python 3 is installed, as some systems may default to Python 2.</li>
+        <li>Alternatively, open the <strong>IDLE</strong> (Integrated Development and Learning Environment) application that comes with Python for a beginner-friendly interface.</li>
+      </ul>
+      <p>Once Python is running, you will see a prompt (<code>&gt;&gt;&gt;</code>), indicating you can enter Python commands and code directly into the interpreter.</p>
+    </section>
+
+    <section>
+      <h2>Your First Python Program</h2>
+      <p>Let’s start with a simple "Hello, World!" program, often the first step in learning a new programming language:</p>
+      <div class="code-box">
+        <pre><code>print("Hello, World!")</code></pre>
+      </div>
+      <p>Type this line into the Python prompt and press Enter. You should see the output:</p>
+      <pre><code>Hello, World!</code></pre>
+    </section>
+
+    <section>
+      <h2>Understanding Modules in Python</h2>
+      <p>Python comes with a wide range of built-in modules, which are files containing Python definitions and statements. These modules can be imported into your programs to add functionality without writing new code.</p>
+      <p>To use a module, you simply import it at the beginning of your script. For example, to work with math functions, use:</p>
+      <div class="code-box">
+        <pre><code>import math</code></pre>
+      </div>
+      <p>Modules are a convenient way to access pre-built functions and make coding faster and easier.</p>
+    </section>
+
+    <section>
+      <h2>Installing Modules</h2>
+      <p>In addition to built-in modules, Python has a vast ecosystem of external modules available through the Python Package Index (PyPI). To install these, you use <code>pip</code>, the package installer for Python.</p>
+      <p>For instance, to install a module named <code>requests</code>, use:</p>
+      <div class="code-box">
+        <pre><code>pip install requests</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>Python for Finance</h2>
+      <p>Python is extensively used in finance for tasks such as data analysis, algorithmic trading, and financial modeling. Here are some popular finance-related modules, each with a brief description and installation command:</p>
+      <ul>
+        <li><strong>Pandas:</strong> Essential for data manipulation and analysis, especially in handling large datasets in finance.</li>
+        <div class="code-box"><pre><code>pip install pandas</code></pre></div>
+
+        <li><strong>NumPy:</strong> Provides support for large, multi-dimensional arrays and matrices, along with mathematical functions. Useful for quantitative finance.</li>
+        <div class="code-box"><pre><code>pip install numpy</code></pre></div>
+
+        <li><strong>Matplotlib:</strong> A plotting library to create static, animated, and interactive visualizations in Python. It’s valuable for visualizing financial data.</li>
+        <div class="code-box"><pre><code>pip install matplotlib</code></pre></div>
+
+        <li><strong>yfinance:</strong> Allows easy downloading of financial data from Yahoo Finance, useful for analysis and stock market tracking.</li>
+        <div class="code-box"><pre><code>pip install yfinance</code></pre></div>
+
+        <li><strong>Scipy:</strong> Used for scientific and technical computing, including statistical analysis, optimizations, and more.</li>
+        <div class="code-box"><pre><code>pip install scipy</code></pre></div>
+      </ul>
+      <p>These modules enhance Python’s capabilities in finance, making it a preferred language in financial data science and analytics.</p>
+    </section>
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- jQuery and Bootstrap JS -->
+  <script src="../lib/jquery/jquery.min.js"></script>
+  <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- JavaScript to Load Header and Footer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch("../header.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading header:", error));
+
+      fetch("../footer.html")
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById("footer-placeholder").innerHTML = data;
+        })
+        .catch(error => console.error("Error loading footer:", error));
+    });
+  </script>
+</body>
+</html>
