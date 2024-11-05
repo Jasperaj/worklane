@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Enlightenment</title>
+    <title>Worklane - Financial Advisory</title>
     <style>
         /* General Reset */
         body, html {
@@ -77,10 +77,9 @@
         @keyframes fadeInLight { 0% { opacity: 0; } 100% { opacity: 1; }}
         @keyframes fadeInLogo { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); }}
         @keyframes fadeInMotto { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); }}
-        
-        /* Service Section with lighter black background */
-        .service-section {
-            background-color: #222; /* Less black */
+
+        /* Service Section Container with progressive lighter backgrounds */
+        .service-section-container {
             color: #fff;
             padding: 50px;
             min-height: 100vh;
@@ -89,25 +88,30 @@
             justify-content: space-between;
             flex-wrap: nowrap;
             opacity: 0;
-            transition: opacity 1s ease;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
         }
+        /* Progressive background colors for each section */
+        #serviceSection1 { background-color: #222; } /* Darkest */
+        #serviceSection2 { background-color: #2a2a2a; } /* Slightly lighter */
+        #serviceSection3 { background-color: #333; } /* Even lighter */
 
         /* Heading Styling with Drop Animation */
         .service-heading {
             font-size: 2.5rem;
             font-weight: bold;
-            margin-top: 20px;
             opacity: 0;
             transform: translateY(-50px);
             transition: opacity 1s ease, transform 1s ease;
+            margin-top: 0;
         }
 
         /* Align Service List Below Heading */
         .service-list-container {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-            margin-top: 10px; /* Add spacing between heading and services */
+            margin-top: 0;
+            padding-top: 20px;
         }
 
         .service-list {
@@ -124,12 +128,11 @@
 
         /* Hovering Image with Right Slide-In Animation */
         .report-image {
-            position: relative;
-            width: 66%; /* Two-thirds of the right side */
+            width: 66%;
             opacity: 0;
-            transform: translateX(100px); /* Start from off the screen to the right */
+            transform: translateX(100px);
             transition: opacity 1s ease, transform 1s ease;
-            margin-left: auto; /* Aligns image to the far right */
+            margin-top: 0;
         }
         .report-image:hover {
             transform: scale(1.05);
@@ -156,60 +159,83 @@
         <div class="scroll-button" onclick="scrollToService()">▼ Scroll Down</div>
     </div>
 
-    <!-- Financial Reporting Service Section -->
-    <div class="service-section" id="serviceSection">
-        <!-- Left Content: Heading and Services -->
+    <!-- Service Section: Financial Reporting and Analysis -->
+    <div class="service-section-container" id="serviceSection1">
         <div class="service-list-container">
-            <!-- Service Heading -->
-            <div class="service-heading" id="serviceHeading">Financial Reporting and Analysis</div>
-
-            <!-- Service List aligned below the heading -->
-            <div class="service-list" id="serviceList">
-                <div class="service-item" style="--delay: 1s;">1. Monthly Financial Statements</div>
-                <div class="service-item" style="--delay: 1.5s;">2. Cash Flow Analysis</div>
-                <div class="service-item" style="--delay: 2s;">3. Budget Variance Reporting</div>
-                <div class="service-item" style="--delay: 2.5s;">4. Profit & Loss Analysis</div>
-                <div class="service-item" style="--delay: 3s;">5. Custom Financial Dashboards</div>
+            <div class="service-heading">Financial Reporting and Analysis</div>
+            <div class="service-list">
+                <div class="service-item" style="--delay: 0s;">1. Monthly Financial Statements</div>
+                <div class="service-item" style="--delay: 0.5s;">2. Cash Flow Analysis</div>
+                <div class="service-item" style="--delay: 1s;">3. Budget Variance Reporting</div>
+                <div class="service-item" style="--delay: 1.5s;">4. Profit & Loss Analysis</div>
+                <div class="service-item" style="--delay: 2s;">5. Custom Financial Dashboards</div>
             </div>
         </div>
+        <img src="..\img\financial-reporting.jpg" alt="Financial Report" class="report-image">
+    </div>
 
-        <!-- Right Image Content -->
-        <img src="..\img\financial-reporting.jpg" alt="Financial Report" class="report-image" id="reportImage">
+    <!-- Service Section: Accounting and Book Keeping -->
+    <div class="service-section-container" id="serviceSection2">
+        <div class="service-list-container">
+            <div class="service-heading">Accounting and Book Keeping</div>
+            <div class="service-list">
+                <div class="service-item" style="--delay: 0s;">1. Software-based accounting record keeping</div>
+                <div class="service-item" style="--delay: 0.5s;">2. Timely and organized bookkeeping</div>
+                <div class="service-item" style="--delay: 1s;">3. Real-time financial reporting</div>
+            </div>
+        </div>
+        <img src="book-keeping.jpg" alt="Accounting and Book Keeping" class="report-image">
+    </div>
+
+    <!-- Service Section: Tax Compliances -->
+    <div class="service-section-container" id="serviceSection3">
+        <div class="service-list-container">
+            <div class="service-heading">Tax Compliances</div>
+            <div class="service-list">
+                <div class="service-item" style="--delay: 0s;">1. VAT Return Filing</div>
+                <div class="service-item" style="--delay: 0.5s;">2. TDS Return Filing</div>
+                <div class="service-item" style="--delay: 1s;">3. Income Tax Return Filing</div>
+                <div class="service-item" style="--delay: 1.5s;">4. Tax Planning and Advisory</div>
+            </div>
+        </div>
+        <img src="compliance.jpg" alt="Tax Compliances" class="report-image">
     </div>
 
     <script>
-        // Function to scroll to the service section and start the animation
+        // Function to scroll to the first service section
         function scrollToService() {
-            const serviceSection = document.getElementById('serviceSection');
-            const serviceHeading = document.getElementById('serviceHeading');
-            const reportImage = document.getElementById('reportImage');
-
-            // Smooth scroll to the service section
-            serviceSection.scrollIntoView({ behavior: 'smooth' });
-
-            // Show the section background
-            serviceSection.style.opacity = '1';
-
-            // Animate the heading to drop down after a brief delay
-            setTimeout(() => {
-                serviceHeading.style.opacity = '1';
-                serviceHeading.style.transform = 'translateY(0)';
-            }, 500);
-
-            // Animate the image to slide in from the right after the heading
-            setTimeout(() => {
-                reportImage.style.opacity = '1';
-                reportImage.style.transform = 'translateX(0)';
-            }, 1000);
-
-            // Start service list animations one by one after the image
-            setTimeout(() => {
-                document.querySelectorAll('.service-item').forEach((item, index) => {
-                    item.style.animation = `slideIn 0.8s ease-out forwards`;
-                    item.style.animationDelay = `${index * 0.5}s`;
-                });
-            }, 1500);
+            document.getElementById('serviceSection1').scrollIntoView({ behavior: 'smooth' });
         }
+
+        // Observe each service section for when it comes into view
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const section = entry.target;
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+
+                    const heading = section.querySelector('.service-heading');
+                    heading.style.opacity = '1';
+                    heading.style.transform = 'translateY(0)';
+
+                    const image = section.querySelector('.report-image');
+                    image.style.opacity = '1';
+                    image.style.transform = 'translateX(0)';
+
+                    section.querySelectorAll('.service-item').forEach((item, index) => {
+                        item.style.animation = `slideIn 0.8s ease-out forwards`;
+                        item.style.animationDelay = `${index * 0.5}s`;
+                    });
+                    observer.unobserve(section);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Attach observer to each service section
+        document.querySelectorAll('.service-section-container').forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
