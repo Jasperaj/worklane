@@ -165,12 +165,14 @@
   <!-- Load Header and Footer -->
   <script src="lib/jquery/jquery.min.js"></script>
   <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/mobile-nav.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       fetch("header.html")
         .then(response => response.text())
         .then(data => {
           document.getElementById("header-placeholder").innerHTML = data;
+          initMobileNav();
         });
 
       fetch("footer.html")
