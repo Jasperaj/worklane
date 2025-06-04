@@ -226,6 +226,7 @@ for file in glob.glob("*.pdf"):
   <!-- jQuery and Bootstrap JS -->
   <script src="../lib/jquery/jquery.min.js"></script>
   <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/mobile-nav.js"></script>
 
   <!-- JavaScript to Load Header and Footer -->
   <script>
@@ -234,6 +235,7 @@ for file in glob.glob("*.pdf"):
         .then(response => response.text())
         .then(data => {
           document.getElementById("header-placeholder").innerHTML = data;
+          initMobileNav();
         })
         .catch(error => console.error("Error loading header:", error));
 

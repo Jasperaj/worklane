@@ -210,6 +210,7 @@ files.download(output_file)</code></pre>
   <!-- jQuery and Bootstrap JS -->
   <script src="../lib/jquery/jquery.min.js"></script>
   <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/mobile-nav.js"></script>
 
   <!-- JavaScript to Load Header and Footer -->
   <script>
@@ -218,6 +219,7 @@ files.download(output_file)</code></pre>
         .then(response => response.text())
         .then(data => {
           document.getElementById("header-placeholder").innerHTML = data;
+          initMobileNav();
         })
         .catch(error => console.error("Error loading header:", error));
 
