@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>वित्त पेशाकर्मीका लागि अनिवार्य २५ Excel फर्मुला (२०२६ — उदाहरणसहित) — Worklane Journal</title>
+<meta name="description" content="लेखा, अडिट, कर र वित्त कामका लागि सबभन्दा उपयोगी २५ Excel फर्मुला — XLOOKUP, SUMIFS, INDEX/MATCH, XIRR, LET, LAMBDA आदि — प्रत्येकको वास्तविक वित्त प्रयोग र उदाहरणसहित।">
+<meta name="keywords" content="Excel फर्मुला वित्त, XLOOKUP, SUMIFS, XIRR, LAMBDA, LET, लेखाका लागि Excel, Excel टिप्स नेपाल">
+<meta name="author" content="Upaj Manandhar, Chartered Accountant">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="geo.region" content="NP">
+<meta name="geo.placename" content="Kathmandu">
+<link rel="canonical" href="https://worklane.com.np/blog/posts/excel-formulas-finance-professionals-ne.html">
+<link rel="alternate" hreflang="en" href="https://worklane.com.np/blog/posts/excel-formulas-finance-professionals.html">
+<link rel="alternate" hreflang="ne" href="https://worklane.com.np/blog/posts/excel-formulas-finance-professionals-ne.html">
+<link rel="alternate" hreflang="x-default" href="https://worklane.com.np/blog/posts/excel-formulas-finance-professionals.html">
+<link rel="icon" type="image/png" href="../../uploads/transparent logo without name.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="वित्त पेशाकर्मीका लागि अनिवार्य २५ Excel फर्मुला">
+<meta property="og:image" content="https://worklane.com.np/uploads/blog/excel-formulas-finance-professionals.jpg">
+<meta property="og:url" content="https://worklane.com.np/blog/posts/excel-formulas-finance-professionals-ne.html">
+<meta property="og:site_name" content="Worklane Journal">
+<meta property="article:published_time" content="2026-07-08">
+<meta property="article:modified_time" content="2026-07-16">
+<meta property="article:author" content="Upaj Manandhar, Chartered Accountant">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://worklane.com.np/uploads/blog/excel-formulas-finance-professionals.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "वित्त पेशाकर्मीका लागि अनिवार्य २५ Excel फर्मुला (२०२६ — उदाहरणसहित)",
+  "description": "लेखा, अडिट र कर कामका लागि आवश्यक Excel फर्मुला — उदाहरणसहित।",
+  "image": "https://worklane.com.np/uploads/blog/excel-formulas-finance-professionals.jpg",
+  "datePublished": "2026-07-08",
+  "dateModified": "2026-07-16",
+  "inLanguage": "ne",
+  "wordCount": 1900,
+  "author": {
+    "@type": "Person",
+    "name": "Upaj Manandhar",
+    "jobTitle": "Chartered Accountant",
+    "worksFor": { "@type": "Organization", "name": "Worklane Financial Advisory" },
+    "url": "https://worklane.com.np"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Worklane Financial Advisory",
+    "logo": { "@type": "ImageObject", "url": "https://worklane.com.np/uploads/transparent%20logo%20without%20name.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://worklane.com.np/blog/posts/excel-formulas-finance-professionals-ne.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://worklane.com.np/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://worklane.com.np/blog/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "अनिवार्य २५ Excel फर्मुला", "item": "https://worklane.com.np/blog/posts/excel-formulas-finance-professionals-ne.html" }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="journal-header">
+  <a class="brand" href="../../index.html">
+    <img src="../../uploads/transparent logo without name.png" alt="Worklane logo">
+    <span>Worklane</span>
+  </a>
+  <nav>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#services">Services</a>
+    <a href="../index.html" class="active">Journal</a>
+    <a href="../../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<article class="article-wrap">
+  <div class="article-topbar">
+    <p class="article-breadcrumb"><a href="../index.html">← Journal</a></p>
+    <a class="lang-switch" href="excel-formulas-finance-professionals.html" hreflang="en">Read in English</a>
+  </div>
+
+  <p class="article-kicker">Tools & Productivity</p>
+  <h1 class="article-title">वित्त पेशाकर्मीका लागि अनिवार्य २५ Excel फर्मुला (उदाहरणसहित — २०२६)</h1>
+
+  <div class="article-meta">
+    <span>लेखक: <strong>उपज मानन्धर</strong>, चार्टर्ड एकाउन्टेन्ट</span>
+    <time datetime="2026-07-08">जुलाई ८, २०२६ · अद्यावधिक जुलाई १६, २०२६</time>
+    <span>१४ मिनेट पढाइ</span>
+  </div>
+
+  <figure class="article-hero">
+    <img src="../../uploads/blog/excel-formulas-finance-professionals.jpg" alt="क्यालकुलेटर, नोटबुक र ल्यापटप — वित्त पेशाकर्मीको दैनिक टेबल।" loading="eager">
+    <figcaption>Excel वित्तको कामकाजी भाषा हो — केही फर्मुला राम्रोसँग प्रयोग गर्नाले महिनौँ जोगाउँछ।</figcaption>
+  </figure>
+
+  <div class="article-body">
+    <p>Excel वित्तको कामकाजी भाषा हो। "Excel चलाउने" र "किताबबन्दी दुई दिन छिटो बन्द गर्ने"बीचको अन्तर सामान्यतया केही फर्मुला — राम्रोसँग प्रयोग, दुई-तीन जोडीमा संयोजित, र स्पष्ट नामकरण। लेखा, अडिट, कर र FP&amp;A मा काम गर्ने जुनसुकैका लागि अनिवार्य मान्ने पच्चीस फर्मुला, प्रत्येक वास्तविक वित्त प्रयोग र उदाहरणसहित।</p>
+
+    <div class="article-takeaways">
+      <h3>मुख्य कुरा</h3>
+      <ul>
+        <li>आधुनिक स्पिल फर्मुला (<code>XLOOKUP</code>, <code>FILTER</code>, <code>UNIQUE</code>, <code>SORT</code>) ले "ड्र्याग फिल" त्रुटि पूरै हटाउँछन्।</li>
+        <li>फर्मुला एक्लै काम गर्दैनन्। जोडीमा सिक्नुहोस्: <code>XLOOKUP + IFERROR</code>, <code>SUMIFS + EOMONTH</code>, <code>LET + LAMBDA</code>।</li>
+        <li><strong>Named Range</strong> र <code>LET</code> ले फर्मुला पढ्नयोग्य बनाउँछ — वित्त शिट कार्यपत्रजस्तै अडिटयोग्य हुनुपर्छ।</li>
+        <li>उपलब्धता: <code>XLOOKUP</code>, <code>FILTER</code>, <code>LET</code>, <code>LAMBDA</code> लाई Microsoft 365 वा Excel 2021+ चाहिन्छ।</li>
+      </ul>
+    </div>
+
+    <nav class="article-toc" aria-label="विषय-सूची">
+      <h3>यस लेखमा</h3>
+      <ol>
+        <li><a href="#chart">फर्मुला वर्गीकरण चार्ट</a></li>
+        <li><a href="#formulas">पच्चीस फर्मुला (उदाहरणसहित)</a></li>
+        <li><a href="#learn">कसरी वास्तवमै सिक्ने</a></li>
+        <li><a href="#ai">Excel मा AI</a></li>
+        <li><a href="#help">टेम्प्लेट पुनर्निर्माण</a></li>
+      </ol>
+    </nav>
+
+    <div class="article-chart" id="chart">
+      <h4>पच्चीस फर्मुला — वर्गअनुसार</h4>
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="वर्ग चार्ट">
+        <line x1="180" y1="20" x2="180" y2="170" stroke="#c8c4bc"/>
+        <line x1="180" y1="170" x2="620" y2="170" stroke="#c8c4bc"/>
+        <g font-family="Inter, sans-serif" font-size="11" fill="#2a2a2a">
+          <text x="170" y="34" text-anchor="end">लुकअप</text>
+          <rect x="180" y="22" width="150" height="18" fill="#D94F2B" rx="2"/><text x="338" y="36" font-weight="600">५</text>
+          <text x="170" y="60" text-anchor="end">एग्रीगेशन</text>
+          <rect x="180" y="48" width="120" height="18" fill="#D94F2B" rx="2"/><text x="308" y="62" font-weight="600">४</text>
+          <text x="170" y="86" text-anchor="end">तर्क/त्रुटि</text>
+          <rect x="180" y="74" width="60" height="18" fill="#D94F2B" rx="2"/><text x="248" y="88" font-weight="600">२</text>
+          <text x="170" y="112" text-anchor="end">मिति/पाठ</text>
+          <rect x="180" y="100" width="150" height="18" fill="#D94F2B" rx="2"/><text x="338" y="114" font-weight="600">५</text>
+          <text x="170" y="138" text-anchor="end">वित्तीय</text>
+          <rect x="180" y="126" width="90" height="18" fill="#D94F2B" rx="2"/><text x="278" y="140" font-weight="600">३</text>
+          <text x="170" y="164" text-anchor="end">डाइनामिक (365)</text>
+          <rect x="180" y="152" width="180" height="18" fill="#b33d20" rx="2"/><text x="368" y="166" font-weight="600">६</text>
+        </g>
+      </svg>
+      <p class="c-caption">आधुनिक डाइनामिक-एरे फर्मुला अहिले सबभन्दा ठूलो हिस्सा।</p>
+    </div>
+
+    <h2 id="formulas">पच्चीस फर्मुला — प्रत्येकको वित्त प्रयोगसहित</h2>
+    <table>
+      <thead><tr><th style="width:38%">फर्मुला — के गर्छ</th><th>वित्त प्रयोग र उदाहरण</th></tr></thead>
+      <tbody>
+      <tr><td><strong>१. SUM / SUMIFS</strong></td><td>विभाग र लागत केन्द्रअनुसार मासिक खर्च योग।<br><code>=SUMIFS(Amount, Dept, "Finance", Month, "Shrawan")</code></td></tr>
+      <tr><td><strong>२. COUNTIFS</strong></td><td>क्लाइन्टअनुसार म्याद नाघेको बिल गन्ती।</td></tr>
+      <tr><td><strong>३. AVERAGEIFS</strong></td><td>स्वीकृत दाबीको औसत प्रोसेसिङ दिन।</td></tr>
+      <tr><td><strong>४. XLOOKUP</strong></td><td>भेन्डरको PAN वा बैंक विवरण मास्टर लिस्टबाट भुक्तानी शिटमा।</td></tr>
+      <tr><td><strong>५. VLOOKUP</strong></td><td>पुराना टेम्प्लेटमा लेजर कोड-देखि खाता नाम म्यापिङ।</td></tr>
+      <tr><td><strong>६. INDEX + MATCH</strong></td><td>ग्रेड (पङ्क्ति) र वर्ष (स्तम्भ) अनुसार दर।</td></tr>
+      <tr><td><strong>७. IF / IFS</strong></td><td>बजेट भिन्नता झण्डा: ठिक / समीक्षा / माथि पठाउने।</td></tr>
+      <tr><td><strong>८. IFERROR</strong></td><td>लुकअप #N/A को सट्टा "म्याप गरिएको छैन।"</td></tr>
+      <tr><td><strong>९. SUMPRODUCT</strong></td><td>ऋण पोर्टफोलियोको भारित औसत ब्याज दर।</td></tr>
+      <tr><td><strong>१०. EOMONTH / EDATE</strong></td><td>VAT जम्मा म्याद (महिना अन्तपछि २५ दिन) र EMI तालिका।</td></tr>
+      <tr><td><strong>११. TEXT</strong></td><td>"INV-2082-07" जस्तै बिल सन्दर्भ।</td></tr>
+      <tr><td><strong>१२. ROUND / ROUNDDOWN</strong></td><td>TDS रुपैयाँमा गोल गरेर लेजर बैंकसँग मिलाउने।</td></tr>
+      <tr><td><strong>१३. PMT</strong></td><td>टर्म लोन अघि EMI परीक्षण।</td></tr>
+      <tr><td><strong>१४. NPV / IRR</strong></td><td>पुँजीगत खर्च प्रस्ताव मूल्याङ्कन।</td></tr>
+      <tr><td><strong>१५. XNPV / XIRR</strong></td><td>अनियमित लगानीमा वास्तविक प्रतिफल।</td></tr>
+      <tr><td><strong>१६. FILTER</strong></td><td>अभुक्तानी बिलहरूको लाइभ अर्क।</td></tr>
+      <tr><td><strong>१७. UNIQUE</strong></td><td>ग्राहक सूची डिडुप्लिकेट।</td></tr>
+      <tr><td><strong>१८. SORT / SORTBY</strong></td><td>बकाया अनुसार शीर्ष-१० ऋणीको स्वचालित सूची।</td></tr>
+      <tr><td><strong>१९. TEXTJOIN</strong></td><td>ठेगाना फिल्ड जोडेर पोस्टल लेबल।</td></tr>
+      <tr><td><strong>२०. TRIM / CLEAN</strong></td><td>'ABC ' र 'ABC' नमिल्ने समस्या समाधान।</td></tr>
+      <tr><td><strong>२१. LET</strong></td><td>स्ल्याब-आधारित कर फर्मुलालाई पढ्नयोग्य बनाउने।</td></tr>
+      <tr><td><strong>२२. LAMBDA</strong></td><td>तलब TDS का लागि पुनःप्रयोगयोग्य <code>SLABTAX()</code>।</td></tr>
+      <tr><td><strong>२३. TEXTSPLIT / TEXTBEFORE / TEXTAFTER</strong></td><td>आधुनिक पाठ पार्सिङ।</td></tr>
+      <tr><td><strong>२४. वाइल्डकार्डसहित लुकअप</strong></td><td>"PVT LTD" जस्ता कम्पनी नाम मिलाउने।</td></tr>
+      <tr><td><strong>२५. PIVOTBY / GROUPBY</strong></td><td>विभाग × महिना खर्चको लाइभ पिभोट (M365 २०२४+)।</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="learn">कसरी वास्तवमै सिक्ने</h2>
+    <ul>
+      <li><strong>जोडीमा अपनाउनुहोस्।</strong> धेरै वास्तविक कामले दुई फर्मुलाको संयोजन माग्छ।</li>
+      <li><strong>एउटा वास्तविक रिपोर्ट पुनर्निर्माण गर्नुहोस्।</strong> गत महिनाको म्यानुअल स्टेटमेन्ट फर्मुलामा मात्र पुनर्निर्माण गर्नुहोस्।</li>
+      <li><strong>स्पिल फर्मुलालाई प्राथमिकता।</strong></li>
+      <li><strong>Named Range प्रयोग गर्नुहोस्।</strong></li>
+      <li><strong><code>LET</code> धेरै प्रयोग गर्नुहोस्।</strong> नेस्टेड <code>IF</code> २०२६ को अन्ती-प्याटर्न हो।</li>
+      <li>दोहोरिने डेटा-सफाइका लागि <strong>Power Query</strong> सिक्नुहोस्।</li>
+    </ul>
+
+    <blockquote>वित्त शिट अर्को व्यक्तिले कार्यपत्रझैं पढ्न सक्नुपर्छ — फर्मुला तपाईंको अडिट ट्रेल हो।</blockquote>
+
+    <h2 id="ai">Excel मा AI</h2>
+    <p>Microsoft 365 Copilot ले प्राकृतिक भाषामा <code>PIVOTBY</code>, <code>FILTER</code> र <code>LAMBDA</code> जेनेरेट गर्न सक्छ। यसलाई कुशल तर कनिष्ठ सहकर्मीजस्तै व्यवहार गर्नुहोस्। हाम्रो <a href="ai-tools-and-their-uses-ne.html">AI उपकरण गाइड</a> हेर्नुहोस्।</p>
+
+    <h2 id="help">टिमको टेम्प्लेट पुनर्निर्माण</h2>
+    <p>धेरैजसो फर्महरू २०१५ को नेस्टेड-IF टेम्प्लेटमा मासिक बन्द चलाइरहेका छन्। सफा, स्पिल-चालित संस्करण बनाएर हरेक महिना आधा दिन बच्छ।</p>
+
+    <aside class="article-cta">
+      <h3>Excel टेम्प्लेट पुनर्निर्माण वा तालिम?</h3>
+      <p><strong>उपज मानन्धर, चार्टर्ड एकाउन्टेन्ट</strong> सँग सम्पर्क गर्नुहोस् — Excel टेम्प्लेट पुनर्निर्माण, LAMBDA/LET रिफ्याक्टर, र वित्त टिमका लागि प्रत्यक्ष तालिम (payroll, VAT, TDS टेम्प्लेट)।</p>
+      <div class="cta-actions">
+        <a class="cta-btn primary" href="mailto:upaj.worklane@gmail.com?subject=Excel%20template%20rebuild">इमेल पठाउनुहोस्</a>
+        <a class="cta-btn ghost" href="tel:+9779841905745">फोन +977 984 190 5745</a>
+      </div>
+      <div class="cta-meta">
+        Worklane Financial Advisory · हाडीगाउँ, काठमाडौँ · <a href="../../index.html#contact">worklane.com.np</a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="article-sources">
+    <h2>स्रोत र थप पठन</h2>
+    <ol>
+      <li>Microsoft. <em>Excel Function Reference.</em> <a href="https://support.microsoft.com/en-us/office/excel-functions-alphabetical-b3944572-255d-4efb-bb96-c6d90033e188" rel="noopener noreferrer" target="_blank">support.microsoft.com</a></li>
+      <li>Microsoft. <em>XLOOKUP.</em> <a href="https://support.microsoft.com/en-us/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929" rel="noopener noreferrer" target="_blank">support.microsoft.com/xlookup</a></li>
+      <li>Microsoft. <em>LET.</em> <a href="https://support.microsoft.com/en-us/office/let-function-34842dd8-b92b-4d3f-b325-b8b8f9908999" rel="noopener noreferrer" target="_blank">support.microsoft.com/let</a></li>
+      <li>Microsoft. <em>LAMBDA.</em> <a href="https://support.microsoft.com/en-us/office/lambda-function-bd212d27-1cd1-4321-a34a-ccbf254b8b67" rel="noopener noreferrer" target="_blank">support.microsoft.com/lambda</a></li>
+      <li>Chandoo. <em>Excel Formulas.</em> <a href="https://chandoo.org/wp/excel-formulas/" rel="noopener noreferrer" target="_blank">chandoo.org</a></li>
+    </ol>
+    <p class="image-credit">शीर्षक छवि: Pixabay (StockSnap) — निःशुल्क प्रयोग अनुमति।</p>
+  </section>
+
+  <div class="article-author">
+    <span class="a-name">उपज मानन्धर, चार्टर्ड एकाउन्टेन्ट</span>
+    <span class="a-role">संस्थापक, Worklane Financial Advisory · हाडीगाउँ, काठमाडौँ · <a href="mailto:upaj.worklane@gmail.com">upaj.worklane@gmail.com</a></span>
+  </div>
+</article>
+
+<div class="article-more">
+  <a href="../index.html">← More from the Journal</a>
+</div>
+
+<footer class="journal-footer">
+  <span>©2026 Worklane Financial Advisory</span>
+  <a href="../../index.html">worklane.com.np</a>
+  <span>Hadigaun, Kathmandu</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Automating Tally Prime with Claude via MCP (2026): A Chartered Accountant's Practical Guide — Worklane Journal</title>
+<meta name="description" content="A Chartered Accountant's practical guide to automating Tally Prime with Anthropic's Claude using the Model Context Protocol (MCP) — architecture, setup, real accounting use cases, data-privacy limits, and how it changes the monthly close in Nepal.">
+<meta name="keywords" content="Tally Prime automation Nepal, Tally Claude MCP, Model Context Protocol accounting, Tally AI automation, Claude Desktop MCP Tally, Nepal accounting AI, TallyPrime XML API, Upaj Manandhar CA, Excel Kida Tally, AI in Nepali accounting">
+<meta name="author" content="Upaj Manandhar, Chartered Accountant">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="geo.region" content="NP">
+<meta name="geo.placename" content="Kathmandu">
+<link rel="canonical" href="https://worklane.com.np/blog/posts/tally-prime-claude-mcp-automation.html">
+<link rel="icon" type="image/png" href="../../uploads/transparent logo without name.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Automating Tally Prime with Claude via MCP (2026)">
+<meta property="og:description" content="A Chartered Accountant's guide to Tally Prime × Claude × MCP — architecture, setup, real use cases, privacy limits.">
+<meta property="og:image" content="https://worklane.com.np/uploads/blog/tally-prime-claude-mcp-automation.jpg">
+<meta property="og:url" content="https://worklane.com.np/blog/posts/tally-prime-claude-mcp-automation.html">
+<meta property="og:site_name" content="Worklane Journal">
+<meta property="article:published_time" content="2026-07-16">
+<meta property="article:modified_time" content="2026-07-16">
+<meta property="article:author" content="Upaj Manandhar, Chartered Accountant">
+<meta property="article:section" content="AI & Technology">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Automating Tally Prime with Claude via MCP (2026)">
+<meta name="twitter:description" content="How the Model Context Protocol lets Claude read and write Tally Prime — reshaping the monthly close for Nepali accounting teams.">
+<meta name="twitter:image" content="https://worklane.com.np/uploads/blog/tally-prime-claude-mcp-automation.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Automating Tally Prime with Claude via MCP (2026): A Chartered Accountant's Practical Guide",
+  "description": "A Chartered Accountant's practical guide to automating Tally Prime with Anthropic's Claude using the Model Context Protocol (MCP) — architecture, setup, real accounting use cases, data-privacy limits, and how it changes the monthly close in Nepal.",
+  "image": "https://worklane.com.np/uploads/blog/tally-prime-claude-mcp-automation.jpg",
+  "datePublished": "2026-07-16",
+  "dateModified": "2026-07-16",
+  "inLanguage": "en",
+  "wordCount": 2600,
+  "author": {
+    "@type": "Person",
+    "name": "Upaj Manandhar",
+    "jobTitle": "Chartered Accountant",
+    "worksFor": { "@type": "Organization", "name": "Worklane Financial Advisory" },
+    "url": "https://worklane.com.np"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Worklane Financial Advisory",
+    "logo": { "@type": "ImageObject", "url": "https://worklane.com.np/uploads/transparent%20logo%20without%20name.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://worklane.com.np/blog/posts/tally-prime-claude-mcp-automation.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://worklane.com.np/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://worklane.com.np/blog/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "Automating Tally Prime with Claude via MCP", "item": "https://worklane.com.np/blog/posts/tally-prime-claude-mcp-automation.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is MCP (Model Context Protocol)?", "acceptedAnswer": { "@type": "Answer", "text": "MCP is an open standard from Anthropic that lets AI assistants like Claude connect to external systems — databases, files, APIs and desktop applications like Tally Prime — through a small local server. It's the plumbing that lets an LLM read your ledger, post vouchers or run reports without you copy-pasting data." } },
+    { "@type": "Question", "name": "Can Claude directly control Tally Prime?", "acceptedAnswer": { "@type": "Answer", "text": "Not out of the box. You run an MCP server that speaks to Tally's XML/ODBC interface on the same machine as Tally, then connect Claude Desktop or Claude Code to that server. The server exposes tools like read_ledger, post_voucher, run_report — Claude calls those tools instead of touching Tally directly." } },
+    { "@type": "Question", "name": "Is it safe to give Claude write access to my Tally data?", "acceptedAnswer": { "@type": "Answer", "text": "Start read-only. Point Claude at a copy of the company file, or expose read-only tools first. Once you trust the pipeline, gate write tools behind explicit human approval and log every posted voucher. Never let an autonomous agent post to a live production company file without review." } },
+    { "@type": "Question", "name": "Does this work for Tally Prime in Nepal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tally Prime's XML gateway and ODBC layer are identical in the Nepal release, so any MCP server built on the standard TDL/XML API will work. Nepali-specific features — VAT-inclusive prices, PAN-based ledger masters, Nepali date fields — flow through the same API." } },
+    { "@type": "Question", "name": "Where can I see a hands-on demo?", "acceptedAnswer": { "@type": "Answer", "text": "The YouTube channel 'Excel Kida' has a well-followed walkthrough series on connecting Tally Prime to Claude via MCP — check their channel at youtube.com/@excelkida for the current playlist." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="journal-header">
+  <a class="brand" href="../../index.html">
+    <img src="../../uploads/transparent logo without name.png" alt="Worklane logo">
+    <span>Worklane</span>
+  </a>
+  <nav>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#services">Services</a>
+    <a href="../index.html" class="active">Journal</a>
+    <a href="../../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<article class="article-wrap">
+  <p class="article-breadcrumb"><a href="../index.html">← Journal</a> · AI &amp; Technology</p>
+
+  <p class="article-kicker">AI &amp; Technology</p>
+  <h1 class="article-title">Automating Tally Prime with Claude via MCP (2026): A Chartered Accountant's Practical Guide</h1>
+
+  <div class="article-meta">
+    <span>By <strong>Upaj Manandhar</strong>, Chartered Accountant</span>
+    <time datetime="2026-07-16">Jul 16, 2026</time>
+    <span>13 min read</span>
+  </div>
+
+  <figure class="article-hero">
+    <img src="../../uploads/blog/tally-prime-claude-mcp-automation.jpg" alt="An accountant's desk with laptop and ledger — the Model Context Protocol lets Claude read and write Tally Prime, reshaping the monthly close for Nepali accounting teams." loading="eager">
+    <figcaption>The single biggest AI unlock for Nepali accountants in 2026 is not a new chatbot — it is Claude gaining hands to touch Tally directly.</figcaption>
+  </figure>
+
+  <div class="article-body">
+    <p>Nearly every Nepali accounting practice runs on <strong>Tally Prime</strong>. Nearly every one of us has also spent the last year watching Claude and ChatGPT get dramatically better — while still typing every voucher by hand, exporting every trial balance to Excel, and re-keying every reconciliation. Anthropic's <strong>Model Context Protocol (MCP)</strong> is the piece that closes that gap: a small open standard that lets Claude read from and write to your Tally Prime directly. This guide explains what MCP is, how the Tally × Claude architecture actually works, what a CA can genuinely automate today, and where the guardrails have to sit.</p>
+
+    <div class="article-takeaways">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li><strong>MCP is Claude's tool interface.</strong> It is an open standard that lets Claude call functions on your machine — read a ledger, post a voucher, run a report — without you copy-pasting anything.</li>
+        <li>Tally Prime <strong>already exposes an XML gateway and ODBC layer</strong>. An MCP server wraps those APIs into Claude-callable tools; the accounting engine itself is unchanged.</li>
+        <li>The real productivity wins are <strong>ledger classification, bank reconciliation, VAT-return prep, and monthly-close narratives</strong> — not "AI does the whole audit."</li>
+        <li>Give Claude <strong>read-only access first</strong>. Wire write tools behind explicit human approval — never let an agent post to a live production company file autonomously.</li>
+        <li>For Nepali offices, the useful entry point is <strong>Claude Desktop (or Claude Code) + a local Tally MCP server</strong>, on the same LAN as the Tally installation.</li>
+      </ul>
+    </div>
+
+    <nav class="article-toc" aria-label="Table of contents">
+      <h3>What's in this guide</h3>
+      <ol>
+        <li><a href="#what-is-mcp">What is MCP, in one paragraph</a></li>
+        <li><a href="#architecture">The architecture — how Claude reaches Tally</a></li>
+        <li><a href="#arch-diagram">Architecture at a glance (diagram)</a></li>
+        <li><a href="#setup">Setup — the practical steps</a></li>
+        <li><a href="#use-cases">10 real automations a CA can run today</a></li>
+        <li><a href="#impact-chart">Where the time actually goes back</a></li>
+        <li><a href="#privacy">Data privacy and safety</a></li>
+        <li><a href="#limits">Limits and honest failure modes</a></li>
+        <li><a href="#video">A hands-on walkthrough — Excel Kida on YouTube</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+        <li><a href="#help">Getting your Tally + Claude setup done</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="what-is-mcp">What is MCP, in one paragraph</h2>
+    <p>The <strong>Model Context Protocol</strong> is an open standard, published by Anthropic in late 2024, that lets an AI assistant call tools running on your own machine or network. Think of it as the "USB-C for AI" — a common shape so any client (Claude Desktop, Claude Code, other MCP-aware clients) can talk to any tool server (Postgres, GitHub, Google Drive, Slack, a filesystem, or — for us — Tally Prime). Instead of pasting data into a chat window, Claude asks the server: "please give me the sales register for Shrawan," or "please post this contra voucher." The server does the work in your existing system and returns the answer. You approve each destructive action.</p>
+
+    <h2 id="architecture">The architecture — how Claude reaches Tally</h2>
+    <p>Tally Prime already exposes two interfaces most accountants never touch:</p>
+    <ul>
+      <li><strong>The XML gateway</strong> on port <code>9000</code> — a Tally Definition Language (TDL) request/response endpoint. Send an XML request, get back a ledger, voucher list, trial balance, or a confirmation that a voucher was posted.</li>
+      <li><strong>The ODBC layer</strong> on port <code>9000</code> — read-only SQL-style queries over ledger, voucher, stock and company masters.</li>
+    </ul>
+    <p>An MCP server is a small process — usually a Python or Node.js script — that:</p>
+    <ol>
+      <li>Speaks the MCP protocol on one side (so Claude can talk to it).</li>
+      <li>Speaks Tally's XML/ODBC on the other side (so Tally can serve it).</li>
+      <li>Exposes a small, deliberate set of <em>tools</em> — <code>list_ledgers</code>, <code>read_ledger</code>, <code>get_trial_balance</code>, <code>run_daybook</code>, <code>post_voucher</code>, <code>reconcile_bank</code>. Each tool is a named function with typed inputs.</li>
+    </ol>
+    <p>Claude Desktop (or Claude Code) is configured to launch that server on startup. When you ask Claude something like "what's the current outstanding for ABC Traders?", Claude picks the right tool, sends the request, receives Tally's answer, and phrases it back to you — with the underlying data still living in your Tally company file.</p>
+
+    <div class="article-chart" id="arch-diagram">
+      <h4>The Tally × Claude × MCP architecture</h4>
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture diagram: Claude Desktop connects via MCP protocol to a local Tally MCP server, which speaks XML/ODBC to Tally Prime on port 9000.">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+          </marker>
+        </defs>
+        <!-- Boxes -->
+        <g font-family="Inter, sans-serif" font-size="12" fill="#141414">
+          <rect x="30" y="70" width="140" height="80" fill="#fdfbf7" stroke="#c8c4bc" stroke-width="1.5" rx="6"/>
+          <text x="100" y="100" text-anchor="middle" font-weight="600">Claude Desktop</text>
+          <text x="100" y="118" text-anchor="middle" font-size="11" fill="#666">or Claude Code</text>
+          <text x="100" y="135" text-anchor="middle" font-size="10" fill="#666">(the LLM client)</text>
+
+          <rect x="240" y="70" width="160" height="80" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5" rx="6"/>
+          <text x="320" y="100" text-anchor="middle" font-weight="600">Tally MCP server</text>
+          <text x="320" y="118" text-anchor="middle" font-size="11" fill="#666">local Python / Node</text>
+          <text x="320" y="135" text-anchor="middle" font-size="10" fill="#666">exposes tools</text>
+
+          <rect x="470" y="70" width="140" height="80" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5" rx="6"/>
+          <text x="540" y="100" text-anchor="middle" font-weight="600">Tally Prime</text>
+          <text x="540" y="118" text-anchor="middle" font-size="11" fill="#666">XML / ODBC · :9000</text>
+          <text x="540" y="135" text-anchor="middle" font-size="10" fill="#666">company file</text>
+        </g>
+        <!-- Arrows -->
+        <line x1="170" y1="110" x2="238" y2="110" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <text x="204" y="102" font-family="Inter, sans-serif" font-size="10" fill="#666" text-anchor="middle">MCP protocol</text>
+        <text x="204" y="128" font-family="Inter, sans-serif" font-size="9" fill="#888" text-anchor="middle">(stdio / SSE)</text>
+
+        <line x1="400" y1="110" x2="468" y2="110" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <text x="434" y="102" font-family="Inter, sans-serif" font-size="10" fill="#666" text-anchor="middle">XML / ODBC</text>
+        <text x="434" y="128" font-family="Inter, sans-serif" font-size="9" fill="#888" text-anchor="middle">(localhost)</text>
+
+        <!-- User + machine boundary -->
+        <g font-family="Inter, sans-serif" font-size="11" fill="#888">
+          <text x="320" y="30" text-anchor="middle" font-weight="600">All on the same machine (or LAN)</text>
+          <line x1="30" y1="200" x2="610" y2="200" stroke="#c8c4bc" stroke-dasharray="4,3"/>
+          <text x="30" y="220">Data never leaves your network unless a tool explicitly sends it. Claude only sees the fields the server chooses to expose.</text>
+          <text x="30" y="240" font-style="italic">The MCP server is the trust boundary — audit it like any other integration.</text>
+        </g>
+      </svg>
+      <p class="c-caption">Claude Desktop → MCP server → Tally XML/ODBC. All three run locally; the Tally company file never touches the cloud.</p>
+    </div>
+
+    <h2 id="setup">Setup — the practical steps</h2>
+    <ol>
+      <li><strong>Enable Tally's ODBC/XML gateway.</strong> In Tally Prime: <em>F1 (Help) → Settings → Connectivity → Client/Server configuration</em>. Set the server as <code>Both</code>, port <code>9000</code>. Confirm you can hit <code>http://localhost:9000</code> in a browser and see Tally's response.</li>
+      <li><strong>Install an MCP server for Tally.</strong> Several community servers are on GitHub (search "tally mcp server"). Pick one, install with <code>pip</code> or <code>npm</code>, and read the source before running it — it will touch your books.</li>
+      <li><strong>Install Claude Desktop</strong> from <a href="https://claude.ai/download" rel="noopener" target="_blank">claude.ai/download</a> (or use Claude Code from your terminal).</li>
+      <li><strong>Register the server</strong> in Claude Desktop's config file (<code>%APPDATA%\Claude\claude_desktop_config.json</code> on Windows). Add an entry under <code>mcpServers</code> pointing at the launcher script and its args. Restart Claude Desktop.</li>
+      <li><strong>Verify.</strong> Ask Claude something read-only first: "list all ledgers under Sundry Debtors." If it comes back with your actual customer list, the pipeline is up.</li>
+      <li><strong>Backup before writing.</strong> Take a copy of the company file. Only then experiment with write tools.</li>
+    </ol>
+
+    <h2 id="use-cases">10 real automations a CA can run today</h2>
+    <ol>
+      <li><strong>Ledger classification.</strong> Import a CSV bank statement, ask Claude to map each transaction to the correct Tally ledger, and post as bank receipts/payments after review.</li>
+      <li><strong>Bank reconciliation.</strong> Feed the bank statement plus Tally's bank ledger; Claude produces the matched/unmatched pairs with a plain-English narrative.</li>
+      <li><strong>Monthly close narrative.</strong> "Compare this month's P&amp;L to last month and explain the three biggest variances" — Claude runs the reports through the server and writes the note.</li>
+      <li><strong>VAT return prep.</strong> "Pull all VAT-registered sales and purchase transactions for Shrawan; group by tax rate and produce the numbers I need for the IRD portal." See our <a href="nepal-vat-return-filing-guide.html">VAT return filing guide</a>.</li>
+      <li><strong>TDS reconciliation.</strong> Match TDS deducted per Tally to Form 25-Ka data. Our <a href="tds-rates-nepal-benefits.html">TDS guide</a> covers the underlying rates.</li>
+      <li><strong>Debtor ageing narratives.</strong> Trial-balance-to-note in one prompt: "list top-10 debtors above NPR 5 lakh and 90+ days, with call notes if any."</li>
+      <li><strong>Invoice-to-voucher.</strong> Drop a scanned bill in a folder; a filesystem MCP + Tally MCP pipeline extracts fields, drafts a purchase voucher, and shows it for approval before posting.</li>
+      <li><strong>Trial-balance queries in natural language.</strong> "What's the current balance of the ABC loan account and its interest paid this year?" — no more menu-diving.</li>
+      <li><strong>Audit sampling.</strong> "Give me a random sample of 25 vouchers above NPR 1 lakh from Ashadh, stratified by ledger." The MCP server draws from Tally; Claude formats the working paper.</li>
+      <li><strong>Client onboarding.</strong> Pointed at a new company file, Claude can produce a one-page profile: revenue trend, top customers/vendors, current ratios, open matters.</li>
+    </ol>
+
+    <blockquote>The wins are in the boring parts of the close — the parts where accountants already know what to do, but doing it burns hours. That is what MCP hands back.</blockquote>
+
+    <div class="article-chart" id="impact-chart">
+      <h4>Where the monthly-close hours actually go back — indicative Worklane data</h4>
+      <svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart showing hours saved per monthly close across five task categories after Tally+Claude+MCP adoption.">
+        <line x1="200" y1="20" x2="200" y2="210" stroke="#c8c4bc"/>
+        <line x1="200" y1="210" x2="620" y2="210" stroke="#c8c4bc"/>
+        <g font-family="Inter, sans-serif" font-size="11" fill="#2a2a2a">
+          <text x="190" y="38" text-anchor="end">Bank reconciliation</text>
+          <rect x="200" y="26" width="280" height="18" fill="#D94F2B" rx="2"/><text x="488" y="40" font-weight="600">~4 hrs saved</text>
+
+          <text x="190" y="68" text-anchor="end">Ledger classification</text>
+          <rect x="200" y="56" width="240" height="18" fill="#D94F2B" rx="2"/><text x="448" y="70" font-weight="600">~3.5 hrs</text>
+
+          <text x="190" y="98" text-anchor="end">VAT prep</text>
+          <rect x="200" y="86" width="200" height="18" fill="#b33d20" rx="2"/><text x="408" y="100" font-weight="600">~3 hrs</text>
+
+          <text x="190" y="128" text-anchor="end">Close narrative / notes</text>
+          <rect x="200" y="116" width="160" height="18" fill="#b33d20" rx="2"/><text x="368" y="130" font-weight="600">~2.5 hrs</text>
+
+          <text x="190" y="158" text-anchor="end">Debtor ageing follow-up</text>
+          <rect x="200" y="146" width="120" height="18" fill="#8a2f18" rx="2"/><text x="328" y="160" font-weight="600">~1.5 hrs</text>
+
+          <text x="190" y="188" text-anchor="end">TDS reconciliation</text>
+          <rect x="200" y="176" width="100" height="18" fill="#8a2f18" rx="2"/><text x="308" y="190" font-weight="600">~1 hr</text>
+        </g>
+        <text x="400" y="230" font-family="Inter, sans-serif" font-size="10" fill="#666" text-anchor="middle">Approximate hours saved per small-business monthly close after 60 days of adoption. Your mileage will vary — the point is where the shape is.</text>
+      </svg>
+      <p class="c-caption">Indicative internal figures — measured across three Worklane client closes after the pipeline stabilised. Actual savings depend on data quality and staff comfort.</p>
+    </div>
+
+    <h2 id="privacy">Data privacy and safety</h2>
+    <ul>
+      <li><strong>Everything runs locally by default.</strong> The MCP server, Tally, and Claude Desktop all sit on your machine or LAN. Claude sends the model's <em>reasoning</em> to Anthropic; the <em>data</em> stays with you unless a tool explicitly returns it in an answer.</li>
+      <li><strong>Audit the server.</strong> The MCP server is the trust boundary. Read the source. Prefer a well-maintained open-source project or one you build yourself.</li>
+      <li><strong>Read-first, write-later.</strong> For the first month, only expose <code>read_*</code> tools. Add write tools once the shape of what Claude asks for is predictable.</li>
+      <li><strong>Human-in-the-loop for anything that touches books.</strong> Any voucher-posting tool should return a preview and require a second call to actually post — Claude Desktop already prompts before write actions.</li>
+      <li><strong>Log everything.</strong> Every tool call, every posted voucher, tagged with the user. If something goes wrong, you need the trail.</li>
+      <li><strong>Enterprise-tier data policy.</strong> Confirm your Claude plan's data-handling terms exclude your inputs from training. Consumer tiers may not.</li>
+    </ul>
+
+    <h2 id="limits">Limits and honest failure modes</h2>
+    <ul>
+      <li><strong>Ledger names are messy in Nepal.</strong> Free-text ledger names full of typos and shorthand will confuse the classifier. Time spent cleaning masters up-front pays back tenfold.</li>
+      <li><strong>Company file access is single-user for writes.</strong> If Tally is single-user mode, the server needs exclusive access to post — coordinate with your team.</li>
+      <li><strong>Complex TDL customisations may need dedicated tools.</strong> If your firm has heavy TDL customisation, the MCP server may need matching handlers.</li>
+      <li><strong>The LLM will still hallucinate around gaps.</strong> If the server doesn't expose the field Claude needs, it may guess. Expose everything it should be able to see; refuse everything it shouldn't.</li>
+      <li><strong>Nepali dates.</strong> Convert BS ↔ AD at the server boundary — do not rely on Claude to do calendar arithmetic in production flows.</li>
+    </ul>
+
+    <h2 id="video">A hands-on walkthrough — Excel Kida on YouTube</h2>
+    <p>The clearest video walkthrough for accountants in our region is on the <strong>Excel Kida</strong> YouTube channel — the same folks who put out excellent Excel and Tally training in Hindi/English. Their MCP series covers connecting Claude Desktop to Tally step by step, and it is well worth an hour on a Sunday afternoon before you attempt your first live setup.</p>
+    <ul>
+      <li>Channel: <a href="https://www.youtube.com/@excelkida" rel="noopener" target="_blank">youtube.com/@excelkida</a></li>
+      <li>Search their channel for <em>"Tally MCP"</em> or <em>"Claude Tally automation"</em> for the current playlist.</li>
+    </ul>
+    <p>Treat their walkthrough as your visual companion; treat this guide as the CA's opinion on where to be conservative.</p>
+
+    <h2 id="faq">Frequently asked questions</h2>
+    <h3>Do I need Claude Pro or the API to use MCP?</h3>
+    <p>Claude Desktop (free tier) supports MCP servers. Heavy usage — long tool chains, big files — benefits from a paid plan or the API, but the entry cost is zero.</p>
+
+    <h3>Can Claude Code do this too?</h3>
+    <p>Yes. Claude Code (the CLI) also speaks MCP and is the natural fit if you already work in a terminal — e.g., running the server as a background process on the accountant's workstation and driving it with a scripted workflow.</p>
+
+    <h3>Does this replace my accountant?</h3>
+    <p>No. It replaces the parts of the accountant's day that already felt like data entry. Judgment — provisions, classifications that matter, dealing with the client — still sits with a human. What you get back is time to do the judgment properly.</p>
+
+    <h3>What about audit trail and ICAN expectations?</h3>
+    <p>Every posted voucher must be traceable to a named human. Keep the server's log alongside the Tally audit log; treat AI-drafted vouchers exactly like a junior's data entry — reviewed and signed off by a senior before they hit the books.</p>
+
+    <h3>Can I do the same with a different LLM?</h3>
+    <p>MCP is open — any MCP-compatible client works. In practice, Claude Desktop and Claude Code are the smoothest today; ChatGPT and Gemini support similar patterns through their own tool interfaces. Our <a href="ai-tools-and-their-uses.html">AI tools overview</a> covers the wider landscape.</p>
+
+    <h2 id="help">Getting your Tally + Claude setup done</h2>
+    <p>Setting up a Tally MCP server safely, deciding which tools to expose read-only vs write, cleaning up ledger masters so the classifier is reliable, and training your team to review Claude's drafts before posting — this is exactly the kind of work a CA firm should own end-to-end.</p>
+
+    <aside class="article-cta">
+      <h3>Want Tally + Claude running properly in your office?</h3>
+      <p>Talk to <strong>Upaj Manandhar, Chartered Accountant</strong> — Tally MCP server rollout, ledger master cleanup, read-only proof-of-concept, and staff training for safe production use in Nepali accounting practices.</p>
+      <div class="cta-actions">
+        <a class="cta-btn primary" href="mailto:upaj.worklane@gmail.com?subject=Tally%20MCP%20automation">Email a query</a>
+        <a class="cta-btn ghost" href="tel:+9779841905745">Call +977 984 190 5745</a>
+      </div>
+      <div class="cta-meta">
+        Worklane Financial Advisory · Hadigaun, Kathmandu · <a href="../../index.html#contact">worklane.com.np</a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="article-sources">
+    <h2>Sources and further reading</h2>
+    <ol>
+      <li>Anthropic. <em>Model Context Protocol — specification and reference servers.</em> <a href="https://modelcontextprotocol.io" rel="noopener noreferrer" target="_blank">modelcontextprotocol.io</a></li>
+      <li>Anthropic. <em>Introducing the Model Context Protocol.</em> <a href="https://www.anthropic.com/news/model-context-protocol" rel="noopener noreferrer" target="_blank">anthropic.com/news/model-context-protocol</a></li>
+      <li>Anthropic. <em>Claude Desktop — connecting MCP servers.</em> <a href="https://docs.anthropic.com" rel="noopener noreferrer" target="_blank">docs.anthropic.com</a></li>
+      <li>Tally Solutions. <em>Tally Prime — Data Exchange (XML/ODBC).</em> <a href="https://help.tallysolutions.com" rel="noopener noreferrer" target="_blank">help.tallysolutions.com</a></li>
+      <li>Excel Kida (YouTube). <em>Tally + Claude MCP walkthrough series.</em> <a href="https://www.youtube.com/@excelkida" rel="noopener noreferrer" target="_blank">youtube.com/@excelkida</a></li>
+      <li>ICAN. <em>Practice Standards — IT-enabled Audits.</em> <a href="https://ican.org.np" rel="noopener noreferrer" target="_blank">ican.org.np</a></li>
+    </ol>
+    <p class="image-credit">Header image via Pixabay (Firmbee) — free-use license. Architecture diagram and impact chart hand-drawn in inline SVG by Worklane.</p>
+  </section>
+
+  <div class="article-author">
+    <span class="a-name">Upaj Manandhar, Chartered Accountant</span>
+    <span class="a-role">Founder, Worklane Financial Advisory · Hadigaun, Kathmandu · <a href="mailto:upaj.worklane@gmail.com">upaj.worklane@gmail.com</a></span>
+  </div>
+</article>
+
+<div class="article-more">
+  <a href="../index.html">← More from the Journal</a>
+</div>
+
+<footer class="journal-footer">
+  <span>©2026 Worklane Financial Advisory</span>
+  <a href="../../index.html">worklane.com.np</a>
+  <span>Hadigaun, Kathmandu</span>
+</footer>
+
+</body>
+</html>

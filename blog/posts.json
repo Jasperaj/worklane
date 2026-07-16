@@ -1,0 +1,125 @@
+{
+  "_readme": "Add one object per blog post, NEWEST FIRST. `slug` must match the post's filename in blog/posts/ (without .html). See blog/README.md for the full 2-step publishing workflow.",
+  "posts": [
+    {
+      "slug": "tally-prime-claude-mcp-automation",
+      "title": "Automating Tally Prime with Claude via MCP (2026): A Chartered Accountant's Practical Guide",
+      "excerpt": "How Anthropic's Model Context Protocol lets Claude read and write Tally Prime — architecture, setup, ten real accounting automations, privacy limits, and the Excel Kida walkthrough on YouTube.",
+      "category": "AI & Technology",
+      "date": "2026-07-16",
+      "dateDisplay": "Jul 16, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "13 min read",
+      "image": "../uploads/blog/tally-prime-claude-mcp-automation.jpg",
+      "tags": ["Tally Prime", "Claude", "MCP", "AI automation", "Nepal accounting", "Model Context Protocol"]
+    },
+    {
+      "slug": "nepal-vat-return-filing-guide",
+      "title": "Filing VAT Returns in Nepal 2026: The Complete Practical Guide for Small Businesses",
+      "excerpt": "Registration thresholds, the monthly filing cycle, e-filing on ird.gov.np, input credit rules, penalties and the eight mistakes that catch most businesses out.",
+      "category": "Tax & Compliance",
+      "date": "2026-07-09",
+      "dateDisplay": "Jul 9, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "12 min read",
+      "image": "../uploads/blog/nepal-vat-return-filing-guide.jpg",
+      "tags": ["VAT", "Nepal", "compliance", "small business", "IRD", "e-filing"]
+    },
+    {
+      "slug": "female-tax-rebate-nepal",
+      "title": "Nepal's 10% Female Tax Rebate (FY 2082/83): Married vs Unmarried Women — Which Filing Status Wins?",
+      "excerpt": "How Nepal's 10% rebate for women works, why couple filing loses it, and worked NPR examples comparing individual vs couple filing at each salary level.",
+      "category": "Tax & Compliance",
+      "date": "2026-07-09",
+      "dateDisplay": "Jul 9, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "9 min read",
+      "image": "../uploads/blog/female-tax-rebate-nepal.jpg",
+      "tags": ["income tax", "Nepal", "women", "personal tax", "FY 2082/83"]
+    },
+    {
+      "slug": "excel-formulas-finance-professionals",
+      "title": "25 Excel Formulas Every Finance Professional Must Know in 2026 (With Examples)",
+      "excerpt": "The essential Excel formulas for accounting, audit and tax — XLOOKUP, SUMIFS, INDEX/MATCH, XIRR, LET, LAMBDA, PIVOTBY and more, each with a copy-ready example.",
+      "category": "Tools & Productivity",
+      "date": "2026-07-08",
+      "dateDisplay": "Jul 8, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "14 min read",
+      "image": "../uploads/blog/excel-formulas-finance-professionals.jpg",
+      "tags": ["Excel", "finance", "productivity", "XLOOKUP", "LAMBDA"]
+    },
+    {
+      "slug": "ai-tools-and-their-uses",
+      "title": "Types of AI Tools 2026: Which One to Use for What (Complete Guide)",
+      "excerpt": "A complete 2026 map of AI tools — Claude, ChatGPT, Gemini, Copilot, Perplexity, NotebookLM, Claude Code, Cursor, image/video generators and meeting AI — and the right use for each.",
+      "category": "AI & Technology",
+      "date": "2026-07-07",
+      "dateDisplay": "Jul 7, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "11 min read",
+      "image": "../uploads/blog/ai-tools-and-their-uses.jpg",
+      "tags": ["AI", "productivity", "Claude", "ChatGPT", "Gemini"]
+    },
+    {
+      "slug": "notebooklm-uses-professionals-students",
+      "title": "NotebookLM: 20 Practical Uses for Professionals and Students (2026 Guide)",
+      "excerpt": "How Google's source-grounded AI notebook differs from a chatbot, plus 20 concrete uses in professional life and study, Audio Overviews, Mind Maps, and privacy limits.",
+      "category": "AI & Technology",
+      "date": "2026-07-06",
+      "dateDisplay": "Jul 6, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "11 min read",
+      "image": "../uploads/blog/notebooklm-uses-professionals-students.jpg",
+      "tags": ["AI", "NotebookLM", "research", "study", "professional"]
+    },
+    {
+      "slug": "google-drive-onedrive-sync-setup",
+      "title": "Google Drive & OneDrive Desktop Sync: The Complete Setup Guide for Business Teams (2026)",
+      "excerpt": "Step-by-step 2026 setup of Google Drive for desktop and OneDrive — Stream vs Mirror, Files On-Demand, PC folder backup, Shared drives, security — for professional teams.",
+      "category": "Tools & Productivity",
+      "date": "2026-07-05",
+      "dateDisplay": "Jul 5, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "11 min read",
+      "image": "../uploads/blog/google-drive-onedrive-sync-setup.jpg",
+      "tags": ["cloud", "productivity", "OneDrive", "Google Drive", "backup"]
+    },
+    {
+      "slug": "nepal-salary-tax-slab-fy-2082-83",
+      "title": "Nepal Salary Tax Slabs FY 2082/83 (2025/26): Full Table, Deductions and the FY 2083/84 Overhaul",
+      "excerpt": "Complete slab table for individual and couple assessees, deductions before slabs, SSF 1% waiver, worked example, and the unified schedule proposed for FY 2083/84.",
+      "category": "Tax & Compliance",
+      "date": "2026-07-02",
+      "dateDisplay": "Jul 2, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "12 min read",
+      "image": "../uploads/blog/nepal-salary-tax-slab-fy-2082-83.jpg",
+      "tags": ["income tax", "Nepal", "salary", "TDS", "FY 2082/83", "FY 2083/84"]
+    },
+    {
+      "slug": "tds-rates-nepal-benefits",
+      "title": "TDS Rates in Nepal FY 2082/83: Complete Rate Chart, Deadlines and Compliance Guide",
+      "excerpt": "Full TDS chart for salary, rent, services, dividends, interest and contracts under Sections 87–92 of the Income Tax Act, deposit deadlines, penalties and e-TDS filing.",
+      "category": "Tax & Compliance",
+      "date": "2026-07-01",
+      "dateDisplay": "Jul 1, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "13 min read",
+      "image": "../uploads/blog/tds-rates-nepal-benefits.jpg",
+      "tags": ["TDS", "Nepal", "withholding tax", "compliance", "IRD"]
+    },
+    {
+      "slug": "vat-turnover-tax-air-tickets-nepal",
+      "title": "VAT and Turnover Tax on Air Tickets in Nepal: The Complete 2026 Guide",
+      "excerpt": "How 13% VAT applies to domestic and international air tickets, the 2%/5% turnover tax on foreign airlines under Section 70A, IATA/BSP implementation issues and transitional waivers.",
+      "category": "Tax & Compliance",
+      "date": "2026-06-30",
+      "dateDisplay": "Jun 30, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "13 min read",
+      "image": "../uploads/blog/vat-turnover-tax-air-tickets-nepal.jpg",
+      "tags": ["VAT", "airlines", "travel", "turnover tax", "Nepal", "IATA"]
+    }
+  ]
+}

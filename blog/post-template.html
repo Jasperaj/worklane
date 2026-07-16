@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+════════════════════════════════════════════════════════════════
+  WORKLANE JOURNAL — POST TEMPLATE
+  How to publish a new post (2 steps):
+
+  1. Copy this file to  blog/posts/<your-slug>.html
+     (slug = lowercase words joined by hyphens, e.g. audit-readiness-checklist)
+     Then replace every {{PLACEHOLDER}} below. Nothing else needs editing.
+
+  2. Add one entry (newest first) to  blog/posts.json  with the SAME slug.
+
+  That's it — the post appears on the Journal page automatically,
+  with search and category filtering, and is Google-indexable
+  (static HTML, meta description, Open Graph, JSON-LD schema).
+
+  Placeholders:
+    {{TITLE}}          Post title
+    {{DESCRIPTION}}    1–2 sentence summary (used by Google + social shares)
+    {{SLUG}}           Filename without .html
+    {{CATEGORY}}       e.g. Tax & Compliance / Accounting / Advisory
+    {{DATE_ISO}}       e.g. 2026-07-09
+    {{DATE_DISPLAY}}   e.g. Jul 9, 2026
+    {{AUTHOR}}         e.g. Worklane Financial Advisory
+    {{READ_TIME}}      e.g. 6 min read
+    Body content       Replace the sample <p>/<h2> inside .article-body
+════════════════════════════════════════════════════════════════
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{TITLE}} — Worklane Journal</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="https://worklane.com.np/blog/posts/{{SLUG}}.html">
+<link rel="icon" type="image/png" href="../../uploads/transparent logo without name.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="article:published_time" content="{{DATE_ISO}}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{TITLE}}",
+  "description": "{{DESCRIPTION}}",
+  "datePublished": "{{DATE_ISO}}",
+  "author": { "@type": "Organization", "name": "{{AUTHOR}}" },
+  "publisher": { "@type": "Organization", "name": "Worklane Financial Advisory" }
+}
+</script>
+</head>
+<body>
+
+<header class="journal-header">
+  <a class="brand" href="../../index.html">
+    <img src="../../uploads/transparent logo without name.png" alt="Worklane logo">
+    <span>Worklane</span>
+  </a>
+  <nav>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#services">Services</a>
+    <a href="../index.html" class="active">Journal</a>
+    <a href="../../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<article class="article-wrap">
+  <p class="article-breadcrumb"><a href="../index.html">← Journal</a></p>
+
+  <p class="article-kicker">{{CATEGORY}}</p>
+  <h1 class="article-title">{{TITLE}}</h1>
+
+  <div class="article-meta">
+    <span>{{AUTHOR}}</span>
+    <time datetime="{{DATE_ISO}}">{{DATE_DISPLAY}}</time>
+    <span>{{READ_TIME}}</span>
+  </div>
+
+  <!-- Optional hero image — delete this <figure> if the post has none.
+  <figure class="article-hero">
+    <img src="../../uploads/YOUR-IMAGE.png" alt="Describe the image for SEO">
+    <figcaption>Optional caption</figcaption>
+  </figure>
+  -->
+
+  <div class="article-body">
+    <p>Opening paragraph — replace this with your introduction. State the problem the reader has and what this article will resolve.</p>
+
+    <h2>First section heading</h2>
+    <p>Body copy. Keep paragraphs short. Use <strong>bold</strong> for key terms.</p>
+
+    <blockquote>A pull-quote or key takeaway can go here.</blockquote>
+
+    <h2>Second section heading</h2>
+    <p>More body copy.</p>
+    <ul>
+      <li>Bullet point one</li>
+      <li>Bullet point two</li>
+    </ul>
+
+    <h2>Closing</h2>
+    <p>Wrap-up and, if relevant, a line inviting the reader to <a href="../../index.html#contact">get in touch</a>.</p>
+  </div>
+
+  <div class="article-author">
+    <span class="a-name">{{AUTHOR}}</span>
+    <span class="a-role">Worklane Financial Advisory · Hadigaun, Kathmandu</span>
+  </div>
+</article>
+
+<div class="article-more">
+  <a href="../index.html">← More from the Journal</a>
+</div>
+
+<footer class="journal-footer">
+  <span>©2026 Worklane Financial Advisory</span>
+  <a href="../../index.html">worklane.com.np</a>
+  <span>Hadigaun, Kathmandu</span>
+</footer>
+
+</body>
+</html>

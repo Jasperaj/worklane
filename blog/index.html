@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal — Worklane Financial Advisory</title>
+<meta name="description" content="Insights on tax, compliance, accounting and financial strategy for businesses in Nepal — from Worklane Financial Advisory, Kathmandu.">
+<link rel="icon" type="image/png" href="../uploads/transparent logo without name.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="blog.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Journal — Worklane Financial Advisory">
+<meta property="og:description" content="Insights on tax, compliance, accounting and financial strategy for businesses in Nepal.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Worklane Journal",
+  "description": "Insights on tax, compliance, accounting and financial strategy for businesses in Nepal.",
+  "publisher": { "@type": "Organization", "name": "Worklane Financial Advisory" }
+}
+</script>
+</head>
+<body>
+
+<header class="journal-header">
+  <a class="brand" href="../index.html">
+    <img src="../uploads/transparent logo without name.png" alt="Worklane logo">
+    <span>Worklane</span>
+  </a>
+  <nav>
+    <a href="../index.html#about">About</a>
+    <a href="../index.html#services">Services</a>
+    <a href="index.html" class="active">Journal</a>
+    <a href="../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="journal-masthead">
+  <p class="label">The Worklane Journal</p>
+  <h1>Notes on money, done&nbsp;properly.</h1>
+  <p class="tagline">Practical writing on tax, compliance and financial strategy for businesses operating in Nepal.</p>
+</section>
+
+<div class="journal-tools">
+  <div class="journal-search">
+    <span class="s-icon">⌕</span>
+    <input type="search" id="blog-search" placeholder="Search articles by title, topic or tag…" aria-label="Search articles">
+  </div>
+  <div class="journal-cats" id="blog-cats"></div>
+</div>
+
+<main class="journal-list" id="blog-list" aria-live="polite">
+  <noscript><p class="journal-empty">Enable JavaScript to browse articles.</p></noscript>
+</main>
+
+<footer class="journal-footer">
+  <span>©2026 Worklane Financial Advisory</span>
+  <a href="../index.html">worklane.com.np</a>
+  <span>Hadigaun, Kathmandu</span>
+</footer>
+
+<script>
+(async function () {
+  const list = document.getElementById('blog-list');
+  const searchEl = document.getElementById('blog-search');
+  const catsEl = document.getElementById('blog-cats');
+  let posts = [];
+  let activeCat = 'All';
+
+  try {
+    const res = await fetch('posts.json', { cache: 'no-cache' });
+    posts = (await res.json()).posts || [];
+  } catch (e) {
+    list.innerHTML = '<p class="journal-empty">Could not load articles.</p>';
+    return;
+  }
+
+  // build category chips
+  const cats = ['All', ...new Set(posts.map(p => p.category))];
+  catsEl.innerHTML = cats.map(c =>
+    '<button type="button" data-cat="' + c + '"' + (c === 'All' ? ' class="active"' : '') + '>' + c + '</button>'
+  ).join('');
+  catsEl.addEventListener('click', function (e) {
+    const btn = e.target.closest('button'); if (!btn) return;
+    activeCat = btn.dataset.cat;
+    catsEl.querySelectorAll('button').forEach(b => b.classList.toggle('active', b === btn));
+    render();
+  });
+
+  searchEl.addEventListener('input', render);
+
+  function render() {
+    const q = searchEl.value.trim().toLowerCase();
+    const shown = posts.filter(p => {
+      const inCat = activeCat === 'All' || p.category === activeCat;
+      if (!inCat) return false;
+      if (!q) return true;
+      const hay = [p.title, p.titleNe || '', p.excerpt, p.category, (p.tags || []).join(' ')].join(' ').toLowerCase();
+      return hay.includes(q);
+    });
+    if (!shown.length) {
+      list.innerHTML = '<p class="journal-empty">No articles match your search.</p>';
+      return;
+    }
+    list.innerHTML = shown.map(p =>
+      '<a class="journal-card" href="posts/' + p.slug + '.html">' +
+        '<div class="jc-meta">' +
+          '<span class="jc-cat">' + p.category + '</span>' +
+          '<time class="jc-date" datetime="' + p.date + '">' + p.dateDisplay + '</time>' +
+        '</div>' +
+        '<div>' +
+          '<h2>' + p.title + (p.slugNe ? '<span class="jc-lang">EN · नेपाली</span>' : '') + '</h2>' +
+          '<p class="jc-excerpt">' + p.excerpt + '</p>' +
+        '</div>' +
+        '<span class="jc-read">' + (p.readTime || '') + '</span>' +
+      '</a>'
+    ).join('');
+  }
+
+  render();
+})();
+</script>
+
+</body>
+</html>
