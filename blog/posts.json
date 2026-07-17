@@ -2,6 +2,18 @@
   "_readme": "Add one object per blog post, NEWEST FIRST. `slug` must match the post's filename in blog/posts/ (without .html). See blog/README.md for the full 2-step publishing workflow.",
   "posts": [
     {
+      "slug": "nepal-multi-rate-vat-fy-2083-84",
+      "title": "Nepal's Multi-Rate VAT is Here (FY 2083/84): 5% on Ride-Sharing and Electricity — What Businesses Must Do",
+      "excerpt": "Finance Act 2083 ends Nepal's single-rate VAT era. From Shrawan 1, 2083 ride-sharing platforms and residential electricity attract 5% VAT — with a lifeline exemption for households under 50 units. A CA's compliance playbook.",
+      "category": "Tax & Compliance",
+      "date": "2026-07-17",
+      "dateDisplay": "Jul 17, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "11 min read",
+      "image": "../uploads/blog/nepal-multi-rate-vat-fy-2083-84.jpg",
+      "tags": ["VAT", "Nepal", "Finance Act 2083", "ride-sharing", "electricity", "FY 2083/84", "IRD"]
+    },
+    {
       "slug": "tally-prime-claude-mcp-automation",
       "title": "Automating Tally Prime with Claude via MCP (2026): A Chartered Accountant's Practical Guide",
       "excerpt": "How Anthropic's Model Context Protocol lets Claude read and write Tally Prime — architecture, setup, ten real accounting automations, privacy limits, and the Excel Kida walkthrough on YouTube.",
