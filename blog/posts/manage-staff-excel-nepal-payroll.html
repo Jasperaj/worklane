@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manage Staff in Nepal Using Excel (No HR Software): Attendance, Leaves, Roster & Payroll — Worklane Journal</title>
+<meta name="description" content="A Chartered Accountant's complete Excel workbook design to run HR for a small Nepali business without paying for HR software — attendance, leave register, public holidays, roster/duty planner and monthly payroll (SSF, EPF, CIT, TDS, female rebate, overtime).">
+<meta name="keywords" content="Excel HR Nepal, staff management Excel Nepal, payroll Excel Nepal, SSF EPF CIT calculation, roster duty Excel, leave register Nepal, monthly salary Nepal Excel, no HR software SME, Upaj Manandhar CA">
+<meta name="author" content="Upaj Manandhar, Chartered Accountant">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="geo.region" content="NP">
+<meta name="geo.placename" content="Kathmandu">
+<link rel="canonical" href="https://worklane.com.np/blog/posts/manage-staff-excel-nepal-payroll.html">
+<link rel="icon" type="image/png" href="../../uploads/transparent logo without name.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Manage Staff in Nepal Using Excel (No HR Software)">
+<meta property="og:description" content="A complete Excel workbook design for attendance, leave, roster and monthly payroll — for Nepali SMEs.">
+<meta property="og:image" content="https://worklane.com.np/uploads/blog/manage-staff-excel-nepal-payroll.jpg">
+<meta property="og:url" content="https://worklane.com.np/blog/posts/manage-staff-excel-nepal-payroll.html">
+<meta property="og:site_name" content="Worklane Journal">
+<meta property="article:published_time" content="2026-07-17">
+<meta property="article:modified_time" content="2026-07-17">
+<meta property="article:author" content="Upaj Manandhar, Chartered Accountant">
+<meta property="article:section" content="Tools & Productivity">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Manage Staff in Nepal Using Excel (No HR Software)">
+<meta name="twitter:image" content="https://worklane.com.np/uploads/blog/manage-staff-excel-nepal-payroll.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Manage Staff in Nepal Using Excel (No HR Software): Attendance, Leaves, Roster and Monthly Payroll",
+  "description": "A Chartered Accountant's Excel-first HR workbook design for Nepali SMEs — attendance, leave register, public holidays, roster/duty planner and monthly payroll with SSF, EPF, CIT, TDS and female rebate.",
+  "image": "https://worklane.com.np/uploads/blog/manage-staff-excel-nepal-payroll.jpg",
+  "datePublished": "2026-07-17",
+  "dateModified": "2026-07-17",
+  "inLanguage": "en",
+  "wordCount": 3100,
+  "author": {
+    "@type": "Person",
+    "name": "Upaj Manandhar",
+    "jobTitle": "Chartered Accountant",
+    "worksFor": { "@type": "Organization", "name": "Worklane Financial Advisory" },
+    "url": "https://worklane.com.np"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Worklane Financial Advisory",
+    "logo": { "@type": "ImageObject", "url": "https://worklane.com.np/uploads/transparent%20logo%20without%20name.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://worklane.com.np/blog/posts/manage-staff-excel-nepal-payroll.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://worklane.com.np/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://worklane.com.np/blog/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "Manage Staff in Nepal Using Excel", "item": "https://worklane.com.np/blog/posts/manage-staff-excel-nepal-payroll.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Do I really need HR software for a small Nepali business?", "acceptedAnswer": { "@type": "Answer", "text": "Not for the first 20-30 employees. A well-designed Excel workbook with an Employee Master, Attendance sheet, Leave Register, Holiday Calendar and Payroll Compute sheet covers everything the Labour Act and Income Tax Act require. HR software becomes worth it above roughly 30-50 headcount or when biometric attendance and self-service are needed." } },
+    { "@type": "Question", "name": "What are the statutory leave entitlements in Nepal?", "acceptedAnswer": { "@type": "Answer", "text": "The Labour Act 2074 (2017) prescribes minimum entitlements — 1 day of home/annual leave for every 20 days worked (approximately 18 days a year), 12 days of sick leave a year, 13 public holidays, and 98 days of maternity leave. Employer policies commonly exceed these minima." } },
+    { "@type": "Question", "name": "What SSF, EPF and CIT deductions apply?", "acceptedAnswer": { "@type": "Answer", "text": "For employees enrolled in the Social Security Fund (SSF): employee contributes 11% of basic; employer contributes 20% (10% EPF + 8.33% Gratuity + 1.67% SSF). For non-SSF employees: 10% EPF employee + 10% employer, plus CIT is voluntary up to statutory limits. The employer must deposit within specified deadlines." } },
+    { "@type": "Question", "name": "How is monthly TDS on salary calculated?", "acceptedAnswer": { "@type": "Answer", "text": "The employer estimates full-year taxable salary, subtracts SSF/EPF/CIT and insurance premium deductions, applies the FY 2083/84 unified slab schedule (1% first 10 lakh, 10% next 5 lakh, 20% next 10 lakh, 27% next 15 lakh, 29% above 40 lakh), applies the 10% female rebate where applicable, and divides by 12 for monthly TDS." } },
+    { "@type": "Question", "name": "How should overtime be calculated?", "acceptedAnswer": { "@type": "Answer", "text": "Under the Labour Act 2074, overtime is paid at 1.5 times the ordinary hourly rate. Total overtime cannot exceed 4 hours per day or 24 hours per week." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="journal-header">
+  <a class="brand" href="../../index.html">
+    <img src="../../uploads/transparent logo without name.png" alt="Worklane logo">
+    <span>Worklane</span>
+  </a>
+  <nav>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#services">Services</a>
+    <a href="../index.html" class="active">Journal</a>
+    <a href="../../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<article class="article-wrap">
+  <p class="article-breadcrumb"><a href="../index.html">← Journal</a> · Tools &amp; Productivity</p>
+
+  <p class="article-kicker">Tools &amp; Productivity</p>
+  <h1 class="article-title">Manage Staff in Nepal Using Excel (No HR Software): Attendance, Leaves, Roster and Monthly Payroll</h1>
+
+  <div class="article-meta">
+    <span>By <strong>Upaj Manandhar</strong>, Chartered Accountant</span>
+    <time datetime="2026-07-17">Jul 17, 2026</time>
+    <span>16 min read</span>
+  </div>
+
+  <figure class="article-hero">
+    <img src="../../uploads/blog/manage-staff-excel-nepal-payroll.jpg" alt="A desk calendar and planner — for the first 20-30 employees a well-designed Excel workbook can replace an HR software subscription entirely." loading="eager">
+    <figcaption>For the first 20–30 employees, a well-designed Excel workbook can replace HR software entirely — provided the schema is right the first time.</figcaption>
+  </figure>
+
+  <div class="article-body">
+    <p>Most small Nepali businesses pay for HR or payroll software they only half-use — because "everyone else does." For the first <strong>20–30 employees</strong>, a properly-designed Excel workbook covers everything the <strong>Labour Act 2074</strong> and the <strong>Income Tax Act 2058</strong> require: employee master, attendance, leave, holiday calendar, roster/duty planner, and monthly payroll with SSF, EPF, CIT, TDS and the 10% female rebate. This guide gives you the full workbook design — six sheets, the formulas that make them work, and the workflow that keeps them honest month after month.</p>
+
+    <div class="article-takeaways">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>A six-sheet Excel workbook — <strong>Master, Attendance, Leave, Holidays, Roster, Payroll</strong> — replaces HR software for most SMEs.</li>
+        <li>Use <strong>one date column as the primary key</strong>. Every leave day, roster slot and pay-period link back through the same date.</li>
+        <li>Nepal's <strong>Labour Act 2074</strong> sets the leave minima: ~18 days annual, 12 sick, 13 public holidays, 98 maternity.</li>
+        <li>Payroll must handle the FY 2083/84 unified slab (1% / 10% / 20% / 27% / 29%), SSF vs non-SSF employees, and the 10% female rebate.</li>
+        <li>Protect the workbook with sheet-level passwords and a change-log; keep the master file in a Shared Drive (see our <a href="google-drive-onedrive-sync-setup.html">Drive/OneDrive guide</a>).</li>
+      </ul>
+    </div>
+
+    <nav class="article-toc" aria-label="Table of contents">
+      <h3>What's in this guide</h3>
+      <ol>
+        <li><a href="#when-excel">When Excel is enough (and when it isn't)</a></li>
+        <li><a href="#workbook">The six-sheet workbook design</a></li>
+        <li><a href="#master">1. Employee Master</a></li>
+        <li><a href="#attendance">2. Attendance</a></li>
+        <li><a href="#leave">3. Leave Register</a></li>
+        <li><a href="#holidays">4. Public Holidays</a></li>
+        <li><a href="#roster">5. Roster / Duty Planner</a></li>
+        <li><a href="#payroll">6. Payroll — the monthly calculation</a></li>
+        <li><a href="#payroll-example">Worked example — Sita's monthly payslip</a></li>
+        <li><a href="#deduction-chart">Where the salary rupee goes</a></li>
+        <li><a href="#workflow">Monthly workflow — 8 steps</a></li>
+        <li><a href="#controls">Controls, security and audit trail</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+        <li><a href="#help">Getting your workbook built</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="when-excel">When Excel is enough (and when it isn't)</h2>
+    <p>Excel handles staff management well up to a point. It struggles beyond it. Roughly:</p>
+    <ul>
+      <li><strong>Excel wins</strong> for 1–30 headcount, no biometric device, monthly manual attendance sign-off, one payroll cycle.</li>
+      <li><strong>Excel starts to strain</strong> at 30–50 headcount, when self-service and mobile access matter.</li>
+      <li><strong>Excel loses</strong> above 50 headcount, or when biometric/RFID attendance, shift-swap workflows, or SSO-based employee portals become the norm.</li>
+    </ul>
+    <p>Even in an HR-software world, the Excel discipline of "one master, one date key, one formula per calculation" is exactly what makes payroll auditable. Learn it here first.</p>
+
+    <h2 id="workbook">The six-sheet workbook design</h2>
+    <div class="article-chart" id="workbook-chart">
+      <h4>Sheet-to-sheet data flow</h4>
+      <svg viewBox="0 0 640 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of six-sheet workbook: Master feeds Attendance, Leave, Roster, Payroll; Holidays feeds Attendance and Roster; Payroll pulls from all upstream sheets.">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+          </marker>
+        </defs>
+        <g font-family="Inter, sans-serif" font-size="11" fill="#141414">
+          <rect x="20"  y="40"  width="120" height="50" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5" rx="6"/>
+          <text x="80"  y="62"  text-anchor="middle" font-weight="600">Employee Master</text>
+          <text x="80"  y="80"  text-anchor="middle" font-size="10" fill="#666">PAN, salary, SSF flag</text>
+
+          <rect x="20"  y="110" width="120" height="50" fill="#fdfbf7" stroke="#7d9553" stroke-width="1.5" rx="6"/>
+          <text x="80"  y="132" text-anchor="middle" font-weight="600">Public Holidays</text>
+          <text x="80"  y="150" text-anchor="middle" font-size="10" fill="#666">Nepal calendar</text>
+
+          <rect x="180" y="40"  width="120" height="50" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5" rx="6"/>
+          <text x="240" y="62"  text-anchor="middle" font-weight="600">Attendance</text>
+          <text x="240" y="80"  text-anchor="middle" font-size="10" fill="#666">P / A / L / H</text>
+
+          <rect x="180" y="110" width="120" height="50" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5" rx="6"/>
+          <text x="240" y="132" text-anchor="middle" font-weight="600">Leave Register</text>
+          <text x="240" y="150" text-anchor="middle" font-size="10" fill="#666">Types, balance</text>
+
+          <rect x="340" y="40"  width="120" height="50" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5" rx="6"/>
+          <text x="400" y="62"  text-anchor="middle" font-weight="600">Roster / Duty</text>
+          <text x="400" y="80"  text-anchor="middle" font-size="10" fill="#666">Shifts, on-call</text>
+
+          <rect x="490" y="75"  width="130" height="80" fill="#fdfbf7" stroke="#b33d20" stroke-width="1.5" rx="6"/>
+          <text x="555" y="105" text-anchor="middle" font-weight="600">Payroll</text>
+          <text x="555" y="123" text-anchor="middle" font-size="10" fill="#666">SSF/EPF/CIT/TDS</text>
+          <text x="555" y="140" text-anchor="middle" font-size="10" fill="#666">Payslip output</text>
+        </g>
+        <g stroke="#666" stroke-width="1.3" fill="none" marker-end="url(#arr2)">
+          <line x1="140" y1="65"  x2="178" y2="65"/>
+          <line x1="140" y1="65"  x2="178" y2="130"/>
+          <line x1="140" y1="65"  x2="338" y2="65"/>
+          <line x1="140" y1="135" x2="178" y2="90"/>
+          <line x1="140" y1="135" x2="338" y2="80"/>
+          <line x1="300" y1="65"  x2="488" y2="100"/>
+          <line x1="300" y1="135" x2="488" y2="115"/>
+          <line x1="460" y1="65"  x2="488" y2="90"/>
+          <line x1="140" y1="65"  x2="488" y2="105"/>
+        </g>
+        <text x="320" y="210" font-family="Inter, sans-serif" font-size="11" fill="#888" text-anchor="middle">Every calculation in Payroll traces back through one of the upstream sheets. No hard-coded numbers on Payroll.</text>
+      </svg>
+      <p class="c-caption">Six sheets, one direction of data flow. Payroll is a computed output — never data-entered directly.</p>
+    </div>
+
+    <h2 id="master">1. Employee Master</h2>
+    <p>The Master sheet is the primary key of the whole workbook. One row per employee, never edited during the month — only additions and status changes.</p>
+    <table>
+      <thead><tr><th>Column</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Emp ID</td><td>Unique code (e.g., WL-001). Never reused.</td></tr>
+        <tr><td>Full Name</td><td>Legal name matching PAN records.</td></tr>
+        <tr><td>PAN</td><td>9-digit PAN. Required for TDS certificate.</td></tr>
+        <tr><td>Gender</td><td>M / F / Other — drives female-rebate logic.</td></tr>
+        <tr><td>Marital Status</td><td>Single / Married — drives filing-status option.</td></tr>
+        <tr><td>Date of Joining</td><td>Drives leave accrual and gratuity.</td></tr>
+        <tr><td>Designation, Department</td><td>Text.</td></tr>
+        <tr><td>Basic Salary</td><td>Monthly.</td></tr>
+        <tr><td>Allowances (fixed)</td><td>House, transport, etc. — as monthly amounts.</td></tr>
+        <tr><td>SSF Registered?</td><td>Yes/No. Drives SST waiver and contribution rates.</td></tr>
+        <tr><td>EPF Membership No.</td><td>If EPF instead of SSF.</td></tr>
+        <tr><td>CIT Contribution</td><td>Voluntary monthly amount.</td></tr>
+        <tr><td>Life Insurance Premium (yearly)</td><td>Up to NPR 40,000 deductible.</td></tr>
+        <tr><td>Health Insurance Premium (yearly)</td><td>Up to NPR 20,000 deductible.</td></tr>
+        <tr><td>Filing Status</td><td>Individual / Couple — from FY 2083/84 this may be redundant if the unified slab is applied to everyone.</td></tr>
+        <tr><td>Bank / Account No.</td><td>For payroll transfer.</td></tr>
+        <tr><td>Status</td><td>Active / On Leave / Resigned / Terminated.</td></tr>
+        <tr><td>Date of Exit</td><td>Populated on resignation.</td></tr>
+      </tbody>
+    </table>
+    <p>Every other sheet uses <code>Emp ID</code> to look up back into Master via <code>XLOOKUP</code>. Never duplicate data.</p>
+
+    <h2 id="attendance">2. Attendance</h2>
+    <p>Design: <strong>rows are employees, columns are dates</strong>. Codes: <code>P</code> (Present), <code>A</code> (Absent unpaid), <code>L</code> (Leave), <code>H</code> (Holiday), <code>W</code> (Weekly off), <code>WFH</code> (Work from home). Data entered daily or captured from a punch export.</p>
+    <ul>
+      <li>Colour-conditional formatting: green for <code>P</code>/<code>WFH</code>, yellow for <code>L</code>, red for <code>A</code>, grey for <code>H</code>/<code>W</code>.</li>
+      <li>Weekly summary column: <code>=COUNTIF(range,"P")+COUNTIF(range,"WFH")</code>.</li>
+      <li>Present days for payroll: <code>=COUNTIFS(range,"P")+COUNTIFS(range,"WFH")+COUNTIFS(range,"L") // paid days</code></li>
+      <li>Unpaid absences: <code>=COUNTIF(range,"A")</code>. This is what triggers a salary deduction.</li>
+      <li>Working days in the month: <code>=NETWORKDAYS.INTL(FirstOfMonth, EndOfMonth, "0000011", HolidayRange)</code> — the "0000011" pattern makes Saturday the weekly off (adjust if Friday-Saturday weekend is your policy).</li>
+    </ul>
+
+    <h2 id="leave">3. Leave Register</h2>
+    <p>One row per leave application. Columns:</p>
+    <ul>
+      <li>Emp ID, Employee (auto), Type, From, To, Days, Reason, Approver, Status.</li>
+      <li>Type = Annual / Sick / Casual / Home / Maternity / Paternity / Bereavement / Unpaid.</li>
+      <li>Days: <code>=NETWORKDAYS.INTL(From, To, "0000011", Holidays)</code>. Do not count holidays as leave.</li>
+    </ul>
+    <p>Balance calculation (per employee, per type):</p>
+    <p><code>=Opening + Accrual − IF([Applied]="Approved",[Days],0)</code></p>
+    <ul>
+      <li><strong>Annual leave accrual:</strong> ~1.5 days/month (approximates the Labour Act's 1 day per 20 days worked; adjust to your policy).</li>
+      <li><strong>Sick leave:</strong> 12 days a year, non-carry-forward or carry-forward capped — your policy choice.</li>
+      <li><strong>Home leave / Casual:</strong> per your policy.</li>
+      <li><strong>Maternity:</strong> 98 days paid, per Labour Act 2074.</li>
+    </ul>
+
+    <h2 id="holidays">4. Public Holidays</h2>
+    <p>A simple two-column sheet: <code>Date</code> and <code>Holiday Name</code>. Update once a year against the Government of Nepal's official calendar.</p>
+    <p>Nepal's Labour Act 2074 recognises <strong>13 public holidays</strong> plus each employee's <strong>weekly off</strong>. Common holidays include:</p>
+    <ul>
+      <li><strong>Dashain</strong> (typically 5 working days off around Vijaya Dashami)</li>
+      <li><strong>Tihar</strong> (2–3 working days)</li>
+      <li><strong>Chhath</strong> (in Tarai regions)</li>
+      <li><strong>Loshar</strong> (community-specific — Tamu, Sonam, Gyalpo)</li>
+      <li><strong>Eid</strong> (Fitr and Bakrid; community-specific)</li>
+      <li><strong>National Day / Democracy Day / Republic Day / Constitution Day / Labour Day</strong></li>
+      <li><strong>New Year (Baisakh 1)</strong> and gender-specific holidays such as <strong>Rishi Panchami</strong> (women).</li>
+    </ul>
+    <p>The Nepal Government publishes the year's exact holiday calendar every Chaitra/Baisakh. Load it into this sheet once a year — every other sheet will pick it up automatically.</p>
+
+    <h2 id="roster">5. Roster / Duty Planner</h2>
+    <p>Roster is the forward-looking cousin of Attendance. Design: <strong>rows are dates, columns are shifts (or employees)</strong>. Fill cells with the Emp ID assigned to that slot.</p>
+    <ul>
+      <li>For a 2-shift office (Day / Evening): two columns of assignments per date, plus an On-call column.</li>
+      <li>Validation: <code>Data → Data Validation → List</code> from the Master Emp ID range, so every cell must resolve to a real employee.</li>
+      <li>Cross-check: <code>=COUNTIF(RosterRow, EmpID)</code> flags if a single employee is assigned twice on the same day.</li>
+      <li>Overtime slot flag: any assignment beyond 8 hours per day should be tagged <code>OT</code> for later payroll pickup.</li>
+      <li>Coverage check per date: <code>=COUNTA(RosterRow)</code> vs required headcount — highlights under-cover.</li>
+    </ul>
+    <p>Publish the roster at least a week in advance. If your team includes shift-swap requests, capture them in a separate Swaps sheet with approver sign-off — do not overwrite the original roster.</p>
+
+    <h2 id="payroll">6. Payroll — the monthly calculation</h2>
+    <p>Payroll is a <em>computed</em> sheet, not a data-entry sheet. Every value comes from an upstream lookup or formula. One row per employee per month; add a <code>Period</code> column so a single sheet holds every month.</p>
+
+    <h3>Core columns</h3>
+    <table>
+      <thead><tr><th>Column</th><th>Formula / source</th></tr></thead>
+      <tbody>
+        <tr><td>Emp ID, Name</td><td><code>XLOOKUP</code> from Master</td></tr>
+        <tr><td>Basic (monthly)</td><td>From Master</td></tr>
+        <tr><td>Allowances</td><td>From Master (+ any variable allowance)</td></tr>
+        <tr><td>Gross</td><td>Basic + Allowances</td></tr>
+        <tr><td>Present Days</td><td>From Attendance (P + WFH + Paid Leave)</td></tr>
+        <tr><td>Payable Days ratio</td><td>Present Days / Working Days in Month</td></tr>
+        <tr><td>Earned Gross</td><td>Gross × Payable Days ratio</td></tr>
+        <tr><td>OT hours</td><td>From Roster / OT log</td></tr>
+        <tr><td>OT amount</td><td>OT hours × (Basic / 208) × 1.5</td></tr>
+        <tr><td>Total Earnings</td><td>Earned Gross + OT</td></tr>
+        <tr><td>SSF/EPF Deduction (Employee)</td><td>11% × Basic (SSF) or 10% × Basic (EPF)</td></tr>
+        <tr><td>CIT Deduction</td><td>From Master (monthly)</td></tr>
+        <tr><td>Life Insurance (annualised)</td><td>Master annual ÷ 12</td></tr>
+        <tr><td>Taxable Income (annualised)</td><td>(Total Earnings × 12) − annual deductions</td></tr>
+        <tr><td>Annual Tax</td><td>Slab formula (see below)</td></tr>
+        <tr><td>Female Rebate</td><td>10% × Annual Tax if Female + Individual + only-employment</td></tr>
+        <tr><td>Monthly TDS</td><td>(Annual Tax − Rebate) ÷ 12</td></tr>
+        <tr><td>Other deductions</td><td>Salary advance, loans, etc.</td></tr>
+        <tr><td>Net Payable</td><td>Total Earnings − SSF/EPF − CIT − TDS − Others</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Slab formula — FY 2083/84 unified schedule</h3>
+    <p>The FY 2083/84 slab (see our <a href="nepal-salary-tax-slab-fy-2082-83.html">salary slab post</a>): 1% first 10 lakh, 10% next 5 lakh, 20% next 10 lakh, 27% next 15 lakh, 29% above 40 lakh. Using <code>LET</code> for readability:</p>
+    <pre><code>=LET(t, TaxableIncome,
+    b1, MIN(t, 1000000),
+    b2, MIN(MAX(t-1000000,0), 500000),
+    b3, MIN(MAX(t-1500000,0), 1000000),
+    b4, MIN(MAX(t-2500000,0), 1500000),
+    b5, MAX(t-4000000,0),
+    b1*IF(IsSSF,0,0.01) + b2*0.1 + b3*0.2 + b4*0.27 + b5*0.29
+)</code></pre>
+    <p><em>SSF contributors have the 1% Social Security Tax on the first band waived; non-SSF pay 1% on the first NPR 10 lakh.</em></p>
+
+    <h2 id="payroll-example">Worked example — Sita's monthly payslip</h2>
+    <p>Sita is a Marketing Executive at a Kathmandu SME. Female. Individual filing. Enrolled in SSF. FY 2083/84.</p>
+    <ul>
+      <li><strong>Basic:</strong> NPR 45,000/month</li>
+      <li><strong>Allowances:</strong> NPR 15,000/month</li>
+      <li><strong>Gross:</strong> NPR 60,000/month → annualised NPR 7,20,000</li>
+      <li><strong>SSF (11%):</strong> NPR 4,950/month → annual NPR 59,400</li>
+      <li><strong>Life insurance premium:</strong> NPR 25,000 per year</li>
+      <li><strong>Attendance:</strong> 22 P + 4 W + 1 H = 27 days; 0 unpaid absence in a 26-working-day month → full month paid.</li>
+    </ul>
+    <p><strong>Annualised taxable income:</strong> 7,20,000 − 59,400 − 25,000 = <strong>NPR 6,35,600</strong>.</p>
+    <p><strong>Annual tax (SSF contributor, so 0% on first 10 lakh):</strong></p>
+    <ul>
+      <li>0% × 6,35,600 = <strong>NPR 0</strong></li>
+    </ul>
+    <p><strong>Female rebate:</strong> 0 × 10% = 0.</p>
+    <p><strong>Monthly TDS:</strong> NPR 0. Net take-home = 60,000 − 4,950 = <strong>NPR 55,050</strong>.</p>
+    <p>Under the old FY 2082/83 slab Sita would have paid ~NPR 8,500 a year — the FY 2083/84 unified 1% band up to 10 lakh eliminates it completely for SSF contributors below that ceiling.</p>
+
+    <div class="article-chart" id="deduction-chart">
+      <h4>Where the salary rupee goes — Sita's payslip</h4>
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stacked bar showing NPR 60,000 gross salary broken into Net take-home NPR 55,050 and SSF NPR 4,950. TDS is zero.">
+        <g font-family="Inter, sans-serif" font-size="11" fill="#2a2a2a">
+          <text x="20" y="30" font-weight="600">Gross monthly</text>
+          <rect x="180" y="20" width="400" height="24" fill="#c8c4bc" rx="2"/>
+          <text x="590" y="36" font-weight="600">NPR 60,000</text>
+
+          <text x="20" y="70" font-weight="600">Net take-home</text>
+          <rect x="180" y="60" width="367" height="24" fill="#4a7c59" rx="2"/>
+          <text x="555" y="76" font-weight="600" fill="#fff">NPR 55,050</text>
+
+          <text x="20" y="110" font-weight="600">SSF (11%)</text>
+          <rect x="180" y="100" width="33" height="24" fill="#D94F2B" rx="2"/>
+          <text x="220" y="116" font-weight="600">NPR 4,950</text>
+
+          <text x="20" y="150" font-weight="600">TDS</text>
+          <rect x="180" y="140" width="6" height="24" fill="#8a2f18" rx="2"/>
+          <text x="194" y="156" font-weight="600">NPR 0</text>
+
+          <text x="20" y="190" font-weight="600">Effective tax rate</text>
+          <rect x="180" y="180" width="6" height="24" fill="#8a2f18" rx="2"/>
+          <text x="194" y="196" font-weight="600">0.0%</text>
+        </g>
+      </svg>
+      <p class="c-caption">Sita's take-home under FY 2083/84 (SSF contributor). The unified 1% band up to NPR 10 lakh removes salary tax at this income level entirely.</p>
+    </div>
+
+    <blockquote>Payroll is not "typing numbers into a sheet." Payroll is a <em>calculation</em> — every rupee traceable to a rule, every deduction to a statutory basis. Design it that way from day one.</blockquote>
+
+    <h2 id="workflow">Monthly workflow — 8 steps</h2>
+    <ol>
+      <li><strong>Day 1–25:</strong> Attendance sheet updated daily by a supervisor. Colour formatting flags problems in real time.</li>
+      <li><strong>Day 25:</strong> Freeze attendance. Any late corrections require a change-log entry.</li>
+      <li><strong>Day 26:</strong> Reconcile leaves — every <code>L</code> code in Attendance must have a corresponding row in Leave Register (and vice versa).</li>
+      <li><strong>Day 26:</strong> Pull OT from Roster / OT log. Verify against the 4-hour/day, 24-hour/week cap.</li>
+      <li><strong>Day 26:</strong> Add any variable earnings (project bonus, incentive) or deductions (advance recovery).</li>
+      <li><strong>Day 27:</strong> Compute payroll. Sanity-check: total gross vs previous month, headcount vs Master, TDS vs previous month.</li>
+      <li><strong>Day 27:</strong> Payslips generated (per-employee PDF export from a payslip template sheet). Approvals from HR head + Finance head.</li>
+      <li><strong>Day 28–30:</strong> Bank transfer file uploaded. SSF/EPF/CIT/TDS deposit challans prepared. TDS deposit due by 25th of the following Nepali month (Section 90, Income Tax Act).</li>
+    </ol>
+
+    <h2 id="controls">Controls, security and audit trail</h2>
+    <ul>
+      <li><strong>Workbook stored in a Shared drive.</strong> Version history is your undo. See our <a href="google-drive-onedrive-sync-setup.html">Drive / OneDrive guide</a>.</li>
+      <li><strong>Sheet protection:</strong> Payroll formulas locked; only variable-input cells unlocked. Password per sheet.</li>
+      <li><strong>Change log sheet:</strong> Date, Who, What changed, Why. Every mid-month attendance correction lands here.</li>
+      <li><strong>Two-person approval</strong> for payroll release. HR + Finance heads' initials on the paid-out sheet.</li>
+      <li><strong>Backup snapshots:</strong> Save-as at month-end into an "Archive" folder. Never edit historical months.</li>
+      <li><strong>PII handling:</strong> PAN and bank account are personal data — restrict edit access to HR + Finance; never share the workbook externally without redacting these columns.</li>
+    </ul>
+
+    <h2 id="faq">Frequently asked questions</h2>
+
+    <h3>Do I need SSF, EPF or both?</h3>
+    <p>The Social Security Fund (SSF) is the government's unified scheme covering retirement, medical, accident, dependent and maternity benefits, funded by 11% employee + 20% employer contribution on basic salary. Businesses that enrolled in SSF stopped contributing separately to EPF for those employees. Non-SSF businesses continue with EPF (10% + 10%) and typically add CIT as a voluntary retirement top-up.</p>
+
+    <h3>Can I run bi-weekly or semi-monthly payroll from this workbook?</h3>
+    <p>Yes. Split the Payroll sheet into two half-month cycles with the same schema; the annualised tax computation still runs on the full year, so TDS smoothing works.</p>
+
+    <h3>How do I handle salary revisions mid-year?</h3>
+    <p>Add an "Effective From" column on the Master sheet and use it as a date filter in the payroll lookup. Never overwrite the previous salary — history matters for statutory calculations and disputes.</p>
+
+    <h3>What about final settlement on resignation?</h3>
+    <p>Compute pro-rata leave encashment on unused annual leave; pay pending salary up to the last working day; issue TDS certificate (Form 25-Ka) within 15 days of fiscal-year-end. Provident/SSF withdrawal is handled by the fund separately.</p>
+
+    <h3>Can this workbook produce a payslip PDF?</h3>
+    <p>Yes — a dedicated Payslip template sheet with <code>XLOOKUP</code>-driven fields (Emp ID as the input), then <em>File → Print → Save as PDF</em>, or a small VBA/macro loop that saves one PDF per employee. For less than 30 staff this takes 3 minutes a month.</p>
+
+    <h2 id="help">Getting your workbook built</h2>
+    <p>Building this workbook for a 15-person business takes roughly a working day for someone who knows Excel well. If yours is a mid-sized practice with unusual pay structures — production incentive, sales commission, home-leave pay — the design has to be adjusted, but the six-sheet skeleton stays the same.</p>
+
+    <aside class="article-cta">
+      <h3>Want your payroll workbook built and audited?</h3>
+      <p>Talk to <strong>Upaj Manandhar, Chartered Accountant</strong> — Excel HR/payroll design for Nepali SMEs, SSF and EPF compliance, monthly payroll review, and TDS certificate issuance for your staff.</p>
+      <div class="cta-actions">
+        <a class="cta-btn primary" href="mailto:upaj.worklane@gmail.com?subject=Excel%20payroll%20workbook">Email a query</a>
+        <a class="cta-btn ghost" href="tel:+9779841905745">Call +977 984 190 5745</a>
+      </div>
+      <div class="cta-meta">
+        Worklane Financial Advisory · Hadigaun, Kathmandu · <a href="../../index.html#contact">worklane.com.np</a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="article-sources">
+    <h2>Sources and further reading</h2>
+    <ol>
+      <li>Government of Nepal. <em>Labour Act, 2074 (2017).</em> <a href="https://www.moless.gov.np" rel="noopener noreferrer" target="_blank">moless.gov.np</a></li>
+      <li>Government of Nepal. <em>Contribution-Based Social Security Act, 2074 &amp; Regulations.</em> <a href="https://ssf.gov.np" rel="noopener noreferrer" target="_blank">ssf.gov.np</a></li>
+      <li>Government of Nepal. <em>Income Tax Act, 2058 — as amended by Finance Act 2083.</em> <a href="https://ird.gov.np" rel="noopener noreferrer" target="_blank">ird.gov.np</a></li>
+      <li>Employees Provident Fund. <em>EPF contribution rates and rules.</em> <a href="https://epfnepal.com.np" rel="noopener noreferrer" target="_blank">epfnepal.com.np</a></li>
+      <li>Citizen Investment Trust. <em>CIT contribution and tax-benefit guidelines.</em> <a href="https://nagarik.com.np" rel="noopener noreferrer" target="_blank">nagarik.com.np</a></li>
+      <li>Ministry of Home Affairs, Nepal. <em>Annual Public Holidays Calendar.</em> <a href="https://www.moha.gov.np" rel="noopener noreferrer" target="_blank">moha.gov.np</a></li>
+    </ol>
+    <p class="image-credit">Header image via Pixabay (kaboompics) — free-use license. Charts hand-drawn in inline SVG by Worklane.</p>
+  </section>
+
+  <div class="article-author">
+    <span class="a-name">Upaj Manandhar, Chartered Accountant</span>
+    <span class="a-role">Founder, Worklane Financial Advisory · Hadigaun, Kathmandu · <a href="mailto:upaj.worklane@gmail.com">upaj.worklane@gmail.com</a></span>
+  </div>
+</article>
+
+<div class="article-more">
+  <a href="../index.html">← More from the Journal</a>
+</div>
+
+<footer class="journal-footer">
+  <span>©2026 Worklane Financial Advisory</span>
+  <a href="../../index.html">worklane.com.np</a>
+  <span>Hadigaun, Kathmandu</span>
+</footer>
+
+</body>
+</html>

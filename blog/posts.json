@@ -2,6 +2,30 @@
   "_readme": "Add one object per blog post, NEWEST FIRST. `slug` must match the post's filename in blog/posts/ (without .html). See blog/README.md for the full 2-step publishing workflow.",
   "posts": [
     {
+      "slug": "manage-staff-excel-nepal-payroll",
+      "title": "Manage Staff in Nepal Using Excel (No HR Software): Attendance, Leaves, Roster and Monthly Payroll",
+      "excerpt": "A six-sheet Excel workbook — Master, Attendance, Leave, Holidays, Roster, Payroll — that runs HR for a Nepali SME without paying for HR software. Formulas, SSF/EPF/CIT/TDS, female rebate and a worked payslip.",
+      "category": "Tools & Productivity",
+      "date": "2026-07-17",
+      "dateDisplay": "Jul 17, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "16 min read",
+      "image": "../uploads/blog/manage-staff-excel-nepal-payroll.jpg",
+      "tags": ["Excel", "HR", "payroll", "Nepal", "SSF", "TDS", "Labour Act 2074"]
+    },
+    {
+      "slug": "fixed-assets-register-nepal-guide",
+      "title": "Fixed Assets Register in Nepal: Build It From Scratch, Maintain It, Track It",
+      "excerpt": "A Chartered Accountant's step-by-step guide to building a Fixed Assets Register from scratch — asset coding, Block A–E depreciation under Schedule 2 of the Income Tax Act 2058, physical verification workflow and a copy-ready Excel schema.",
+      "category": "Accounting",
+      "date": "2026-07-17",
+      "dateDisplay": "Jul 17, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "14 min read",
+      "image": "../uploads/blog/fixed-assets-register-nepal-guide.jpg",
+      "tags": ["fixed assets", "depreciation", "Nepal", "Schedule 2", "Income Tax Act", "NFRS", "audit"]
+    },
+    {
       "slug": "nepal-multi-rate-vat-fy-2083-84",
       "title": "Nepal's Multi-Rate VAT is Here (FY 2083/84): 5% on Ride-Sharing and Electricity — What Businesses Must Do",
       "excerpt": "Finance Act 2083 ends Nepal's single-rate VAT era. From Shrawan 1, 2083 ride-sharing platforms and residential electricity attract 5% VAT — with a lifeline exemption for households under 50 units. A CA's compliance playbook.",

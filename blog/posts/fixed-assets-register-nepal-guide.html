@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed Assets Register in Nepal: Build It From Scratch, Maintain It, Track It — Worklane Journal</title>
+<meta name="description" content="A Chartered Accountant's step-by-step guide to building a Fixed Assets Register from scratch in Nepal — asset coding, Block A–E depreciation under Schedule 2 of the Income Tax Act 2058, physical verification, disposal, and a copy-ready Excel template.">
+<meta name="keywords" content="fixed assets register Nepal, FAR template Excel, Schedule 2 Income Tax Act Nepal, block depreciation Nepal, WDV depreciation, asset tagging, physical verification Nepal, capex register, Upaj Manandhar CA">
+<meta name="author" content="Upaj Manandhar, Chartered Accountant">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="geo.region" content="NP">
+<meta name="geo.placename" content="Kathmandu">
+<link rel="canonical" href="https://worklane.com.np/blog/posts/fixed-assets-register-nepal-guide.html">
+<link rel="icon" type="image/png" href="../../uploads/transparent logo without name.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fixed Assets Register in Nepal: Build, Maintain, Track">
+<meta property="og:description" content="From scratch: asset coding, Block A-E depreciation under Schedule 2, verification, disposal, and a copy-ready Excel template.">
+<meta property="og:image" content="https://worklane.com.np/uploads/blog/fixed-assets-register-nepal-guide.jpg">
+<meta property="og:url" content="https://worklane.com.np/blog/posts/fixed-assets-register-nepal-guide.html">
+<meta property="og:site_name" content="Worklane Journal">
+<meta property="article:published_time" content="2026-07-17">
+<meta property="article:modified_time" content="2026-07-17">
+<meta property="article:author" content="Upaj Manandhar, Chartered Accountant">
+<meta property="article:section" content="Accounting">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fixed Assets Register in Nepal: Build, Maintain, Track">
+<meta name="twitter:image" content="https://worklane.com.np/uploads/blog/fixed-assets-register-nepal-guide.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fixed Assets Register in Nepal: Build It From Scratch, Maintain It, Track It",
+  "description": "A Chartered Accountant's step-by-step guide to building a Fixed Assets Register from scratch in Nepal, with Block A-E depreciation, verification workflow and a copy-ready Excel template.",
+  "image": "https://worklane.com.np/uploads/blog/fixed-assets-register-nepal-guide.jpg",
+  "datePublished": "2026-07-17",
+  "dateModified": "2026-07-17",
+  "inLanguage": "en",
+  "wordCount": 2900,
+  "author": {
+    "@type": "Person",
+    "name": "Upaj Manandhar",
+    "jobTitle": "Chartered Accountant",
+    "worksFor": { "@type": "Organization", "name": "Worklane Financial Advisory" },
+    "url": "https://worklane.com.np"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Worklane Financial Advisory",
+    "logo": { "@type": "ImageObject", "url": "https://worklane.com.np/uploads/transparent%20logo%20without%20name.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://worklane.com.np/blog/posts/fixed-assets-register-nepal-guide.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://worklane.com.np/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://worklane.com.np/blog/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "Fixed Assets Register in Nepal", "item": "https://worklane.com.np/blog/posts/fixed-assets-register-nepal-guide.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Is a Fixed Assets Register mandatory in Nepal?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Section 81 of the Income Tax Act 2058 requires every business to maintain accounting records that substantiate tax positions, and Schedule 2 requires block-wise depreciation which is only possible with a detailed FAR. NFRS/NAS 16 also mandates asset-level records for financial-statement disclosures." } },
+    { "@type": "Question", "name": "What depreciation method does the Income Tax Act 2058 use?", "acceptedAnswer": { "@type": "Answer", "text": "Nepal's Income Tax Act uses the Written Down Value (WDV) method applied to five 'pool' blocks under Schedule 2 — Block A (buildings) 5%, Block B (computers/office equipment) 25%, Block C (vehicles) 20%, Block D (plant/other) 15%, and Block E (intangibles) as applicable. Additions during the year are added to the block; the pool then depreciates as one." } },
+    { "@type": "Question", "name": "How often should physical verification be done?", "acceptedAnswer": { "@type": "Answer", "text": "Best practice is annual full verification at year-end (Ashadh), with rolling quarterly cycles for high-value or mobile assets. Discrepancies must be investigated and either reconciled, written off with approval, or booked as loss." } },
+    { "@type": "Question", "name": "What is the '1/3rd rule' in Nepali tax depreciation?", "acceptedAnswer": { "@type": "Answer", "text": "Under Schedule 2 of the Income Tax Act, additions to a block within a fiscal year receive depreciation on only 2/3rd, 1/3rd or nil of the addition depending on when in the year the asset was acquired — this replaces a full-year vs half-year convention with a Nepali-specific three-tier rule." } },
+    { "@type": "Question", "name": "Should book and tax depreciation match?", "acceptedAnswer": { "@type": "Answer", "text": "Not necessarily. Book depreciation follows NFRS/NAS 16 (typically Straight Line based on estimated useful life). Tax depreciation follows Schedule 2 (WDV, block-wise). The difference is a timing difference that creates deferred tax under NAS 12." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="journal-header">
+  <a class="brand" href="../../index.html">
+    <img src="../../uploads/transparent logo without name.png" alt="Worklane logo">
+    <span>Worklane</span>
+  </a>
+  <nav>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#services">Services</a>
+    <a href="../index.html" class="active">Journal</a>
+    <a href="../../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<article class="article-wrap">
+  <p class="article-breadcrumb"><a href="../index.html">← Journal</a> · Accounting</p>
+
+  <p class="article-kicker">Accounting</p>
+  <h1 class="article-title">Fixed Assets Register in Nepal: Build It From Scratch, Maintain It, Track It</h1>
+
+  <div class="article-meta">
+    <span>By <strong>Upaj Manandhar</strong>, Chartered Accountant</span>
+    <time datetime="2026-07-17">Jul 17, 2026</time>
+    <span>14 min read</span>
+  </div>
+
+  <figure class="article-hero">
+    <img src="../../uploads/blog/fixed-assets-register-nepal-guide.jpg" alt="A warehouse of tagged inventory and equipment — the Fixed Assets Register is the single accounting record that ties physical reality to the balance sheet." loading="eager">
+    <figcaption>The FAR is the single accounting record that ties physical reality to the balance sheet — and the first thing an auditor asks for.</figcaption>
+  </figure>
+
+  <div class="article-body">
+    <p>The <strong>Fixed Assets Register (FAR)</strong> is the accounting record most Nepali SMEs postpone building until an audit forces them to. That is a mistake — the FAR is not a bureaucratic form; it is the operating record that connects <em>a physical thing in your office</em> to <em>a number on your balance sheet</em>, and it drives depreciation, insurance, disposal accounting, tax positions and internal control at the same time. This guide walks through building a FAR from scratch, running it properly month after month, and keeping physical reality and the ledger reconciled — with a copy-ready Excel schema, worked examples, and Nepal-specific depreciation under Schedule 2 of the Income Tax Act 2058.</p>
+
+    <div class="article-takeaways">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li>A FAR is required by both the <strong>Income Tax Act 2058 (Schedule 2)</strong> for block-wise WDV depreciation and by <strong>NFRS/NAS 16</strong> for financial-statement disclosures — you cannot get either right without it.</li>
+        <li>Every asset needs a <strong>unique asset code</strong>, a <strong>physical tag</strong>, and a <strong>row in the register</strong> — no exceptions. If it does not tie back, it does not exist.</li>
+        <li>Nepal's tax depreciation uses <strong>five blocks (A–E)</strong> with WDV rates 5% / 25% / 20% / 15% / 10% respectively, and a <strong>1/3rd rule</strong> for mid-year additions.</li>
+        <li>Book depreciation (NAS 16 straight-line) and tax depreciation (Schedule 2 WDV) will not match — that is normal, and creates deferred tax.</li>
+        <li>Physical verification once a year is the minimum; rolling verification of high-value or mobile assets each quarter is the standard we recommend.</li>
+      </ul>
+    </div>
+
+    <nav class="article-toc" aria-label="Table of contents">
+      <h3>What's in this guide</h3>
+      <ol>
+        <li><a href="#why">Why the FAR matters</a></li>
+        <li><a href="#lifecycle">The asset lifecycle at a glance</a></li>
+        <li><a href="#schema">Building the register from scratch — the schema</a></li>
+        <li><a href="#coding">Asset coding and tagging</a></li>
+        <li><a href="#blocks">Depreciation — Schedule 2 blocks A–E</a></li>
+        <li><a href="#one-third">The 1/3rd rule for mid-year additions</a></li>
+        <li><a href="#worked-example">Worked example — a Kathmandu SME's first year</a></li>
+        <li><a href="#book-vs-tax">Book vs tax depreciation — deferred tax</a></li>
+        <li><a href="#monthly">Monthly maintenance workflow</a></li>
+        <li><a href="#verification">Physical verification — how, and how often</a></li>
+        <li><a href="#disposal">Disposals, transfers and impairment</a></li>
+        <li><a href="#excel">The Excel schema you can copy</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+        <li><a href="#help">Getting your FAR set up correctly</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="why">Why the FAR matters</h2>
+    <p>A FAR is doing four jobs at the same time:</p>
+    <ul>
+      <li><strong>Substantiating your depreciation charge</strong> — under the Income Tax Act 2058 (Sections 19 and Schedule 2), depreciation is a deductible business expense only if you can show which pool the asset sits in and when it was added.</li>
+      <li><strong>Underpinning NFRS/NAS 16 disclosures</strong> — cost, accumulated depreciation, additions, disposals and impairment must be reconciled at the level of the asset class.</li>
+      <li><strong>Enabling internal control</strong> — knowing which laptop is with which employee, where the projector actually lives, and whether the generator serial number matches the invoice.</li>
+      <li><strong>Enabling insurance and disposal decisions</strong> — you cannot insure or scrap an asset you cannot find.</li>
+    </ul>
+
+    <h2 id="lifecycle">The asset lifecycle at a glance</h2>
+    <div class="article-chart" id="lifecycle-chart">
+      <h4>The asset lifecycle</h4>
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flow diagram of the fixed asset lifecycle: acquisition, capitalisation, tagging, depreciation, verification, disposal.">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+          </marker>
+        </defs>
+        <g font-family="Inter, sans-serif" font-size="11" fill="#141414">
+          <rect x="10"  y="70" width="90" height="60" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5" rx="6"/>
+          <text x="55" y="95" text-anchor="middle" font-weight="600">Acquisition</text>
+          <text x="55" y="112" text-anchor="middle" font-size="10" fill="#666">PO, GRN, invoice</text>
+
+          <rect x="120" y="70" width="90" height="60" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5" rx="6"/>
+          <text x="165" y="95" text-anchor="middle" font-weight="600">Capitalisation</text>
+          <text x="165" y="112" text-anchor="middle" font-size="10" fill="#666">Cost + freight + install</text>
+
+          <rect x="230" y="70" width="90" height="60" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5" rx="6"/>
+          <text x="275" y="95" text-anchor="middle" font-weight="600">Tag &amp; code</text>
+          <text x="275" y="112" text-anchor="middle" font-size="10" fill="#666">Sticker on asset</text>
+
+          <rect x="340" y="70" width="90" height="60" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5" rx="6"/>
+          <text x="385" y="95" text-anchor="middle" font-weight="600">Depreciate</text>
+          <text x="385" y="112" text-anchor="middle" font-size="10" fill="#666">Book + tax</text>
+
+          <rect x="450" y="70" width="90" height="60" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5" rx="6"/>
+          <text x="495" y="95" text-anchor="middle" font-weight="600">Verify</text>
+          <text x="495" y="112" text-anchor="middle" font-size="10" fill="#666">Physical count</text>
+
+          <rect x="560" y="70" width="72" height="60" fill="#fdfbf7" stroke="#b33d20" stroke-width="1.5" rx="6"/>
+          <text x="596" y="95" text-anchor="middle" font-weight="600">Dispose</text>
+          <text x="596" y="112" text-anchor="middle" font-size="10" fill="#666">Sale/scrap</text>
+        </g>
+        <g stroke="#666" stroke-width="1.5" fill="none" marker-end="url(#arr)">
+          <line x1="100" y1="100" x2="118" y2="100"/>
+          <line x1="210" y1="100" x2="228" y2="100"/>
+          <line x1="320" y1="100" x2="338" y2="100"/>
+          <line x1="430" y1="100" x2="448" y2="100"/>
+          <line x1="540" y1="100" x2="558" y2="100"/>
+        </g>
+        <text x="320" y="170" font-family="Inter, sans-serif" font-size="11" fill="#888" text-anchor="middle">Every step leaves a row in the FAR — nothing exists off-register.</text>
+      </svg>
+      <p class="c-caption">The FAR is the source of truth across the whole lifecycle. Each step should update at most one row of the register.</p>
+    </div>
+
+    <h2 id="schema">Building the register from scratch — the schema</h2>
+    <p>Every FAR — whether in Excel, Tally, or an ERP — needs the same core columns. Start with these and you can always add more later:</p>
+    <table>
+      <thead><tr><th>Column</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td>Asset Code</td><td>Unique ID — the primary key of the register. Never reused.</td></tr>
+        <tr><td>Description</td><td>Plain-language what-is-it. "HP LaserJet Pro M404dn, Sn: XY123."</td></tr>
+        <tr><td>Category / Block</td><td>Block A / B / C / D / E under Schedule 2, and your finer book category.</td></tr>
+        <tr><td>Location</td><td>Building, floor, room / desk / vehicle.</td></tr>
+        <tr><td>Custodian</td><td>Named employee or department currently responsible.</td></tr>
+        <tr><td>Supplier + Invoice No.</td><td>Ties the asset back to the purchase document.</td></tr>
+        <tr><td>Date of Purchase</td><td>Invoice date. Used for warranty and 1/3rd rule.</td></tr>
+        <tr><td>Date Put to Use</td><td>When it was actually installed/commissioned — controls tax depreciation start.</td></tr>
+        <tr><td>Original Cost (NPR)</td><td>Invoice cost + freight + install + non-refundable duties. Excludes VAT if input credit claimed.</td></tr>
+        <tr><td>Useful Life (yrs)</td><td>NAS 16 estimate for book depreciation.</td></tr>
+        <tr><td>Salvage Value</td><td>Expected residual — usually zero for tax; small for book.</td></tr>
+        <tr><td>Book Depreciation Method</td><td>SLM (typical) or WDV.</td></tr>
+        <tr><td>Tax Block</td><td>A / B / C / D / E per Schedule 2.</td></tr>
+        <tr><td>Opening WDV, Additions, Depreciation, Closing WDV</td><td>Yearly columns; drive the tax computation.</td></tr>
+        <tr><td>Physical Verification Date</td><td>Last time someone laid eyes on the asset.</td></tr>
+        <tr><td>Status</td><td>In Use / Idle / Retired / Sold / Written-off.</td></tr>
+        <tr><td>Disposal Date, Sale Proceeds, Gain/Loss</td><td>Populated on retirement.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="coding">Asset coding and tagging</h2>
+    <p>A good code makes the register self-documenting. A workable structure for a small Nepali business:</p>
+    <p><code>WL-KTM-B-014</code> — where <em>WL</em> is your entity, <em>KTM</em> is the location, <em>B</em> is the tax block, <em>014</em> is a running serial.</p>
+    <ul>
+      <li>Print the code on a durable label (thermal / laminated) and stick it in a fixed, visible location on the asset.</li>
+      <li>For high-mobility assets (laptops, cameras), use a QR sticker that resolves to the FAR row when scanned.</li>
+      <li>Never reuse a retired code — extend the serial forever.</li>
+      <li>Photograph every asset at the time of tagging; keep the photo in a shared drive folder named after the code.</li>
+    </ul>
+
+    <h2 id="blocks">Depreciation — Schedule 2 blocks A–E</h2>
+    <p>Under <strong>Schedule 2 of the Income Tax Act 2058</strong>, assets are grouped into five <em>pools</em> (blocks), each with its own WDV rate. The block, not the individual asset, is what depreciates:</p>
+
+    <div class="article-chart" id="block-chart">
+      <h4>Nepal tax depreciation rates (WDV, per block)</h4>
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bar chart of block depreciation rates: Block A 5%, Block B 25%, Block C 20%, Block D 15%, Block E 10%.">
+        <line x1="240" y1="20" x2="240" y2="200" stroke="#c8c4bc"/>
+        <line x1="240" y1="200" x2="620" y2="200" stroke="#c8c4bc"/>
+        <g font-family="Inter, sans-serif" font-size="11" fill="#2a2a2a">
+          <text x="230" y="42" text-anchor="end">Block A — Buildings, structures</text>
+          <rect x="240" y="30" width="50" height="20" fill="#D94F2B" rx="2"/><text x="298" y="45" font-weight="600">5%</text>
+
+          <text x="230" y="76" text-anchor="end">Block B — Computers, office equipment, fixtures</text>
+          <rect x="240" y="64" width="250" height="20" fill="#D94F2B" rx="2"/><text x="498" y="79" font-weight="600">25%</text>
+
+          <text x="230" y="110" text-anchor="end">Block C — Automobiles, buses, minibuses</text>
+          <rect x="240" y="98" width="200" height="20" fill="#b33d20" rx="2"/><text x="448" y="113" font-weight="600">20%</text>
+
+          <text x="230" y="144" text-anchor="end">Block D — Construction plant, other business assets</text>
+          <rect x="240" y="132" width="150" height="20" fill="#b33d20" rx="2"/><text x="398" y="147" font-weight="600">15%</text>
+
+          <text x="230" y="178" text-anchor="end">Block E — Intangibles / mineral rights</text>
+          <rect x="240" y="166" width="100" height="20" fill="#8a2f18" rx="2"/><text x="348" y="181" font-weight="600">See §</text>
+        </g>
+      </svg>
+      <p class="c-caption">Source: Income Tax Act 2058, Schedule 2. Block E depreciation is amortised over the useful life of the intangible.</p>
+    </div>
+
+    <p>Every fixed asset must be assigned to exactly one block. If you cannot decide between two blocks for a particular asset — say, a specialised piece of testing equipment — the safer position is usually the higher-rate block, but confirm with your auditor.</p>
+
+    <h2 id="one-third">The 1/3rd rule for mid-year additions</h2>
+    <p>Additions to a block during the fiscal year do <em>not</em> get a full year of depreciation. Schedule 2 uses a three-tier rule based on when in the year the asset was put to use:</p>
+    <ul>
+      <li><strong>First 4 months (Shrawan–Kartik):</strong> depreciation on the <em>full</em> addition amount.</li>
+      <li><strong>Middle 4 months (Mangsir–Falgun):</strong> depreciation on <em>2/3rd</em> of the addition.</li>
+      <li><strong>Last 4 months (Chaitra–Ashadh):</strong> depreciation on <em>1/3rd</em> of the addition.</li>
+    </ul>
+    <p>This is a Nepal-specific convention — do not import the Indian half-year rule or the international mid-month convention. It matters because most acquisitions land near the fiscal-year end (Chaitra–Ashadh), and getting the fraction wrong understates or overstates deductible depreciation.</p>
+
+    <h2 id="worked-example">Worked example — a Kathmandu SME's first year</h2>
+    <p>Suppose a consulting firm buys the following assets during FY 2082/83:</p>
+    <table>
+      <thead><tr><th>Asset</th><th>Cost (NPR)</th><th>Block</th><th>Date put to use</th><th>Depreciable amount</th></tr></thead>
+      <tbody>
+        <tr><td>Office fit-out</td><td>15,00,000</td><td>A (5%)</td><td>Shrawan (early)</td><td>Full (15,00,000)</td></tr>
+        <tr><td>Laptops × 5</td><td>7,50,000</td><td>B (25%)</td><td>Bhadra (early)</td><td>Full (7,50,000)</td></tr>
+        <tr><td>Server</td><td>4,00,000</td><td>B (25%)</td><td>Mangsir (mid)</td><td>2/3 = 2,66,667</td></tr>
+        <tr><td>Delivery van</td><td>25,00,000</td><td>C (20%)</td><td>Baisakh (late)</td><td>1/3 = 8,33,333</td></tr>
+      </tbody>
+    </table>
+    <p>The FY 2082/83 tax depreciation is:</p>
+    <ul>
+      <li><strong>Block A:</strong> 15,00,000 × 5% = <strong>NPR 75,000</strong></li>
+      <li><strong>Block B:</strong> (7,50,000 + 2,66,667) × 25% = <strong>NPR 2,54,167</strong></li>
+      <li><strong>Block C:</strong> 8,33,333 × 20% = <strong>NPR 1,66,667</strong></li>
+      <li><strong>Total tax depreciation FY 2082/83:</strong> <strong>NPR 4,95,834</strong></li>
+    </ul>
+
+    <blockquote>The 1/3rd rule is not a rounding convention — it is a real reduction in your first-year deductible depreciation. Plan capex acquisitions in the first four months of the year where you can.</blockquote>
+
+    <h2 id="book-vs-tax">Book vs tax depreciation — deferred tax</h2>
+    <p>Book depreciation under <strong>NAS 16</strong> is typically Straight Line over estimated useful life (e.g., laptops 3 years, servers 5 years, buildings 30-40 years, vehicles 5-7 years). Tax depreciation under Schedule 2 is WDV pool-based. These will almost never match. The difference is a <strong>timing difference</strong> giving rise to <strong>deferred tax</strong> under <strong>NAS 12</strong>.</p>
+    <table>
+      <thead><tr><th></th><th>Book (NAS 16 SLM)</th><th>Tax (Schedule 2 WDV)</th></tr></thead>
+      <tbody>
+        <tr><td>Method</td><td>Straight Line (usual)</td><td>Written Down Value</td></tr>
+        <tr><td>Base</td><td>Cost − residual, per asset</td><td>Block WDV as a pool</td></tr>
+        <tr><td>Rate driver</td><td>Estimated useful life</td><td>Schedule 2 fixed %</td></tr>
+        <tr><td>First-year fraction</td><td>Pro-rata from month of use</td><td>1/3rd rule (full / 2/3 / 1/3)</td></tr>
+        <tr><td>Disposal impact</td><td>Individual asset gain/loss</td><td>Reduces block WDV</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="monthly">Monthly maintenance workflow</h2>
+    <ol>
+      <li><strong>Additions:</strong> Every asset invoice through the AP cycle should generate a FAR row before it hits the general ledger. Never post to Fixed Assets without a code being created.</li>
+      <li><strong>Transfers:</strong> If a laptop moves from one employee to another, update the Custodian column and log the change.</li>
+      <li><strong>WIP/CWIP:</strong> Track assets under construction separately; capitalise (move to FAR proper) on the date the asset is put to use, not on the date of the final invoice.</li>
+      <li><strong>Book depreciation:</strong> Run automatically monthly through your accounting software or an Excel formula linked to the FAR.</li>
+      <li><strong>Reconciliation:</strong> At month-end, tie the FAR closing balance to the ledger (Fixed Assets − Accumulated Depreciation). A recurring 1% mismatch is a broken FAR.</li>
+      <li><strong>Insurance:</strong> Renew insurance schedules against the FAR — undervalued cover is a common gap.</li>
+    </ol>
+
+    <h2 id="verification">Physical verification — how, and how often</h2>
+    <ul>
+      <li><strong>Annual full verification</strong> at year-end (Ashadh) is the minimum. Sign-off must come from a person independent of the custodian.</li>
+      <li><strong>Quarterly rolling verification</strong> of high-value or mobile assets (laptops, cameras, vehicles). Rotate the sample so every asset is verified at least twice a year.</li>
+      <li><strong>Location-based sweeps:</strong> One team, one floor, one afternoon. Print a location-filtered FAR extract and walk with it.</li>
+      <li><strong>Discrepancy handling:</strong>
+        <ul>
+          <li><em>Found but not in FAR</em> → investigate; if genuine, back-date the capitalisation.</li>
+          <li><em>In FAR but not found</em> → search 30 days, ask custodian, escalate; only then write off with management approval.</li>
+          <li><em>Wrong location/custodian</em> → simple update, log the change.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2 id="disposal">Disposals, transfers and impairment</h2>
+    <ul>
+      <li><strong>Sale:</strong> Book proceeds; retire the asset in the FAR; compute book gain/loss (proceeds − net book value) and tax impact (proceeds reduce block WDV; if proceeds exceed block WDV, the excess is taxable gain).</li>
+      <li><strong>Scrap / write-off:</strong> Requires management approval and, ideally, a physical destruction / scrap note.</li>
+      <li><strong>Transfer between locations:</strong> No accounting entry; update Location and Custodian in the FAR.</li>
+      <li><strong>Impairment:</strong> NAS 36 requires review of assets showing indicators of impairment (obsolete, damaged, market value collapse). Book an impairment loss; tax deduction may be available only on actual disposal.</li>
+    </ul>
+
+    <h2 id="excel">The Excel schema you can copy</h2>
+    <p>Below is a minimal, working-quality FAR you can drop into Excel today. Adjust as your business scales — but do not skip any of these columns:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th><th>Description</th><th>Block</th><th>Location</th><th>Custodian</th><th>Purchase Date</th><th>Put to Use</th><th>Cost (NPR)</th><th>Life (yr)</th><th>Book Method</th><th>Book Op. WDV</th><th>Book Dep.</th><th>Book Cl. WDV</th><th>Tax Op. WDV</th><th>Tax Add.</th><th>Tax Dep.</th><th>Tax Cl. WDV</th><th>Last PV</th><th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>WL-KTM-A-001</td><td>Office fit-out</td><td>A</td><td>HG-2F</td><td>Admin</td><td>2082-04-05</td><td>2082-04-15</td><td>1,500,000</td><td>10</td><td>SLM</td><td>—</td><td>150,000</td><td>1,350,000</td><td>—</td><td>1,500,000</td><td>75,000</td><td>1,425,000</td><td>2082-12-30</td><td>In Use</td></tr>
+        <tr><td>WL-KTM-B-014</td><td>Server Dell R750</td><td>B</td><td>HG-2F-Server</td><td>IT</td><td>2082-08-20</td><td>2082-08-25</td><td>400,000</td><td>5</td><td>SLM</td><td>—</td><td>80,000</td><td>320,000</td><td>—</td><td>266,667</td><td>66,667</td><td>200,000</td><td>2082-12-30</td><td>In Use</td></tr>
+      </tbody>
+    </table>
+    <p>Handy Excel formulas for the register:</p>
+    <ul>
+      <li><strong>1/3rd fraction based on month of use:</strong><br>
+        <code>=IF(MONTH(PutToUse)&lt;=4,1, IF(MONTH(PutToUse)&lt;=8,2/3, 1/3))</code>
+        <br><em>Note: MONTH() here is the fiscal-year month; store dates as BS or map via a helper column.</em></li>
+      <li><strong>Book SLM annual depreciation:</strong><br>
+        <code>=(Cost - Salvage) / Life</code></li>
+      <li><strong>Tax WDV depreciation for a block row:</strong><br>
+        <code>=(TaxOpWDV + TaxAdd_Full + TaxAdd_TwoThird*2/3 + TaxAdd_OneThird/3) * BlockRate</code></li>
+      <li><strong>Aging vs verification:</strong><br>
+        <code>=TODAY() - [@[Last PV]]</code> — highlight rows &gt; 365 days.</li>
+      <li>See our <a href="excel-formulas-finance-professionals.html">Excel formulas guide</a> for the wider toolkit — <code>XLOOKUP</code>, <code>SUMIFS</code>, <code>FILTER</code>, <code>LET</code>.</li>
+    </ul>
+
+    <h2 id="faq">Frequently asked questions</h2>
+
+    <h3>Can I keep the FAR only in Tally Prime?</h3>
+    <p>Tally's built-in Fixed Assets module handles the ledger side, but it does not natively track custodian, location, or verification history. Most Nepali businesses keep Tally for the accounting and Excel/ERP for the operational FAR, reconciled monthly.</p>
+
+    <h3>What about assets below a de-minimis (NPR 5,000, 10,000)?</h3>
+    <p>Many businesses have a policy to expense assets below a threshold (say NPR 5,000 per item). This is an accounting policy choice and must be applied consistently. For tax, Schedule 2 does not exempt low-value assets — technically they still enter the block; in practice, immaterial items are expensed.</p>
+
+    <h3>Can VAT be capitalised into asset cost?</h3>
+    <p>Only if you cannot claim input credit on it. VAT-registered businesses that use the asset in taxable supplies exclude VAT from the capitalised cost.</p>
+
+    <h3>How do I handle a fully-depreciated asset that is still in use?</h3>
+    <p>Keep it in the FAR at Rs 1 or its salvage value, with status "In Use." Retire only on physical disposal. It is not unusual for well-run FARs to carry 10-year-old items at nominal value simply for control.</p>
+
+    <h3>What if my company file has never had a proper FAR?</h3>
+    <p>Do a "day-zero" physical count, build the register bottom-up, back-solve depreciation from purchase invoices where available, and open the register with a management-approved reconciliation to the ledger. It is uncomfortable but one-time; done properly, you are set for a decade.</p>
+
+    <h2 id="help">Getting your FAR set up correctly</h2>
+    <p>Building a FAR from scratch usually takes 3–5 working days for a small business — most of it physical counting and back-solving purchase history. Doing it once, properly, saves you every year at audit.</p>
+
+    <aside class="article-cta">
+      <h3>Need a FAR built or cleaned up?</h3>
+      <p>Talk to <strong>Upaj Manandhar, Chartered Accountant</strong> — full FAR build from scratch, block-wise reclassification, Excel/Tally schema design, physical verification support, and audit-ready reconciliations for Nepali SMEs.</p>
+      <div class="cta-actions">
+        <a class="cta-btn primary" href="mailto:upaj.worklane@gmail.com?subject=Fixed%20Assets%20Register%20help">Email a query</a>
+        <a class="cta-btn ghost" href="tel:+9779841905745">Call +977 984 190 5745</a>
+      </div>
+      <div class="cta-meta">
+        Worklane Financial Advisory · Hadigaun, Kathmandu · <a href="../../index.html#contact">worklane.com.np</a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="article-sources">
+    <h2>Sources and further reading</h2>
+    <ol>
+      <li>Government of Nepal. <em>Income Tax Act, 2058 (2002), Section 19 &amp; Schedule 2 — Depreciation of Assets.</em> <a href="https://ird.gov.np" rel="noopener noreferrer" target="_blank">ird.gov.np</a></li>
+      <li>Ministry of Finance. <em>Finance Act 2082 / Finance Act 2083 — amendments affecting depreciation.</em> <a href="https://www.mof.gov.np" rel="noopener noreferrer" target="_blank">mof.gov.np</a></li>
+      <li>Accounting Standards Board of Nepal. <em>NAS 16 — Property, Plant and Equipment.</em> <a href="https://asbnepal.gov.np" rel="noopener noreferrer" target="_blank">asbnepal.gov.np</a></li>
+      <li>Accounting Standards Board of Nepal. <em>NAS 12 — Income Taxes (deferred tax).</em> <a href="https://asbnepal.gov.np" rel="noopener noreferrer" target="_blank">asbnepal.gov.np</a></li>
+      <li>ICAN. <em>Auditing Standards and Practice Manuals — Fixed Assets Verification.</em> <a href="https://ican.org.np" rel="noopener noreferrer" target="_blank">ican.org.np</a></li>
+      <li>IRD. <em>Depreciation directives and business income guidance notes.</em> <a href="https://ird.gov.np" rel="noopener noreferrer" target="_blank">ird.gov.np</a></li>
+    </ol>
+    <p class="image-credit">Header image via Pixabay (tianya1223) — free-use license. Charts hand-drawn in inline SVG by Worklane.</p>
+  </section>
+
+  <div class="article-author">
+    <span class="a-name">Upaj Manandhar, Chartered Accountant</span>
+    <span class="a-role">Founder, Worklane Financial Advisory · Hadigaun, Kathmandu · <a href="mailto:upaj.worklane@gmail.com">upaj.worklane@gmail.com</a></span>
+  </div>
+</article>
+
+<div class="article-more">
+  <a href="../index.html">← More from the Journal</a>
+</div>
+
+<footer class="journal-footer">
+  <span>©2026 Worklane Financial Advisory</span>
+  <a href="../../index.html">worklane.com.np</a>
+  <span>Hadigaun, Kathmandu</span>
+</footer>
+
+</body>
+</html>
