@@ -2,6 +2,18 @@
   "_readme": "Add one object per blog post, NEWEST FIRST. `slug` must match the post's filename in blog/posts/ (without .html). See blog/README.md for the full 2-step publishing workflow.",
   "posts": [
     {
+      "slug": "nepal-salary-tax-clearance-certificate-online",
+      "title": "Salary Tax Clearance Certificate in Nepal — Online Process for Salaried Employees (2026)",
+      "excerpt": "A step-by-step guide to the online Tax Clearance Certificate (Kar Chukta Praman Patra) for salaried employees — eligibility under Section 4(4), documents, portal walkthrough with page-by-page schematics, common rejections and fixes.",
+      "category": "Tax & Compliance",
+      "date": "2026-07-18",
+      "dateDisplay": "Jul 18, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "13 min read",
+      "image": "../uploads/blog/nepal-salary-tax-clearance-certificate-online.jpg",
+      "tags": ["tax clearance", "Nepal", "salary", "STCC", "Section 4(4)", "ird.gov.np", "personal tax"]
+    },
+    {
       "slug": "manage-staff-excel-nepal-payroll",
       "title": "Manage Staff in Nepal Using Excel (No HR Software): Attendance, Leaves, Roster and Monthly Payroll",
       "excerpt": "A six-sheet Excel workbook — Master, Attendance, Leave, Holidays, Roster, Payroll — that runs HR for a Nepali SME without paying for HR software. Formulas, SSF/EPF/CIT/TDS, female rebate and a worked payslip.",
