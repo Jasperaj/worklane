@@ -2,6 +2,18 @@
   "_readme": "Add one object per blog post, NEWEST FIRST. `slug` must match the post's filename in blog/posts/ (without .html). See blog/README.md for the full 2-step publishing workflow.",
   "posts": [
     {
+      "slug": "anusuchi-13-balance-confirmation-nepal-tax-delay",
+      "title": "Anusuchi 13 Balance Confirmation: Why It Is Delaying Every Poush Tax Deadline in Nepal — and What Should Change",
+      "excerpt": "The NPR 1 lakh Anusuchi 13 threshold is Nepal's single biggest cause of filing delay — creating a market-wide dependency chain that pushes small taxpayers into the Poush window while large counterparties file at their convenience. A CA's case for three concrete reforms.",
+      "category": "Tax & Compliance",
+      "date": "2026-07-18",
+      "dateDisplay": "Jul 18, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "15 min read",
+      "image": "../uploads/blog/anusuchi-13-balance-confirmation-nepal-tax-delay.jpg",
+      "tags": ["Anusuchi 13", "Nepal", "balance confirmation", "IRD reform", "SME", "audit", "Poush deadline", "policy"]
+    },
+    {
       "slug": "nepal-ird-anusuchi-1-and-10-guide",
       "title": "Nepal IRD Portal — Anusuchi 1 (Tax Computation) and Anusuchi 10 (Annual TDS Return): Field-by-Field Guide",
       "excerpt": "Page-by-page walkthrough of the IRD Taxpayer Portal — every mandatory and optional field on Anusuchi 1 (individual tax computation), how the tax calculation waterfall works, and three ways to auto-populate Anusuchi 10 (annual employer TDS return).",
