@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nepal IRD Portal — Anusuchi 1 (Tax Computation) and Anusuchi 10 (Annual TDS Return): Field-by-Field Guide — Worklane Journal</title>
+<meta name="description" content="A Chartered Accountant's page-by-page walkthrough of the Nepal IRD Taxpayer Portal — every mandatory and optional field on Anusuchi 1 (income tax computation for individuals), how the calculation waterfall works, and how to auto-populate Anusuchi 10 (the annual employer TDS return) via the Excel template, monthly-return import or manual entry.">
+<meta name="keywords" content="Nepal IRD Anusuchi 1, Anusuchi 10 auto populate, ird.gov.np annual TDS return, Schedule 1 Income Tax Act Nepal, D-01 return Nepal, annual employer TDS return Nepal, Form 25-Ka source, e-TDS Excel template Nepal, Upaj Manandhar CA">
+<meta name="author" content="Upaj Manandhar, Chartered Accountant">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="geo.region" content="NP">
+<meta name="geo.placename" content="Kathmandu">
+<link rel="canonical" href="https://worklane.com.np/blog/posts/nepal-ird-anusuchi-1-and-10-guide.html">
+<link rel="icon" type="image/png" href="../../uploads/transparent logo without name.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nepal IRD Portal — Anusuchi 1 & Anusuchi 10 Field Guide">
+<meta property="og:description" content="Every mandatory and optional field on Anusuchi 1 tax computation and how to auto-populate Anusuchi 10 annual TDS return — from a Nepali CA.">
+<meta property="og:image" content="https://worklane.com.np/uploads/blog/nepal-ird-anusuchi-1-and-10-guide.jpg">
+<meta property="og:url" content="https://worklane.com.np/blog/posts/nepal-ird-anusuchi-1-and-10-guide.html">
+<meta property="og:site_name" content="Worklane Journal">
+<meta property="article:published_time" content="2026-07-18">
+<meta property="article:modified_time" content="2026-07-18">
+<meta property="article:author" content="Upaj Manandhar, Chartered Accountant">
+<meta property="article:section" content="Tax & Compliance">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nepal IRD Portal — Anusuchi 1 & Anusuchi 10 Field Guide">
+<meta name="twitter:image" content="https://worklane.com.np/uploads/blog/nepal-ird-anusuchi-1-and-10-guide.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Nepal IRD Portal — Anusuchi 1 (Tax Computation) and Anusuchi 10 (Annual TDS Return): Field-by-Field Guide",
+  "description": "Page-by-page walkthrough of the Nepal IRD Taxpayer Portal — every mandatory and optional field on Anusuchi 1 (individual tax computation), how the calculation flows, and how to auto-populate Anusuchi 10 (annual employer TDS return).",
+  "image": "https://worklane.com.np/uploads/blog/nepal-ird-anusuchi-1-and-10-guide.jpg",
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "inLanguage": "en",
+  "wordCount": 3200,
+  "author": {
+    "@type": "Person",
+    "name": "Upaj Manandhar",
+    "jobTitle": "Chartered Accountant",
+    "worksFor": { "@type": "Organization", "name": "Worklane Financial Advisory" },
+    "url": "https://worklane.com.np"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Worklane Financial Advisory",
+    "logo": { "@type": "ImageObject", "url": "https://worklane.com.np/uploads/transparent%20logo%20without%20name.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://worklane.com.np/blog/posts/nepal-ird-anusuchi-1-and-10-guide.html" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://worklane.com.np/" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://worklane.com.np/blog/index.html" },
+    { "@type": "ListItem", "position": 3, "name": "IRD Portal — Anusuchi 1 & Anusuchi 10 Guide", "item": "https://worklane.com.np/blog/posts/nepal-ird-anusuchi-1-and-10-guide.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is Anusuchi 1 in Nepal's tax system?", "acceptedAnswer": { "@type": "Answer", "text": "Anusuchi 1 (Schedule 1 of the Income Tax Act 2058) is the tax rate schedule for natural persons. On the IRD portal, it also refers to the individual income tax computation page inside the D-01 return where salary, deductions, slab-wise tax, rebates and TDS credits are computed to arrive at net tax payable or refundable." } },
+    { "@type": "Question", "name": "What is Anusuchi 10 in Nepal?", "acceptedAnswer": { "@type": "Answer", "text": "Anusuchi 10 is the annual TDS return filed by the employer after the fiscal year ends. It lists every employee with PAN, name, annual gross salary and total TDS deducted, and reconciles with the 12 monthly e-TDS returns filed during the year. It is the source data behind Form 25-Ka certificates issued to employees." } },
+    { "@type": "Question", "name": "How do I auto-populate Anusuchi 10 on the IRD portal?", "acceptedAnswer": { "@type": "Answer", "text": "Three ways: (1) download the IRD Excel template, fill it offline from payroll, and upload; (2) use the portal's 'Import from Monthly Returns' button to pull data from the 12 monthly filings already made; or (3) manually enter employee-by-employee. Method 2 is the fastest and matches with what you already deposited." } },
+    { "@type": "Question", "name": "Which fields on Anusuchi 1 are mandatory?", "acceptedAnswer": { "@type": "Answer", "text": "PAN, Fiscal Year, Filing Status (Individual/Couple until FY 2082/83), Assessable Income from Employment, Deductions (SSF/EPF/CIT and insurance are optional but zero-fill), and TDS Credit are all mandatory. Business, rent, and capital gain income sections are conditional on you having such income." } },
+    { "@type": "Question", "name": "What happens if the auto-populated Anusuchi 10 doesn't match the monthly returns?", "acceptedAnswer": { "@type": "Answer", "text": "The portal flags the mismatch and blocks submission until reconciled. Typical causes: an amended monthly return that never propagated, a late-deposit adjustment, or an employee added/removed after the monthly filing. Fix at the monthly-return level first, then re-import." } }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="journal-header">
+  <a class="brand" href="../../index.html">
+    <img src="../../uploads/transparent logo without name.png" alt="Worklane logo">
+    <span>Worklane</span>
+  </a>
+  <nav>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#services">Services</a>
+    <a href="../index.html" class="active">Journal</a>
+    <a href="../../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<article class="article-wrap">
+  <p class="article-breadcrumb"><a href="../index.html">← Journal</a> · Tax &amp; Compliance</p>
+
+  <p class="article-kicker">Tax &amp; Compliance</p>
+  <h1 class="article-title">Nepal IRD Portal — Anusuchi 1 (Tax Computation) and Anusuchi 10 (Annual TDS Return): Field-by-Field Guide</h1>
+
+  <div class="article-meta">
+    <span>By <strong>Upaj Manandhar</strong>, Chartered Accountant</span>
+    <time datetime="2026-07-18">Jul 18, 2026</time>
+    <span>17 min read</span>
+  </div>
+
+  <figure class="article-hero">
+    <img src="../../uploads/blog/nepal-ird-anusuchi-1-and-10-guide.jpg" alt="A laptop with tax forms on screen — the IRD Taxpayer Portal packs Nepal's individual return and the annual employer TDS return into two schedules that most filers get wrong on the first try." loading="eager">
+    <figcaption>The two schedules everyone eventually meets — Anusuchi 1 (individual tax computation) and Anusuchi 10 (annual employer TDS return). Get their fields and reconciliation right, and the rest of Nepal's tax filing lines up behind them.</figcaption>
+  </figure>
+
+  <div class="article-body">
+    <p>If our <a href="nepal-salary-tax-clearance-certificate-online.html">STCC guide</a> was the express lane for salaried Section 4(4) taxpayers, this post is for everyone else: the individual who has to file a full <strong>D-01 return with Anusuchi 1</strong>, and the employer who has to file the <strong>Anusuchi 10 annual TDS return</strong>. Both live on <a href="https://ird.gov.np" rel="noopener" target="_blank">ird.gov.np</a>. Both have field-by-field rules that determine whether the portal accepts your submission or bounces it. And both can be auto-populated from data you already have — if you know where the buttons are. This guide walks through every mandatory and optional field, shows how the tax calculation waterfalls through Anusuchi 1, and lays out the three auto-populate paths for Anusuchi 10 side-by-side.</p>
+
+    <div class="article-takeaways">
+      <h3>Key takeaways</h3>
+      <ul>
+        <li><strong>Anusuchi 1 is a waterfall:</strong> Assessable Income → Statutory Deductions → Taxable Income → Slab Tax → Rebates → TDS Credit → Net Payable / Refundable. Every arrow is a formula the portal runs; every input is a field you fill.</li>
+        <li>On Anusuchi 1, <strong>the six mandatory fields</strong> are: PAN, Fiscal Year, Filing Status, Employment Income, Deductions block (zero-fill if none), and TDS Credit. Business, rent and capital-gain sections are <strong>conditional</strong> and open only if you tick the relevant box.</li>
+        <li><strong>Anusuchi 10 is the annual employer return</strong> — one row per employee with PAN, name, months worked, gross salary and TDS, and it reconciles with all 12 monthly e-TDS filings.</li>
+        <li><strong>Three ways to auto-populate Anusuchi 10:</strong> (1) IRD Excel template offline fill + upload; (2) portal's "Import from Monthly Returns" button; (3) manual employee-by-employee entry. Method 2 is fastest and safest.</li>
+        <li>The submission gate for both schedules is <strong>reconciliation</strong>: for Anusuchi 1, portal-recorded TDS must equal your Form 25-Ka credit claim; for Anusuchi 10, the annual totals must equal the sum of 12 monthly returns.</li>
+      </ul>
+    </div>
+
+    <nav class="article-toc" aria-label="Table of contents">
+      <h3>What's in this guide</h3>
+      <ol>
+        <li><a href="#context">Anusuchi 1 vs Anusuchi 10 — who files what</a></li>
+        <li><a href="#nav">Where they sit in the portal navigation</a></li>
+        <li><a href="#anusuchi-1">Anusuchi 1 — page-by-page</a></li>
+        <li><a href="#waterfall">The Anusuchi 1 calculation waterfall</a></li>
+        <li><a href="#worked-example">Worked example — a NPR 12,00,000 salary</a></li>
+        <li><a href="#field-cheatsheet-1">Mandatory vs optional field cheat-sheet — Anusuchi 1</a></li>
+        <li><a href="#anusuchi-10">Anusuchi 10 — page-by-page</a></li>
+        <li><a href="#autopopulate">Three ways to auto-populate Anusuchi 10</a></li>
+        <li><a href="#excel-template">Method 1 — the IRD Excel template</a></li>
+        <li><a href="#import-monthly">Method 2 — import from monthly returns</a></li>
+        <li><a href="#manual">Method 3 — manual entry</a></li>
+        <li><a href="#validation">Validation errors and how to fix them</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+        <li><a href="#help">Getting help</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="context">Anusuchi 1 vs Anusuchi 10 — who files what</h2>
+    <p>Nepal's Income Tax Act, 2058 organises tax schedules with Nepali numerals. Two are far more visible than the rest:</p>
+    <table>
+      <thead><tr><th>Schedule</th><th>Who files</th><th>When</th><th>Where in the portal</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Anusuchi 1 (Schedule 1)</strong> — Tax rate schedule / Individual computation</td><td>A natural person (individual) who has to file a return — mixed income, multiple employers, capital gain, business, etc.</td><td>Within 3 months of fiscal year-end (Ashwin end); extendable by another 3 months</td><td>Return Filing → Income Tax → D-01 (Individual)</td></tr>
+        <tr><td><strong>Anusuchi 10 (Schedule 10)</strong> — Annual TDS return of the employer</td><td>Any employer who withheld TDS on salary during the year</td><td>Within 3 months of fiscal year-end (Ashwin end)</td><td>Return Filing → TDS → Annual Return (Anusuchi 10)</td></tr>
+      </tbody>
+    </table>
+    <p>Note the split: Anusuchi 1 is filed under your <em>personal PAN</em>; Anusuchi 10 is filed under the <em>employer's business PAN</em>. If you are the accountant of a company, you may be logged into both portals in the same session.</p>
+
+    <h2 id="nav">Where they sit in the portal navigation</h2>
+    <div class="article-chart" id="nav-chart">
+      <h4>Getting to Anusuchi 1 and Anusuchi 10 from the Taxpayer Portal home</h4>
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two-branch navigation flowchart: personal PAN login goes to D-01 Anusuchi 1, business PAN login goes to Annual TDS Return Anusuchi 10.">
+        <defs>
+          <marker id="nav-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+          </marker>
+        </defs>
+        <g font-family="Inter, sans-serif" font-size="11" fill="#141414">
+          <rect x="220" y="10" width="200" height="40" rx="6" fill="#fdfbf7" stroke="#141414" stroke-width="1.5"/>
+          <text x="320" y="35" text-anchor="middle" font-weight="600">Taxpayer Portal — login</text>
+
+          <rect x="30" y="90" width="240" height="40" rx="6" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5"/>
+          <text x="150" y="108" text-anchor="middle" font-weight="600">Personal PAN</text>
+          <text x="150" y="123" text-anchor="middle" font-size="10" fill="#666">(individual filing)</text>
+
+          <rect x="370" y="90" width="240" height="40" rx="6" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5"/>
+          <text x="490" y="108" text-anchor="middle" font-weight="600">Business PAN</text>
+          <text x="490" y="123" text-anchor="middle" font-size="10" fill="#666">(employer filing)</text>
+
+          <rect x="30" y="160" width="240" height="40" rx="6" fill="#fff" stroke="#c8c4bc"/>
+          <text x="150" y="178" text-anchor="middle">Return Filing → Income Tax</text>
+          <text x="150" y="193" text-anchor="middle" font-size="10" fill="#666">D-01 Individual Return</text>
+
+          <rect x="370" y="160" width="240" height="40" rx="6" fill="#fff" stroke="#c8c4bc"/>
+          <text x="490" y="178" text-anchor="middle">Return Filing → TDS</text>
+          <text x="490" y="193" text-anchor="middle" font-size="10" fill="#666">Annual Return (Anusuchi 10)</text>
+
+          <rect x="30" y="220" width="240" height="30" rx="6" fill="#faeae4" stroke="#b33d20" stroke-width="1.5"/>
+          <text x="150" y="240" text-anchor="middle" font-weight="600" fill="#8a2f18">Contains Anusuchi 1 pages</text>
+
+          <rect x="370" y="220" width="240" height="30" rx="6" fill="#e8f0e6" stroke="#4a7c59" stroke-width="1.5"/>
+          <text x="490" y="240" text-anchor="middle" font-weight="600" fill="#2d5238">This IS Anusuchi 10</text>
+        </g>
+        <g stroke="#666" stroke-width="1.5" fill="none" marker-end="url(#nav-arr)">
+          <line x1="270" y1="45" x2="150" y2="88"/>
+          <line x1="370" y1="45" x2="490" y2="88"/>
+          <line x1="150" y1="130" x2="150" y2="158"/>
+          <line x1="490" y1="130" x2="490" y2="158"/>
+          <line x1="150" y1="200" x2="150" y2="218"/>
+          <line x1="490" y1="200" x2="490" y2="218"/>
+        </g>
+      </svg>
+      <p class="c-caption">Same login page, two different PANs, two different filing paths. Do not try to file Anusuchi 10 under a personal PAN or Anusuchi 1 under an employer PAN — the portal simply will not show the option.</p>
+    </div>
+
+    <h2 id="anusuchi-1">Anusuchi 1 — page-by-page</h2>
+    <p>The D-01 individual return has five pages. Anusuchi 1 spans the middle three:</p>
+    <ol>
+      <li><strong>Page 1 — General Information.</strong> PAN, Name, Address, Fiscal Year, Filing Status, contact info.</li>
+      <li><strong>Page 2 — Income Details (Anusuchi 1 begins).</strong> Employment income, business income (if any), rental income (if any), investment income (if any), capital gain (if any).</li>
+      <li><strong>Page 3 — Deductions.</strong> SSF/EPF/CIT, life insurance, health insurance, remote area, disabled concession, female individual rebate flag.</li>
+      <li><strong>Page 4 — Tax Computation.</strong> Auto-generated waterfall from Pages 2 &amp; 3. Read-only.</li>
+      <li><strong>Page 5 — TDS Credit &amp; Payment.</strong> TDS deducted at source (auto-pulled), self-assessment payment, refund / additional payment.</li>
+    </ol>
+
+    <h3>Page 2 — Income Details</h3>
+    <table>
+      <thead><tr><th>Field</th><th>Required?</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Employment Income — Employer PAN</td><td><strong>Mandatory</strong> if employment box ticked</td><td>Auto-lookup fetches employer name.</td></tr>
+        <tr><td>Employment Income — Gross Salary</td><td><strong>Mandatory</strong></td><td>Annual gross from Form 25-Ka. Portal cross-checks against employer's monthly returns.</td></tr>
+        <tr><td>Employment Income — Bonus / Allowances / PF share</td><td>Conditional</td><td>Only if separately paid outside gross salary line of Form 25-Ka.</td></tr>
+        <tr><td>Second Employer (if any)</td><td>Conditional</td><td>Add row per additional employer. Multi-employer forces D-01 (disqualifies Section 4(4) / STCC).</td></tr>
+        <tr><td>Business Income (net)</td><td>Conditional</td><td>If ticked, Anusuchi 4 opens (business schedule).</td></tr>
+        <tr><td>Rental Income — Address, Gross Rent, TDS Withheld</td><td>Conditional</td><td>If ticked. Rent to entity: 10% TDS applies. Rent to individual (residential): outside IRD TDS regime.</td></tr>
+        <tr><td>Investment Income — Interest / Dividend</td><td>Conditional</td><td>Bank interest under Section 92 is <em>final</em> — do not add here unless voluntarily disclosing.</td></tr>
+        <tr><td>Capital Gain — Asset / Cost / Sale / Gain</td><td>Conditional</td><td>Applies to shares, land, other assets. Land sale: 1.5% / 2.5% / 5% per Section 95A.</td></tr>
+        <tr><td>Foreign Income</td><td>Conditional</td><td>Applies to residents with global income. Foreign tax paid can be credited via Section 71.</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Page 3 — Deductions</h3>
+    <table>
+      <thead><tr><th>Field</th><th>Required?</th><th>Cap / Rule</th></tr></thead>
+      <tbody>
+        <tr><td>SSF Contribution (Employee 11%)</td><td>Enter if applicable (zero if not enrolled)</td><td>Part of the SSF+EPF+CIT combined cap.</td></tr>
+        <tr><td>EPF Contribution (Employee 10%)</td><td>Enter if applicable</td><td>Same combined cap.</td></tr>
+        <tr><td>CIT Contribution (voluntary)</td><td>Optional</td><td>Combined SSF/EPF/CIT cap: NPR 5,00,000 <em>or</em> one-third of assessable income, whichever is lower.</td></tr>
+        <tr><td>Life Insurance Premium</td><td>Optional</td><td>Actual premium up to NPR 40,000.</td></tr>
+        <tr><td>Health Insurance Premium</td><td>Optional</td><td>Actual premium up to NPR 20,000.</td></tr>
+        <tr><td>Remote Area Allowance</td><td>Conditional (A-E area code)</td><td>Up to NPR 50,000 depending on area category.</td></tr>
+        <tr><td>Disabled Concession Flag</td><td>Conditional</td><td>Adds 50% of the basic exemption to the exempt threshold.</td></tr>
+        <tr><td>Female Individual Rebate Flag</td><td>Auto (from Master gender + filing status)</td><td>10% of computed tax; only for resident woman filing individually with employment-only income.</td></tr>
+      </tbody>
+    </table>
+    <p>The portal validates the deduction inputs against the annual gross salary from Page 2 — you cannot claim a NPR 60,000 life insurance premium if your salary was NPR 2,00,000, because the cap is the lower of actual premium or NPR 40,000.</p>
+
+    <h2 id="waterfall">The Anusuchi 1 calculation waterfall</h2>
+    <div class="article-chart" id="waterfall-chart">
+      <h4>How Anusuchi 1 turns your inputs into net tax</h4>
+      <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anusuchi 1 waterfall: assessable income minus deductions equals taxable income; apply slab tax and add surcharges; subtract rebates; subtract TDS credit and advance tax to arrive at net payable or refundable.">
+        <defs>
+          <marker id="wf-arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#666"/>
+          </marker>
+        </defs>
+        <g font-family="Inter, sans-serif" font-size="10" fill="#141414">
+          <rect x="10" y="30" width="130" height="50" rx="6" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5"/>
+          <text x="75" y="52" text-anchor="middle" font-weight="600">Assessable</text>
+          <text x="75" y="66" text-anchor="middle">income (Page 2)</text>
+
+          <rect x="160" y="30" width="130" height="50" rx="6" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5"/>
+          <text x="225" y="52" text-anchor="middle" font-weight="600">− Deductions</text>
+          <text x="225" y="66" text-anchor="middle">(Page 3)</text>
+
+          <rect x="310" y="30" width="130" height="50" rx="6" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5"/>
+          <text x="375" y="52" text-anchor="middle" font-weight="600">= Taxable</text>
+          <text x="375" y="66" text-anchor="middle">income</text>
+
+          <rect x="460" y="30" width="170" height="50" rx="6" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5"/>
+          <text x="545" y="52" text-anchor="middle" font-weight="600">Apply slab schedule</text>
+          <text x="545" y="66" text-anchor="middle" font-size="9" fill="#666">(FY 2083/84 unified)</text>
+
+          <rect x="460" y="120" width="170" height="50" rx="6" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5"/>
+          <text x="545" y="142" text-anchor="middle" font-weight="600">= Gross tax</text>
+
+          <rect x="310" y="120" width="130" height="50" rx="6" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5"/>
+          <text x="375" y="142" text-anchor="middle" font-weight="600">− 10% female</text>
+          <text x="375" y="156" text-anchor="middle" font-size="9" fill="#666">rebate (if eligible)</text>
+
+          <rect x="160" y="120" width="130" height="50" rx="6" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5"/>
+          <text x="225" y="142" text-anchor="middle" font-weight="600">= Net tax</text>
+
+          <rect x="10" y="120" width="130" height="50" rx="6" fill="#fdfbf7" stroke="#b33d20" stroke-width="1.5"/>
+          <text x="75" y="142" text-anchor="middle" font-weight="600">− TDS credit</text>
+          <text x="75" y="156" text-anchor="middle" font-size="9" fill="#666">(Page 5, auto)</text>
+
+          <rect x="10" y="210" width="620" height="50" rx="6" fill="#e8f0e6" stroke="#4a7c59" stroke-width="2"/>
+          <text x="320" y="230" text-anchor="middle" font-weight="600" fill="#2d5238">= NET PAYABLE (positive) or REFUNDABLE (negative)</text>
+          <text x="320" y="248" text-anchor="middle" font-size="10" fill="#4a7c59">If payable: pay on portal before submitting. If refundable: claim refund on Page 5.</text>
+        </g>
+        <g stroke="#666" stroke-width="1.5" fill="none" marker-end="url(#wf-arr)">
+          <line x1="140" y1="55" x2="158" y2="55"/>
+          <line x1="290" y1="55" x2="308" y2="55"/>
+          <line x1="440" y1="55" x2="458" y2="55"/>
+          <line x1="545" y1="80" x2="545" y2="118"/>
+          <line x1="460" y1="145" x2="442" y2="145"/>
+          <line x1="310" y1="145" x2="292" y2="145"/>
+          <line x1="160" y1="145" x2="142" y2="145"/>
+          <line x1="75" y1="170" x2="75" y2="208"/>
+        </g>
+      </svg>
+      <p class="c-caption">Left-to-right on the top row, right-to-left on the middle row. Each box on Page 4 (Tax Computation) is one line of this diagram.</p>
+    </div>
+
+    <h2 id="worked-example">Worked example — a NPR 12,00,000 salary</h2>
+    <p>Same numbers as our <a href="nepal-salary-tax-slab-fy-2082-83.html">salary slab post</a>, run through the Anusuchi 1 fields for FY 2082/83:</p>
+    <ol>
+      <li><strong>Page 2 — Income:</strong> Employer PAN 601XXXXXX, ABC Pvt Ltd, Gross Salary 12,00,000.</li>
+      <li><strong>Page 3 — Deductions:</strong> SSF Employee 1,32,000; Life Insurance 40,000; Others zero.</li>
+      <li><strong>Page 4 — Auto compute:</strong>
+        <ul>
+          <li>Taxable Income: 12,00,000 − 1,32,000 − 40,000 = <strong>NPR 10,28,000</strong>.</li>
+          <li>Slab tax (SSF contributor, so 0% on first 5 lakh): 10% × 2L + 20% × 3L + 30% × 28,000 = <strong>NPR 88,400</strong>.</li>
+          <li>If female + individual: Female rebate 10% = 8,840; Net tax = <strong>NPR 79,560</strong>.</li>
+        </ul>
+      </li>
+      <li><strong>Page 5 — TDS Credit:</strong> auto-pulled from employer's monthly returns. If TDS deducted &amp; deposited matched net tax, portal shows Refund / Payable = 0. If more was deducted than owed, portal shows Refund; if less, portal shows Additional Payable.</li>
+    </ol>
+
+    <blockquote>The waterfall is deterministic. If the auto-computed tax on Page 4 does not match what you expected, the bug is on Page 2 or Page 3 — not the slab formula.</blockquote>
+
+    <h2 id="field-cheatsheet-1">Mandatory vs optional field cheat-sheet — Anusuchi 1</h2>
+    <div class="article-chart" id="cheatsheet-chart">
+      <h4>Anusuchi 1 field map — one glance</h4>
+      <svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Field map with two colour-coded columns: mandatory fields and conditional or optional fields on Anusuchi 1.">
+        <g font-family="Inter, sans-serif" font-size="11" fill="#141414">
+          <rect x="10" y="20" width="300" height="240" rx="6" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5"/>
+          <text x="160" y="42" text-anchor="middle" font-weight="600" fill="#D94F2B">MANDATORY (always)</text>
+          <text x="25" y="70">• Personal PAN (auto)</text>
+          <text x="25" y="90">• Fiscal Year</text>
+          <text x="25" y="110">• Filing Status (Individual / Couple)*</text>
+          <text x="25" y="130">• Employment Income if any</text>
+          <text x="25" y="150">    • Employer PAN + Gross salary</text>
+          <text x="25" y="170">• Deductions block (zero-fill OK)</text>
+          <text x="25" y="190">• TDS Credit (auto-pulled)</text>
+          <text x="25" y="210">• Contact — phone / email</text>
+          <text x="25" y="240" font-size="9" fill="#666">*Filing Status may be redundant once FY 2083/84</text>
+          <text x="25" y="252" font-size="9" fill="#666"> unified slab is in force.</text>
+
+          <rect x="330" y="20" width="300" height="240" rx="6" fill="#fdfbf7" stroke="#4a7c59" stroke-width="1.5"/>
+          <text x="480" y="42" text-anchor="middle" font-weight="600" fill="#4a7c59">CONDITIONAL / OPTIONAL</text>
+          <text x="345" y="70">• Second employer row</text>
+          <text x="345" y="90">• Business Income → opens Anusuchi 4</text>
+          <text x="345" y="110">• Rental Income → address + gross + TDS</text>
+          <text x="345" y="130">• Investment Income (interest / dividend)</text>
+          <text x="345" y="150">• Capital Gain (shares / land / other)</text>
+          <text x="345" y="170">• Foreign Income &amp; foreign tax credit</text>
+          <text x="345" y="190">• Life Insurance / Health Insurance</text>
+          <text x="345" y="210">• Remote Area (with area code A-E)</text>
+          <text x="345" y="230">• Disabled concession flag</text>
+        </g>
+      </svg>
+      <p class="c-caption">Fill the mandatory column completely. Only tick a box in the optional column if you have the underlying transaction — an unopened box saves you an entire schedule.</p>
+    </div>
+
+    <h2 id="anusuchi-10">Anusuchi 10 — page-by-page</h2>
+    <p>Anusuchi 10 is the annual TDS return the employer files after the fiscal year ends. Structurally it is simpler than D-01 but wider — one row per employee. Pages:</p>
+    <ol>
+      <li><strong>Page 1 — Header.</strong> Business PAN, business name, fiscal year, total number of employees, total gross salary, total TDS deducted.</li>
+      <li><strong>Page 2 — Employee Grid.</strong> A grid with one row per employee. Columns detailed below.</li>
+      <li><strong>Page 3 — Reconciliation.</strong> Auto-shows monthly deposits vs annual total. Flags mismatches.</li>
+      <li><strong>Page 4 — Submit.</strong> Digital signature (or logged-in PAN acknowledgment), submit, download acknowledgment.</li>
+    </ol>
+
+    <h3>Page 2 — the Employee Grid fields</h3>
+    <table>
+      <thead><tr><th>Column</th><th>Required?</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>S.N.</td><td>Auto</td><td>Row counter.</td></tr>
+        <tr><td>Employee PAN</td><td><strong>Mandatory</strong></td><td>9-digit personal PAN. Portal validates against IRD master.</td></tr>
+        <tr><td>Employee Name</td><td>Auto (from PAN lookup)</td><td>Editable if IRD spelling differs from HR record; recommended to update PAN master instead.</td></tr>
+        <tr><td>Gender</td><td>Auto (from PAN)</td><td>Drives female-rebate calculation on the employee's own D-01.</td></tr>
+        <tr><td>Filing Status</td><td>Optional</td><td>Employer's declaration; the employee's return overrides.</td></tr>
+        <tr><td>Months Worked</td><td><strong>Mandatory</strong></td><td>1–12. Employer's payroll count.</td></tr>
+        <tr><td>Date of Joining</td><td>Conditional</td><td>Required if joined mid-year.</td></tr>
+        <tr><td>Date of Exit</td><td>Conditional</td><td>Required if left mid-year.</td></tr>
+        <tr><td>Gross Salary (annual)</td><td><strong>Mandatory</strong></td><td>Sum of monthly gross across months worked.</td></tr>
+        <tr><td>Employer's PF / CIT contribution</td><td>Optional</td><td>Informational; not taxable to employee.</td></tr>
+        <tr><td>SSF Employee 11%</td><td>Optional (zero if not SSF)</td><td>Informational.</td></tr>
+        <tr><td>Deductions claimed by employer</td><td>Optional</td><td>Life insurance, health insurance, remote area etc. as considered in employee's TDS estimate.</td></tr>
+        <tr><td>Annual Taxable Income</td><td>Auto</td><td>Derived by portal.</td></tr>
+        <tr><td>Tax Payable per employer estimate</td><td><strong>Mandatory</strong></td><td>What the employer calculated for the year.</td></tr>
+        <tr><td>Total TDS Deducted (annual)</td><td><strong>Mandatory</strong></td><td>Must reconcile to monthly deposits.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="autopopulate">Three ways to auto-populate Anusuchi 10</h2>
+    <div class="article-chart" id="autopop-chart">
+      <h4>Three routes to fill Anusuchi 10</h4>
+      <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three routes to populate Anusuchi 10: Excel template offline, import from monthly returns, manual entry, each with pros and cons.">
+        <g font-family="Inter, sans-serif" font-size="11" fill="#141414">
+          <rect x="10" y="20" width="200" height="180" rx="6" fill="#fdfbf7" stroke="#D94F2B" stroke-width="1.5"/>
+          <text x="110" y="42" text-anchor="middle" font-weight="600">1. Excel Template</text>
+          <text x="20" y="70">Download IRD template</text>
+          <text x="20" y="88">→ fill offline from payroll</text>
+          <text x="20" y="106">→ upload back to portal</text>
+          <text x="20" y="140" font-size="10" fill="#4a7c59">✓ Best when payroll is</text>
+          <text x="20" y="155" font-size="10" fill="#4a7c59">   already in Excel</text>
+          <text x="20" y="175" font-size="10" fill="#b33d20">✗ Column ordering matters</text>
+
+          <rect x="220" y="20" width="200" height="180" rx="6" fill="#e8f0e6" stroke="#4a7c59" stroke-width="2"/>
+          <text x="320" y="42" text-anchor="middle" font-weight="600" fill="#2d5238">2. Import Monthly Returns</text>
+          <text x="230" y="70">Portal reads all 12</text>
+          <text x="230" y="88">monthly filings, aggregates</text>
+          <text x="230" y="106">per employee automatically</text>
+          <text x="230" y="140" font-size="10" fill="#4a7c59">✓ Zero re-typing</text>
+          <text x="230" y="155" font-size="10" fill="#4a7c59">✓ Guaranteed reconciliation</text>
+          <text x="230" y="175" font-size="10" fill="#4a7c59">✓ Recommended default</text>
+
+          <rect x="430" y="20" width="200" height="180" rx="6" fill="#fdfbf7" stroke="#666" stroke-width="1.5"/>
+          <text x="530" y="42" text-anchor="middle" font-weight="600">3. Manual Entry</text>
+          <text x="440" y="70">Add employees row by row</text>
+          <text x="440" y="88">in the portal grid</text>
+          <text x="440" y="106">directly</text>
+          <text x="440" y="140" font-size="10" fill="#4a7c59">✓ Fine for very small teams</text>
+          <text x="440" y="155" font-size="10" fill="#b33d20">✗ Slow &amp; error-prone above</text>
+          <text x="440" y="170" font-size="10" fill="#b33d20">   ~10 employees</text>
+        </g>
+      </svg>
+      <p class="c-caption">Method 2 is our default recommendation for anyone who has been filing monthly returns anyway — one click, guaranteed reconciliation.</p>
+    </div>
+
+    <h2 id="excel-template">Method 1 — the IRD Excel template</h2>
+    <ol>
+      <li>On the Anusuchi 10 page, click <strong>Download Template</strong>. An <code>.xlsx</code> file downloads with two sheets: <em>Instructions</em> and <em>Employees</em>.</li>
+      <li>Open the file, keep the header row exactly as is. Do <strong>not</strong> insert or delete columns.</li>
+      <li>Fill one row per employee. Use ISO date format (<code>YYYY-MM-DD</code>) or the Nepali BS date the portal expects (varies by portal version; the instruction sheet tells you which).</li>
+      <li>Save and re-upload via <strong>Upload Template</strong> on the same page.</li>
+      <li>Portal parses the file, shows a preview of accepted rows and a list of rejected rows with the reason. Common rejects: invalid PAN, name mismatch, negative TDS.</li>
+      <li>Fix the rejected rows in Excel, re-upload, or accept the partial and complete the balance manually.</li>
+    </ol>
+    <p>If you already run payroll from a well-designed Excel workbook (see our <a href="manage-staff-excel-nepal-payroll.html">Excel HR/payroll guide</a>), you can map your Master + Payroll sheets to the IRD template columns with an <code>XLOOKUP</code> or <code>INDEX/MATCH</code> — Method 1 becomes a copy-paste job.</p>
+
+    <h2 id="import-monthly">Method 2 — import from monthly returns</h2>
+    <p>The best-kept-secret button on the portal:</p>
+    <ol>
+      <li>On the Anusuchi 10 header page (Page 1), click <strong>Import from Monthly Returns</strong>.</li>
+      <li>The portal reads all 12 monthly e-TDS returns you filed under the same PAN and fiscal year.</li>
+      <li>It aggregates per employee: sums gross salary and TDS across the months, counts months worked.</li>
+      <li>You see a pre-filled Employee Grid on Page 2 — nothing typed manually.</li>
+      <li>Review, edit if needed (rare — usually only if an employee joined/left mid-year and monthly returns need a manual correction), and proceed to Page 3.</li>
+      <li>Page 3 automatically reconciles because the source data is the same monthly returns.</li>
+    </ol>
+    <p>The Import method inherits whatever accuracy exists in your monthly filings. Garbage monthly returns → garbage Anusuchi 10. Correct monthly returns → clean Anusuchi 10 in one click.</p>
+
+    <h2 id="manual">Method 3 — manual entry</h2>
+    <p>Add row by row in the portal grid. Fine for a business with 2–3 employees on payroll. Beyond that, the risk of a typo forcing a Page 3 reconciliation failure grows fast. If you must go manual, follow one rule: <strong>enter one employee, save draft, verify the running total, then add the next.</strong> Do not batch-enter and save at the end — the portal's session-save behaviour is not generous with unsaved work.</p>
+
+    <h2 id="validation">Validation errors and how to fix them</h2>
+    <table>
+      <thead><tr><th>Message</th><th>Cause</th><th>Fix</th></tr></thead>
+      <tbody>
+        <tr><td>Employee PAN not found</td><td>Employee never registered for personal PAN, or PAN mistyped</td><td>Employee registers at ird.gov.np or nearest IRO. Correct PAN in your row.</td></tr>
+        <tr><td>Employee name mismatch with IRD master</td><td>Spelling / order / case difference</td><td>Update employee's PAN master (via Profile → Update on the employee's own portal) or override in Anusuchi 10 with a note.</td></tr>
+        <tr><td>Annual gross &lt; sum of monthly returns</td><td>Missing month in monthlies, or annual total under-declared</td><td>Fix in monthlies first (revised filing), then re-import.</td></tr>
+        <tr><td>Annual TDS ≠ sum of monthly deposits</td><td>Late deposit adjustment not reflected, or arithmetic error</td><td>Check TDS Deposit Statement in the portal for the year; align annual to actually-deposited figure.</td></tr>
+        <tr><td>Months worked = 0</td><td>Employee row copied but not filled</td><td>Delete the row or fill months.</td></tr>
+        <tr><td>Duplicate employee PAN</td><td>Same PAN listed twice (e.g., promoted mid-year with two designations)</td><td>Consolidate into one row with cumulative months, gross and TDS.</td></tr>
+        <tr><td>Digital signature invalid (if using DSC)</td><td>Expired or wrong DSC</td><td>Renew DSC or use the portal's login-based acknowledgement.</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="faq">Frequently asked questions</h2>
+
+    <h3>Can I use the same Excel template across fiscal years?</h3>
+    <p>No — the IRD updates the template each year (small formatting changes, sometimes new mandatory columns like SSF flag). Download a fresh template each fiscal year to avoid rejection.</p>
+
+    <h3>If I use "Import from Monthly Returns", do I still need Form 25-Ka?</h3>
+    <p>Yes. Form 25-Ka is the certificate you issue to <em>each employee</em> — the portal does not print it for you. Generate 25-Ka from your payroll or an Excel template after Anusuchi 10 is filed. It must be issued within 15 days of fiscal year end (Section 90).</p>
+
+    <h3>Can Anusuchi 10 be revised?</h3>
+    <p>Yes. Filed Anusuchi 10 can be revised through the portal — click <em>Revise Return</em> on the filed acknowledgement. Interest under Section 119 applies if the revision increases the deposit; refunds are adjusted against future deposits.</p>
+
+    <h3>What if an employee's PAN was inactive during part of the year?</h3>
+    <p>Their row still enters Anusuchi 10 with the actual months worked. Portal accepts it but flags "PAN inactive." The employee's own return will reconcile once they reactivate PAN. Do not skip inactive-PAN employees — TDS deducted must still be reported.</p>
+
+    <h3>Is Anusuchi 10 different from the monthly e-TDS returns?</h3>
+    <p>Yes. The 12 monthly returns cover only <em>salary TDS deposit</em> per month. Anusuchi 10 is the <em>annual reconciliation</em> — same data, aggregated per employee for the year, plus deductions considered by the employer and the annual tax estimate.</p>
+
+    <h3>Does the employee need to file anything after Anusuchi 10 is filed?</h3>
+    <p>If the employee is a Section 4(4) case (single employer, correct TDS, only-salary), they do not file a return — they just apply for the <a href="nepal-salary-tax-clearance-certificate-online.html">Salary Tax Clearance Certificate</a> after the employer files Anusuchi 10.</p>
+
+    <h2 id="help">Getting help</h2>
+    <p>Most Anusuchi 10 rejections trace back to an unfixed monthly return. Fix the source, re-import, and the annual return closes. Most Anusuchi 1 rejections trace back to an employer-side deposit gap or a name-spelling mismatch. Fix at the employer level, then re-attempt on the personal PAN.</p>
+
+    <aside class="article-cta">
+      <h3>Filing Anusuchi 1 or Anusuchi 10 this month?</h3>
+      <p>Talk to <strong>Upaj Manandhar, Chartered Accountant</strong> — D-01 individual return preparation and filing, employer Anusuchi 10 preparation with monthly-return reconciliation, Form 25-Ka issuance to your staff, and post-filing STCC / assessment support.</p>
+      <div class="cta-actions">
+        <a class="cta-btn primary" href="mailto:upaj.worklane@gmail.com?subject=Anusuchi%201%20/%2010%20filing">Email a query</a>
+        <a class="cta-btn ghost" href="tel:+9779841905745">Call +977 984 190 5745</a>
+      </div>
+      <div class="cta-meta">
+        Worklane Financial Advisory · Hadigaun, Kathmandu · <a href="../../index.html#contact">worklane.com.np</a>
+      </div>
+    </aside>
+  </div>
+
+  <section class="article-sources">
+    <h2>Sources and further reading</h2>
+    <ol>
+      <li>Government of Nepal. <em>Income Tax Act, 2058 (2002) — Schedules 1, 2 &amp; 4; Sections 87–92 (TDS), Section 96 (return filing).</em> <a href="https://ird.gov.np" rel="noopener noreferrer" target="_blank">ird.gov.np</a></li>
+      <li>Inland Revenue Department. <em>Taxpayer Portal — D-01 Individual Return &amp; Annual TDS Return (Anusuchi 10) user manuals.</em> <a href="https://ird.gov.np" rel="noopener noreferrer" target="_blank">ird.gov.np — publications</a></li>
+      <li>Inland Revenue Department. <em>e-TDS Excel Template (Anusuchi 10) — annual release.</em> <a href="https://ird.gov.np" rel="noopener noreferrer" target="_blank">ird.gov.np</a></li>
+      <li>Ministry of Finance. <em>Finance Act 2082 &amp; 2083.</em> <a href="https://www.mof.gov.np" rel="noopener noreferrer" target="_blank">mof.gov.np</a></li>
+      <li>ICAN. <em>Direct Tax Study Material — Personal Taxation, Salary and Withholding.</em> <a href="https://ican.org.np" rel="noopener noreferrer" target="_blank">ican.org.np</a></li>
+      <li>Worklane Journal. <em><a href="nepal-salary-tax-slab-fy-2082-83.html">Nepal Salary Tax Slabs FY 2082/83</a></em>, <em><a href="tds-rates-nepal-benefits.html">TDS Rates in Nepal FY 2082/83</a></em>, <em><a href="nepal-salary-tax-clearance-certificate-online.html">Salary Tax Clearance Certificate — Online</a></em>.</li>
+    </ol>
+    <p class="image-credit">Header image via Pixabay (Pexels) — free-use license. Waterfall, navigation and field-map diagrams hand-drawn in inline SVG by Worklane; they are simplified layouts for illustration, not exact copies of ird.gov.np.</p>
+  </section>
+
+  <div class="article-author">
+    <span class="a-name">Upaj Manandhar, Chartered Accountant</span>
+    <span class="a-role">Founder, Worklane Financial Advisory · Hadigaun, Kathmandu · <a href="mailto:upaj.worklane@gmail.com">upaj.worklane@gmail.com</a></span>
+  </div>
+</article>
+
+<div class="article-more">
+  <a href="../index.html">← More from the Journal</a>
+</div>
+
+<footer class="journal-footer">
+  <span>©2026 Worklane Financial Advisory</span>
+  <a href="../../index.html">worklane.com.np</a>
+  <span>Hadigaun, Kathmandu</span>
+</footer>
+
+</body>
+</html>
