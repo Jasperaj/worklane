@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IRD Toolkit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-brand">
+      <span class="rail-brand-mark">IRD</span>
+      <span class="rail-brand-text">Toolkit</span>
+    </div>
+    <nav class="rail-nav" id="nav">
+      <button class="rail-tab active" data-panel="p1">
+        <span class="rail-tab-num">1</span><span>TDS list &amp; PDFs</span>
+      </button>
+      <button class="rail-tab" data-panel="p2">
+        <span class="rail-tab-num">2</span><span>VAT filing check</span>
+      </button>
+      <button class="rail-tab" data-panel="p3">
+        <span class="rail-tab-num">3</span><span>Extension - apply</span>
+      </button>
+      <button class="rail-tab" data-panel="p4">
+        <span class="rail-tab-num">4</span><span>Extension - PDF</span>
+      </button>
+      <button class="rail-tab" data-panel="p5">
+        <span class="rail-tab-num">5</span><span>eTax voucher lookup</span>
+      </button>
+    </nav>
+    <div class="rail-foot">
+      Runs entirely against ird.gov.np from this server, using your own PAN and login each time. Nothing is stored between requests.
+    </div>
+  </aside>
+  <main class="workspace">
+
+    <section class="panel active" id="p1">
+      <header class="panel-head"><h1>TDS list &amp; bulk PDF download</h1><span class="badge badge-stable">Stable</span></header>
+      <p class="panel-desc">Fetches every withheld TDS transaction for your PAN in a date range, then can bundle every submission's official PDF into one ZIP.</p>
+      <form id="form1" class="panel-form">
+        <div class="field-row">
+          <label>PAN<input required name="pan" placeholder="600123456"></label>
+          <label>Output name<input name="output_name" value="output"></label>
+        </div>
+        <div class="field-row">
+          <label>Username<input required name="username"></label>
+          <label>Password<input required type="password" name="password"></label>
+        </div>
+        <div class="field-row">
+          <label>From date<input required name="from_date" value="2081.04.01" placeholder="YYYY.MM.DD"></label>
+          <label>To date<input required name="to_date" value="2082.03.31" placeholder="YYYY.MM.DD"></label>
+        </div>
+        <div class="field-actions">
+          <button type="submit" class="btn-primary">Fetch TDS list</button>
+          <button type="button" class="btn-secondary" id="btn1-pdfs" disabled>Download all PDFs (ZIP)</button>
+        </div>
+      </form>
+      <div class="status" id="status1"></div>
+      <div class="result" id="result1"></div>
+    </section>
+
+    <section class="panel" id="p2">
+      <header class="panel-head"><h1>VAT filing status check</h1><span class="badge badge-fragile">Depends on portal internals</span></header>
+      <p class="panel-desc">Logs in with your own PAN, then checks whether VAT returns were filed for a list of PANs, a tax year, and a period.</p>
+      <form id="form2" class="panel-form">
+        <div class="field-row">
+          <label>Your PAN (for login)<input required name="pan"></label>
+          <label>Username<input required name="username"></label>
+        </div>
+        <div class="field-row">
+          <label>Password<input required type="password" name="password"></label>
+          <label>Tax year<input required name="tax_year" placeholder="2080"></label>
+          <label>Period<input required name="period" placeholder="2"></label>
+        </div>
+        <div class="field-row">
+          <label class="field-wide">PANs to check (one per line)<textarea name="pan_list" rows="4"></textarea></label>
+        </div>
+        <div class="field-actions"><button type="submit" class="btn-primary">Check filing status</button></div>
+      </form>
+      <div class="status" id="status2"></div>
+      <div class="result" id="result2"></div>
+    </section>
+
+    <section class="panel" id="p3">
+      <header class="panel-head"><h1>Date extension - apply</h1><span class="badge badge-warn">Live submission</span></header>
+      <p class="panel-desc">Submits a real filing-date extension application to IRD for your own PAN. Double-check every field - there is no undo.</p>
+      <form id="form3" class="panel-form">
+        <div class="field-row">
+          <label>PAN<input required name="pan"></label>
+          <label>Fiscal year<input required name="fiscal_year" value="2081.082"></label>
+        </div>
+        <div class="field-row">
+          <label>Application date<input required name="application_date" placeholder="YYYY.MM.DD"></label>
+          <label>Extended upto<input required name="extended_upto" placeholder="YYYY.MM.DD"></label>
+        </div>
+        <div class="field-row">
+          <label class="field-wide">Reason<textarea name="reason" rows="2">audit completion pending due to TDS receivable and balance confirmation</textarea></label>
+        </div>
+        <div class="field-actions"><button type="submit" class="btn-danger">Submit application</button></div>
+      </form>
+      <div class="status" id="status3"></div>
+      <div class="result" id="result3"></div>
+    </section>
+
+    <section class="panel" id="p4">
+      <header class="panel-head"><h1>Date extension - download PDF</h1><span class="badge badge-fragile">Depends on portal internals</span></header>
+      <p class="panel-desc">Retrieves your approved extension document as a PDF.</p>
+      <form id="form4" class="panel-form">
+        <div class="field-row">
+          <label>PAN<input required name="pan"></label>
+          <label>Username<input required name="username"></label>
+        </div>
+        <div class="field-row">
+          <label>Password<input required type="password" name="password"></label>
+          <label>Fiscal year<input required name="fiscal_year" value="2081.082"></label>
+          <label>Office code<input name="office_code" value="2501"></label>
+        </div>
+        <div class="field-actions"><button type="submit" class="btn-primary">Download PDF</button></div>
+      </form>
+      <div class="status" id="status4"></div>
+      <div class="result" id="result4"></div>
+    </section>
+
+    <section class="panel" id="p5">
+      <header class="panel-head"><h1>eTax payment voucher lookup</h1><span class="badge badge-warn">Manual token needed</span></header>
+      <p class="panel-desc">
+        Talks to a separate system (etax.ird.gov.np) with its own short-lived login token.
+        Log into etax.ird.gov.np in your browser, open DevTools -> Network, open any API
+        request, and copy the value after <code>Bearer</code> in its Authorization header.
+        It usually expires within the hour.
+      </p>
+      <form id="form5" class="panel-form">
+        <div class="field-row">
+          <label>PAN<input required name="pan"></label>
+          <label>Fiscal year<input required name="fiscal_year" placeholder="2080.081"></label>
+        </div>
+        <div class="field-row">
+          <label class="field-wide">Bearer token<input required type="password" name="bearer_token"></label>
+        </div>
+        <div class="field-actions"><button type="submit" class="btn-primary">Look up vouchers</button></div>
+      </form>
+      <div class="status" id="status5"></div>
+      <div class="result" id="result5"></div>
+    </section>
+
+  </main>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
