@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connecting Tally Prime to Claude and ChatGPT via MCP (2026) — Worklane Journal</title>
+<meta name="description" content="How Tally Prime's XML/ODBC gateway meets the Model Context Protocol — connecting Claude Desktop locally, why ChatGPT needs a public endpoint instead, real automations, and the privacy questions to answer before you connect live ledgers to an AI.">
+<link rel="canonical" href="https://worklane.com.np/blog/posts/tally-prime-mcp-chatgpt-claude.html">
+<link rel="icon" type="image/png" href="../../uploads/transparent logo without name.png">
+<link rel="apple-touch-icon" href="../../uploads/transparent logo without name.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../blog.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Connecting Tally Prime to Claude and ChatGPT via MCP (2026)">
+<meta property="og:description" content="How Tally Prime's XML/ODBC gateway meets the Model Context Protocol — connecting Claude Desktop locally, why ChatGPT needs a public endpoint instead, and the privacy questions to answer first.">
+<meta property="article:published_time" content="2026-09-08">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Connecting Tally Prime to Claude and ChatGPT via MCP (2026)",
+  "description": "How Tally Prime's XML/ODBC gateway meets the Model Context Protocol — connecting Claude Desktop locally, why ChatGPT needs a public endpoint instead, real automations, and the privacy questions to answer before you connect live ledgers to an AI.",
+  "datePublished": "2026-09-08",
+  "author": { "@type": "Organization", "name": "Upaj Manandhar, Chartered Accountant" },
+  "publisher": { "@type": "Organization", "name": "Worklane Financial Advisory" }
+}
+</script>
+<style>
+  .diagram-wrap { margin: 28px 0; padding: 20px; background: #F6F3EC; border: 1px solid var(--rule, #C8C4BC); border-radius: 8px; overflow-x: auto; }
+  .diagram-wrap svg { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+  .diagram-caption { text-align: center; font-size: 12px; color: #888; margin-top: 10px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .cmp-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+  .cmp-table th, .cmp-table td { border: 1px solid var(--rule, #C8C4BC); padding: 10px 14px; text-align: left; vertical-align: top; }
+  .cmp-table th { background: #F0EDE6; font-family: var(--font-display); font-weight: 600; }
+  .warn-box { background: #FBF0EC; border-left: 4px solid #D94F2B; padding: 16px 20px; margin: 24px 0; border-radius: 4px; }
+  .warn-box strong { color: #B33D20; }
+</style>
+</head>
+<body>
+
+<header class="journal-header">
+  <a class="brand" href="../../index.html">
+    <img src="../../uploads/transparent logo without name.png" alt="Worklane logo">
+    <span>Worklane</span>
+  </a>
+  <nav>
+    <a href="../../index.html#about">About</a>
+    <a href="../../index.html#services">Services</a>
+    <a href="../index.html" class="active">Journal</a>
+    <a href="../../index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<article class="article-wrap">
+  <p class="article-breadcrumb"><a href="../index.html">← Journal</a></p>
+
+  <p class="article-kicker">AI &amp; Technology</p>
+  <h1 class="article-title">Connecting Tally Prime to Claude and ChatGPT via MCP: A 2026 Practical Guide</h1>
+
+  <div class="article-meta">
+    <span>Upaj Manandhar, Chartered Accountant</span>
+    <time datetime="2026-09-08">Sep 8, 2026</time>
+    <span>12 min read</span>
+  </div>
+
+  <figure class="article-hero">
+    <img src="../../uploads/blog/tally-prime-mcp-chatgpt-claude.jpg" alt="Laptop and USB drive on a desk, representing a local Tally Prime connection">
+  </figure>
+
+  <div class="article-body">
+    <p>Since our earlier piece on Claude and Tally Prime, the ecosystem around the Model Context Protocol (MCP) has grown fast — there are now half a dozen community MCP servers for Tally, and both Claude and ChatGPT can theoretically sit on the other end of the connection. But "theoretically" is doing a lot of work in that sentence: the two assistants get there through genuinely different architectures, with different practical and security trade-offs for a firm handling live client ledgers.</p>
+
+    <h2>How Tally Prime talks to the outside world</h2>
+    <p>Tally Prime doesn't expose a modern REST API. Everything routes through one of two long-standing mechanisms, both switched on from <strong>F1 → Settings → Advanced Configuration</strong>:</p>
+    <ul>
+      <li><strong>The XML/HTTP gateway</strong> (port 9000 by default) — send it an "Export" XML request and it hands back ledgers, vouchers, or stock items; send an "Import" XML request and it can create vouchers or masters. This is read <em>and</em> write.</li>
+      <li><strong>The ODBC server</strong> (same port, separate toggle) — read-only SELECT queries against Tally's pseudo-tables (Vouchers, Ledgers, StockItems, etc.). No inserts or updates are possible over ODBC, which makes it the safer of the two when you only need an AI to look, not touch.</li>
+    </ul>
+    <p>Tally Definition Language (TDL) sits underneath both — it's how you'd shape a custom report or add a menu button that fires an HTTP call, if the off-the-shelf export doesn't already give you what you need.</p>
+
+    <h2>Connecting Claude: a closed loop on one machine</h2>
+    <p>Claude Desktop and Claude Code connect to MCP servers defined in a local config file — <code>claude_desktop_config.json</code>, under <code>%APPDATA%\Claude\</code> on Windows. A local server is launched as a subprocess and talks to Claude over <strong>stdio</strong> — standard input/output, not a network port. Nothing about that connection is reachable from outside your machine.</p>
+
+    <div class="diagram-wrap">
+      <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: Tally Prime connects to a local MCP server over the XML gateway on port 9000, which talks to Claude Desktop over stdio, entirely on one machine.">
+        <defs>
+          <marker id="arrow1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#2E2E2E"/>
+          </marker>
+        </defs>
+        <rect x="1" y="1" width="718" height="198" rx="10" fill="none" stroke="#C8C4BC" stroke-dasharray="4 4"/>
+        <text x="360" y="24" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" letter-spacing="2" fill="#888">YOUR MACHINE — NOTHING LEAVES IT</text>
+
+        <rect x="30" y="70" width="160" height="70" rx="6" fill="#F0EDE6" stroke="#1A1A1A"/>
+        <text x="110" y="100" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="600" font-size="17" fill="#1A1A1A">Tally Prime</text>
+        <text x="110" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#555">XML gateway :9000</text>
+
+        <rect x="280" y="70" width="160" height="70" rx="6" fill="#F0EDE6" stroke="#1A1A1A"/>
+        <text x="360" y="100" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="600" font-size="17" fill="#1A1A1A">MCP Server</text>
+        <text x="360" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#555">local process</text>
+
+        <rect x="530" y="70" width="160" height="70" rx="6" fill="#D94F2B" stroke="#B33D20"/>
+        <text x="610" y="100" text-anchor="middle" font-family="Cormorant Garamond, serif" font-weight="600" font-size="17" fill="#F0EDE6">Claude Desktop</text>
+        <text x="610" y="120" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#F0EDE6">via stdio</text>
+
+        <line x1="190" y1="105" x2="278" y2="105" stroke="#2E2E2E" stroke-width="2" marker-end="url(#arrow1)"/>
+        <line x1="440" y1="105" x2="528" y2="105" stroke="#2E2E2E" stroke-width="2" marker-end="url(#arrow1)"/>
+        <text x="234" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#888">HTTP/XML</text>
+        <text x="484" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#888">stdio</text>
+
+        <text x="360" y="180" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#888">Restart Claude Desktop after editing the config file for changes to take effect.</text>
+      </svg>
+      <div class="diagram-caption">Claude → local MCP server → Tally, all on one machine</div>
+    </div>
+
+    <p>A handful of community MCP servers now target Tally Prime specifically — some read-only via ODBC, some with dozens of tools that can create or even <em>delete</em> vouchers and masters. Before pointing any of them at a live company, read the source: these are mostly small, unaudited open-source projects, not vendor-shipped software. For production use, a read-only ODBC-backed server is the safer starting point; reserve write-capable tools (voucher creation, master edits) for a sandboxed test company first.</p>
+
+    <h2>Connecting ChatGPT: the catch</h2>
+    <p>This is where the two assistants genuinely diverge. ChatGPT's MCP client — available through its Apps/Connectors framework — only speaks to <strong>remote</strong> servers over a public HTTPS endpoint (SSE or Streamable HTTP). It has no equivalent of Claude's local stdio launch. ChatGPT cannot reach <code>localhost:9000</code> on your office PC directly, full stop.</p>
+
+    <table class="cmp-table">
+      <thead>
+        <tr><th>Assistant</th><th>Connection type</th><th>What that means for Tally</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Claude Desktop / Code</strong></td>
+          <td>Local, stdio subprocess</td>
+          <td>MCP server runs on the same PC as Tally. Nothing is exposed to the internet unless you deliberately choose a remote setup.</td>
+        </tr>
+        <tr>
+          <td><strong>ChatGPT (Apps/Connectors)</strong></td>
+          <td>Remote only, HTTPS (SSE/Streamable HTTP)</td>
+          <td>Requires a publicly reachable endpoint in front of Tally — a tunnel (e.g. Cloudflare Tunnel, ngrok) or a small hosted relay. Bigger attack surface by design.</td>
+        </tr>
+        <tr>
+          <td><strong>ChatGPT — Custom GPT Actions (alternative)</strong></td>
+          <td>Remote, OpenAPI-schema REST call</td>
+          <td>Doesn't need MCP at all — a lightweight REST wrapper around Tally's XML gateway, described with an OpenAPI schema, works today. Same "must be internet-reachable" constraint applies.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>If your practice is committed to Claude, the local-only path is genuinely simpler and safer to reason about. If you specifically need ChatGPT, budget time for setting up and securing a tunnel or relay — and treat that exposed endpoint with the same care you'd give any internet-facing system holding client financial data: authentication, IP allowlisting, and logging, at minimum.</p>
+
+    <h2>What you can actually automate</h2>
+    <ul>
+      <li><strong>Daily reconciliation</strong> — pull the day's sales register and ask the assistant to flag entries that don't match the bank statement.</li>
+      <li><strong>Draft return summaries</strong> — query ledger groups tagged for VAT/tax and get a first-pass summary before you review and file.</li>
+      <li><strong>Anomaly flagging</strong> — scan a date range of vouchers for outlier amounts, duplicate entries, or narrations that don't match the ledger head.</li>
+      <li><strong>On-demand MIS</strong> — trial balance, P&amp;L, or balance-sheet summaries without opening Tally and running the report manually.</li>
+    </ul>
+
+    <h2>The privacy question you have to answer first</h2>
+    <div class="warn-box">
+      <p><strong>Client ledgers are confidential by professional obligation, not just by preference.</strong> The moment any MCP relay, tunnel, or model API sits between Tally and the assistant, transaction data is leaving the local machine. Before connecting a live company, know exactly which hops your data passes through and who can see it at each one.</p>
+    </div>
+    <p>Beyond the basic exposure question, two risk classes are worth naming specifically: <strong>prompt injection</strong> — a malicious or malformed voucher narration is just text the model reads, and a sufficiently crafted one could try to redirect the assistant's next action — and <strong>unintended retention</strong> by whichever model provider or relay is in the loop. Neither risk is unique to Tally; both are well-documented general concerns with connecting LLMs to live business systems.</p>
+
+    <h2>Our recommendation for a Nepali practice</h2>
+    <ol>
+      <li>Start read-only. An ODBC-backed MCP server that can query but not write is enough for 90% of the useful automations above.</li>
+      <li>Prefer Claude's local stdio setup over exposing Tally to the internet for ChatGPT, unless there's a specific reason you need ChatGPT.</li>
+      <li>If you must use ChatGPT, put real authentication and an IP allowlist in front of the tunnel — don't rely on the endpoint being "hard to guess."</li>
+      <li>Keep any write-capable tool (voucher creation, master edits, deletions) out of production until you've tested it thoroughly in a sandbox company.</li>
+      <li>Review whichever MCP server's source code you're about to run — most of what's available today is community-maintained, not vendor-audited.</li>
+    </ol>
+
+    <p>Want help wiring this up safely for your own books, or auditing an MCP setup someone else built for you? <a href="../../index.html#contact">Get in touch</a>.</p>
+  </div>
+
+  <div class="article-author">
+    <span class="a-name">Upaj Manandhar, Chartered Accountant</span>
+    <span class="a-role">Worklane Financial Advisory · Hadigaun, Kathmandu</span>
+  </div>
+</article>
+
+<div class="article-more">
+  <a href="../index.html">← More from the Journal</a>
+</div>
+
+<footer class="journal-footer">
+  <span>©2026 Worklane Financial Advisory</span>
+  <a href="../../index.html">worklane.com.np</a>
+  <span>Hadigaun, Kathmandu</span>
+</footer>
+
+</body>
+</html>

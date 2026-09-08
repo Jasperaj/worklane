@@ -2,6 +2,78 @@
   "_readme": "Add one object per blog post, NEWEST FIRST. `slug` must match the post's filename in blog/posts/ (without .html). See blog/README.md for the full 2-step publishing workflow.",
   "posts": [
     {
+      "slug": "nepal-salary-tax-slabs-fy-2083-84",
+      "title": "Nepal Salary Tax Slabs FY 2083/84: Full Table, Deductions and Worked Examples",
+      "excerpt": "The confirmed, unified income tax slabs for FY 2083/84 — 1% up to 10 lakh, top rate cut to 29%. Every deduction before the slabs apply, the female rebate status, and worked NPR examples.",
+      "category": "Tax & Compliance",
+      "date": "2026-09-08",
+      "dateDisplay": "Sep 8, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "11 min read",
+      "image": "../uploads/blog/nepal-salary-tax-slabs-fy-2083-84.jpg",
+      "tags": ["income tax", "Nepal", "salary", "TDS", "FY 2083/84", "slabs", "SSF"]
+    },
+    {
+      "slug": "nepal-budget-2083-84-ird-portal-changes",
+      "title": "Nepal's FY 2083/84 Budget and the New IRD Portal: What Actually Changed",
+      "excerpt": "Finance Act 2083 unified the income tax slabs and cut the top rate to 29%. IRD also put a rebuilt taxpayer portal into trial the same season. A CA's honest read of what's confirmed, what's still trial-stage, and what 'D-01' actually means.",
+      "category": "Tax & Compliance",
+      "date": "2026-09-08",
+      "dateDisplay": "Sep 8, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "11 min read",
+      "image": "../uploads/blog/nepal-budget-2083-84-ird-portal-changes.jpg",
+      "tags": ["Budget 2083/84", "Finance Act 2083", "Nepal", "IRD portal", "income tax", "VAT"]
+    },
+    {
+      "slug": "nepal-vat-return-rectification-process",
+      "title": "How to Rectify a Filed VAT Return in Nepal: Step-by-Step",
+      "excerpt": "What to do when a submitted VAT return has an error — the legal basis for correction, why there's no simple online 'edit' button, the practical process through your Inland Revenue Office, and what changes with IRD's new trial portal.",
+      "category": "Tax & Compliance",
+      "date": "2026-09-08",
+      "dateDisplay": "Sep 8, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "10 min read",
+      "image": "../uploads/blog/nepal-vat-return-rectification-process.jpg",
+      "tags": ["VAT", "Nepal", "rectification", "amendment", "IRD", "compliance"]
+    },
+    {
+      "slug": "nepal-ird-new-website-faster-filing",
+      "title": "IRD's New Taxpayer Portal: What's New, and Is Filing Actually Faster?",
+      "excerpt": "IRD Nepal put a rebuilt taxpayer portal into public trial in August 2026. What's confirmed to have changed, what's still just a stated goal, and what to check before you rely on it this filing season.",
+      "category": "Tax & Compliance",
+      "date": "2026-09-08",
+      "dateDisplay": "Sep 8, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "9 min read",
+      "image": "../uploads/blog/nepal-ird-new-website-faster-filing.jpg",
+      "tags": ["IRD portal", "Nepal", "e-filing", "taxpayer portal", "2026"]
+    },
+    {
+      "slug": "nepal-advance-tax-installments-section-94",
+      "title": "Advance Tax Installments in Nepal: The Section 94 Quarterly Payment Guide",
+      "excerpt": "Who must pay advance/installment tax under Section 94, the 40/70/100 percent schedule across Poush, Chaitra and Ashad, the Section 118 underpayment penalty, and how to actually pay on the IRD portal.",
+      "category": "Tax & Compliance",
+      "date": "2026-09-08",
+      "dateDisplay": "Sep 8, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "9 min read",
+      "image": "../uploads/blog/nepal-advance-tax-installments-section-94.jpg",
+      "tags": ["advance tax", "Section 94", "Nepal", "installments", "income tax", "penalty"]
+    },
+    {
+      "slug": "tally-prime-mcp-chatgpt-claude",
+      "title": "Connecting Tally Prime to Claude and ChatGPT via MCP: A 2026 Practical Guide",
+      "excerpt": "How Tally Prime's XML/ODBC gateway meets the Model Context Protocol — connecting Claude Desktop locally, why ChatGPT needs a public endpoint instead, real automations, and the privacy questions to answer before you connect live ledgers to an AI.",
+      "category": "AI & Technology",
+      "date": "2026-09-08",
+      "dateDisplay": "Sep 8, 2026",
+      "author": "Upaj Manandhar, Chartered Accountant",
+      "readTime": "12 min read",
+      "image": "../uploads/blog/tally-prime-mcp-chatgpt-claude.jpg",
+      "tags": ["Tally Prime", "Claude", "ChatGPT", "MCP", "AI automation", "Nepal accounting"]
+    },
+    {
       "slug": "anusuchi-13-balance-confirmation-nepal-tax-delay",
       "title": "Anusuchi 13 Balance Confirmation: Why It Is Delaying Every Poush Tax Deadline in Nepal — and What Should Change",
       "excerpt": "The NPR 1 lakh Anusuchi 13 threshold is Nepal's single biggest cause of filing delay — creating a market-wide dependency chain that pushes small taxpayers into the Poush window while large counterparties file at their convenience. A CA's case for three concrete reforms.",
