@@ -2,6 +2,7 @@
 FastAPI app - exposes 5 IRD toolkit features as REST endpoints under /api/*,
 and serves the static frontend (../static) at /.
 """
+import sys
 from pathlib import Path
 from typing import List
 
@@ -11,6 +12,7 @@ from fastapi.responses import Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+sys.path.append(str(Path(__file__).resolve().parent))
 import ird_service as svc
 
 app = FastAPI(title="IRD Nepal Toolkit API")
