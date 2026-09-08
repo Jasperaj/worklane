@@ -70,6 +70,16 @@ class EtaxVoucherRequest(BaseModel):
     bearer_token: str
 
 
+class EtdsTransVoucherRequest(BaseModel):
+    submissions: List[str]
+    username: str
+    password: str
+
+
+class EtdsTransVoucherDownloadRequest(EtdsTransVoucherRequest):
+    output_name: str = "output"
+
+
 def _wrap(fn, *args, **kwargs):
     try:
         return fn(*args, **kwargs)
@@ -125,6 +135,25 @@ def api_date_extension_pdf(body: DateExtensionPdfRequest):
 def api_etax_voucher(body: EtaxVoucherRequest):
     rows = _wrap(svc.etax_voucher_lookup, body.pan, body.fiscal_year, body.bearer_token)
     return {"rows": rows}
+
+
+@app.post("/api/etds-trans-voucher")
+def api_etds_trans_voucher(body: EtdsTransVoucherRequest):
+    return _wrap(svc.etds_trans_voucher_bulk, body.submissions, body.username, body.password)
+
+
+@app.post("/api/etds-trans-voucher/download")
+def api_etds_trans_voucher_download(body: EtdsTransVoucherDownloadRequest):
+    zip_bytes, count = _wrap(
+        svc.etds_trans_voucher_excel_zip, body.submissions, body.username, body.password, body.output_name
+    )
+    if count == 0:
+        raise HTTPException(status_code=404, detail="No PDFs could be downloaded for these submission numbers.")
+    return Response(
+        content=zip_bytes,
+        media_type="application/zip",
+        headers={"Content-Disposition": f'attachment; filename="{body.output_name}_ETDS_Trans_Voucher.zip"'},
+    )
 
 
 @app.get("/api/health")

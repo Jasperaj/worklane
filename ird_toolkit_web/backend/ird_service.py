@@ -224,6 +224,101 @@ def download_date_extension_pdf(pan: str, username: str, password: str, fiscal_y
     return r.content
 
 
+TDSB_BASE = "https://taxpayerportalb.ird.gov.np:8081"
+
+
+def etds_trans_login(session: requests.Session, sub_no: str, username: str, password: str) -> dict:
+    r = session.post(
+        f"{TDSB_BASE}/Handlers/TDS/TDSUserLoginHandler.ashx",
+        headers=STD_HEADERS,
+        data={"tranNo": str(sub_no), "username": username, "password": password, "formToken": "a"},
+    )
+    parsed = parse_loose_json(r.text)
+    root = parsed.get("root") if isinstance(parsed, dict) else None
+    return root if isinstance(root, dict) else {}
+
+
+def etds_download_english_pdf(session: requests.Session, sub_no: str) -> bytes:
+    r = session.post(
+        f"{TDSB_BASE}/Reporting/TDS/ReportHandlers/TDSSubmissionEngReportHandler.ashx",
+        headers=STD_HEADERS,
+        data={"TranNo": str(sub_no), "Status": "V", "formToken": "a"},
+    )
+    return r.content
+
+
+def etds_transaction_detail(session: requests.Session, sub_no: str) -> list[dict]:
+    r = session.post(
+        f"{TDSB_BASE}/Handlers/TDS/InsertTransactionHandler.ashx",
+        params={"method": "GetTrans"},
+        headers=STD_HEADERS,
+        data={
+            "objIns": json.dumps({"TransNo": int(sub_no), "RecStatus": "V", "FromDate": "1", "ToDate": "236250"}),
+            "formToken": "a",
+        },
+    )
+    parsed = parse_loose_json(r.text)
+    root = parsed.get("root") if isinstance(parsed, dict) else None
+    if not root:
+        return []
+    return df_to_records(pd.DataFrame(root))
+
+
+def etds_voucher_detail(session: requests.Session, sub_no: str) -> list[dict]:
+    r = session.post(
+        f"{TDSB_BASE}/Handlers/TDS/VoucherInformationHandler.ashx",
+        params={"method": "GetVouchInfo"},
+        headers=STD_HEADERS,
+        data={"TranNo": str(sub_no), "status": "V", "formToken": "a"},
+    )
+    parsed = parse_loose_json(r.text)
+    root = parsed.get("root") if isinstance(parsed, dict) else None
+    if not root:
+        return []
+    return df_to_records(pd.DataFrame(root))
+
+
+def etds_trans_voucher_bulk(submissions: list[str], username: str, password: str) -> dict:
+    login_rows, txn_rows, voucher_rows = [], [], []
+    for sub_no in submissions:
+        session = requests.Session()
+        try:
+            login_info = etds_trans_login(session, sub_no, username, password)
+            login_info = {"TranNo": sub_no, **login_info} if login_info else {"TranNo": sub_no, "error": "login returned no data"}
+            login_rows.append(login_info)
+            txn_rows.extend(etds_transaction_detail(session, sub_no))
+            voucher_rows.extend(etds_voucher_detail(session, sub_no))
+        except Exception as e:
+            login_rows.append({"TranNo": sub_no, "error": str(e)})
+    return {"login": login_rows, "transactions": txn_rows, "vouchers": voucher_rows}
+
+
+def etds_trans_voucher_excel_zip(submissions: list[str], username: str, password: str, output_name: str) -> tuple[bytes, int]:
+    data = etds_trans_voucher_bulk(submissions, username, password)
+
+    xlsx_buf = BytesIO()
+    with pd.ExcelWriter(xlsx_buf, engine="openpyxl") as writer:
+        pd.DataFrame(data["login"]).to_excel(writer, sheet_name="ETDS Details", index=False)
+        pd.DataFrame(data["vouchers"]).to_excel(writer, sheet_name="Voucher Details", index=False)
+        pd.DataFrame(data["transactions"]).to_excel(writer, sheet_name="TDS Voucher", index=False)
+
+    zip_buf = BytesIO()
+    count = 0
+    with zipfile.ZipFile(zip_buf, "w") as zf:
+        zf.writestr(f"{output_name}_ETDS_Trans_Voucher_Details.xlsx", xlsx_buf.getvalue())
+        for sub_no in submissions:
+            try:
+                session = requests.Session()
+                etds_trans_login(session, sub_no, username, password)
+                pdf_bytes = etds_download_english_pdf(session, sub_no)
+                if pdf_bytes:
+                    zf.writestr(f"{sub_no}_ETDS_English.pdf", pdf_bytes)
+                    count += 1
+            except Exception:
+                continue
+    return zip_buf.getvalue(), count
+
+
 def etax_voucher_lookup(pan: str, fiscal_year: str, bearer_token: str) -> list[dict]:
     headers = {
         "Accept": "application/json, text/plain, */*",

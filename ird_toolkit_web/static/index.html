@@ -31,6 +31,9 @@
       <button class="rail-tab" data-panel="p5">
         <span class="rail-tab-num">5</span><span>eTax voucher lookup</span>
       </button>
+      <button class="rail-tab" data-panel="p6">
+        <span class="rail-tab-num">6</span><span>ETDS trans &amp; voucher detail</span>
+      </button>
     </nav>
     <div class="rail-foot">
       Runs entirely against ird.gov.np from this server, using your own PAN and login each time. Nothing is stored between requests.
@@ -145,6 +148,33 @@
       </form>
       <div class="status" id="status5"></div>
       <div class="result" id="result5"></div>
+    </section>
+
+    <section class="panel" id="p6">
+      <header class="panel-head"><h1>ETDS transaction &amp; voucher detail</h1><span class="badge badge-fragile">Depends on portal internals</span></header>
+      <p class="panel-desc">
+        For a list of ETDS submission numbers, logs in per submission on the secondary IRD host and pulls
+        transaction detail and voucher detail rows. Can also bundle everything - a 3-sheet Excel workbook plus
+        each submission's English-language PDF - into one ZIP.
+      </p>
+      <form id="form6" class="panel-form">
+        <div class="field-row">
+          <label>Username<input required name="username"></label>
+          <label>Password<input required type="password" name="password"></label>
+        </div>
+        <div class="field-row">
+          <label>Output name<input name="output_name" value="output"></label>
+        </div>
+        <div class="field-row">
+          <label class="field-wide">Submission numbers (one per line)<textarea required name="submissions" rows="4" placeholder="780031346111"></textarea></label>
+        </div>
+        <div class="field-actions">
+          <button type="submit" class="btn-primary">Fetch details</button>
+          <button type="button" class="btn-secondary" id="btn6-zip">Download Excel + PDFs (ZIP)</button>
+        </div>
+      </form>
+      <div class="status" id="status6"></div>
+      <div class="result" id="result6"></div>
     </section>
 
   </main>

@@ -179,3 +179,40 @@ form5.addEventListener("submit", async (e) => {
     setStatus("status5", err.message, "error");
   }
 });
+
+const form6 = document.getElementById("form6");
+const btn6Zip = document.getElementById("btn6-zip");
+form6.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = formToObject(form6);
+  const submissions = linesToList(data.submissions);
+  if (submissions.length === 0) { setStatus("status6", "Enter at least one submission number.", "error"); return; }
+  setStatus("status6", "Logging in per submission and fetching details...");
+  document.getElementById("result6").innerHTML = "";
+  try {
+    const { login, transactions, vouchers } = await postJSON("/api/etds-trans-voucher", {
+      submissions, username: data.username, password: data.password,
+    });
+    document.getElementById("result6").innerHTML =
+      "<h3>ETDS Details</h3>" + renderTable(login) +
+      "<h3>Transaction Detail</h3>" + renderTable(transactions) +
+      "<h3>Voucher Detail</h3>" + renderTable(vouchers);
+    setStatus("status6", `Done - ${login.length} submission(s) processed.`, "success");
+  } catch (err) {
+    setStatus("status6", err.message, "error");
+  }
+});
+btn6Zip.addEventListener("click", async () => {
+  const data = formToObject(form6);
+  const submissions = linesToList(data.submissions);
+  if (submissions.length === 0) { setStatus("status6", "Enter at least one submission number.", "error"); return; }
+  setStatus("status6", "Building ZIP (Excel workbook + PDFs)...");
+  try {
+    await postForFile("/api/etds-trans-voucher/download", {
+      submissions, username: data.username, password: data.password, output_name: data.output_name || "output",
+    }, "etds_trans_voucher.zip");
+    setStatus("status6", "ZIP downloaded.", "success");
+  } catch (err) {
+    setStatus("status6", err.message, "error");
+  }
+});
