@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /archive/
 
 Sitemap: https://worklane.com.np/sitemap.xml
