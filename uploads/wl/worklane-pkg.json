@@ -1,9 +1,9 @@
 {
-  "versionCode": 5,
-  "versionName": "1.4.0",
-  "apk": "worklane-pkg-5.apk",
-  "sha256": "a17512d2d24bf8ea959bab2f3effe1ea2e42a1400612a5cb1684cb332f6b16d7",
-  "size": 3376187,
-  "notes": "v1.4.0: add audiobooks from a folder on the phone",
-  "publishedAt": "2026-10-03T18:16:42Z"
+  "versionCode": 6,
+  "versionName": "1.5.0",
+  "apk": "worklane-pkg-6.apk",
+  "sha256": "caf01d44867a98928db96575239c02ad482bae3d1ae484cb7aa85cb7356f347b",
+  "size": 3376209,
+  "notes": "v1.5.0: Nepali audiobooks category + LibriVox public-domain search",
+  "publishedAt": "2026-10-03T18:44:15Z"
 }
