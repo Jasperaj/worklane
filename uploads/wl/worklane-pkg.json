@@ -1,9 +1,9 @@
 {
-  "versionCode": 4,
-  "versionName": "1.3.0",
-  "apk": "worklane-pkg-4.apk",
-  "sha256": "e69c09796c7d674b38b771d0d8c66f0067bcebaf34b395cbf56a19be3023961c",
-  "size": 3359561,
-  "notes": "In-app updates, signed builds, book switching + download fixes",
-  "publishedAt": "2026-10-03T17:48:51Z"
+  "versionCode": 5,
+  "versionName": "1.4.0",
+  "apk": "worklane-pkg-5.apk",
+  "sha256": "a17512d2d24bf8ea959bab2f3effe1ea2e42a1400612a5cb1684cb332f6b16d7",
+  "size": 3376187,
+  "notes": "v1.4.0: add audiobooks from a folder on the phone",
+  "publishedAt": "2026-10-03T18:16:42Z"
 }
