@@ -1,0 +1,9 @@
+{
+  "versionCode": 4,
+  "versionName": "1.3.0",
+  "apk": "worklane-pkg-4.apk",
+  "sha256": "e69c09796c7d674b38b771d0d8c66f0067bcebaf34b395cbf56a19be3023961c",
+  "size": 3359561,
+  "notes": "In-app updates, signed builds, book switching + download fixes",
+  "publishedAt": "2026-10-03T17:48:51Z"
+}
