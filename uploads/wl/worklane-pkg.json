@@ -1,9 +1,9 @@
 {
-  "versionCode": 7,
-  "versionName": "1.6.0",
-  "apk": "worklane-pkg-7.apk",
-  "sha256": "e41d169fdf63ff7cec7abeb25e7663033edea619269c76d9dec2cd9a7c4c1542",
-  "size": 3415827,
-  "notes": "v1.6.0: Nepali covers, home-screen widget, checkpoints, still-listening check",
-  "publishedAt": "2026-10-03T19:30:27Z"
+  "versionCode": 8,
+  "versionName": "1.7.0",
+  "apk": "worklane-pkg-8.apk",
+  "sha256": "d0fc2e615a16ff007d7a0f8de63fadf5749735d2aea93eaa0d495b5ed1cba7ff",
+  "size": 3448618,
+  "notes": "v1.7.0: EPUB read-along",
+  "publishedAt": "2026-10-03T19:40:49Z"
 }
