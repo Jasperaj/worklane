@@ -1,9 +1,9 @@
 {
-  "versionCode": 6,
-  "versionName": "1.5.0",
-  "apk": "worklane-pkg-6.apk",
-  "sha256": "caf01d44867a98928db96575239c02ad482bae3d1ae484cb7aa85cb7356f347b",
-  "size": 3376209,
-  "notes": "v1.5.0: Nepali audiobooks category + LibriVox public-domain search",
-  "publishedAt": "2026-10-03T18:44:15Z"
+  "versionCode": 7,
+  "versionName": "1.6.0",
+  "apk": "worklane-pkg-7.apk",
+  "sha256": "e41d169fdf63ff7cec7abeb25e7663033edea619269c76d9dec2cd9a7c4c1542",
+  "size": 3415827,
+  "notes": "v1.6.0: Nepali covers, home-screen widget, checkpoints, still-listening check",
+  "publishedAt": "2026-10-03T19:30:27Z"
 }
