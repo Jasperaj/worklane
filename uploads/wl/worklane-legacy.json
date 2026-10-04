@@ -1,9 +1,9 @@
 {
-  "versionCode": 15,
-  "versionName": "1.11.1-legacy",
+  "versionCode": 16,
+  "versionName": "1.11.2-legacy",
   "apk": "worklane-legacy.apk",
-  "sha256": "a225c6541bb190d31ac64a6a9d104642c26edf51c898d2f804e9d86ecf4368e2",
-  "size": 3682373,
-  "notes": "v1.11.1: fix EPUB crash on Android 5-7",
-  "publishedAt": "2026-10-04T16:20:58Z"
+  "sha256": "c6fc67852c31e21c0867eaaeba13a768155c9b163c83f648062f1efee6827a13",
+  "size": 3682799,
+  "notes": "v1.11.2: clean Nepali author names ('Amar Neupane. The' -> 'Amar Neupane')",
+  "publishedAt": "2026-10-04T16:32:35Z"
 }
