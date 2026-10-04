@@ -1,9 +1,9 @@
 {
-  "versionCode": 12,
-  "versionName": "1.9.1-legacy",
+  "versionCode": 13,
+  "versionName": "1.10.0-legacy",
   "apk": "worklane-legacy.apk",
-  "sha256": "cd65460eca3ea36e37422d00e2319c1d9656e3b4dd4abc9a9d54a3cabf28737a",
-  "size": 3653753,
-  "notes": "v1.9.1: fix crash on Android 5-6 when browsing (core library desugaring)",
-  "publishedAt": "2026-10-04T14:33:33Z"
+  "sha256": "0a165c3875097f0fdf14d170f1b0c7152549fc24aa3dadc6ec9c00315d776169",
+  "size": 3674725,
+  "notes": "v1.10.0: accounts + sync across devices",
+  "publishedAt": "2026-10-04T14:49:01Z"
 }
