@@ -1,9 +1,9 @@
 {
-  "versionCode": 8,
-  "versionName": "1.7.0",
-  "apk": "worklane-pkg-8.apk",
-  "sha256": "d0fc2e615a16ff007d7a0f8de63fadf5749735d2aea93eaa0d495b5ed1cba7ff",
-  "size": 3448618,
-  "notes": "v1.7.0: EPUB read-along",
-  "publishedAt": "2026-10-03T19:40:49Z"
+  "versionCode": 9,
+  "versionName": "1.8.0",
+  "apk": "worklane-pkg-9.apk",
+  "sha256": "a279de154a476dbb2a32dfa032582659add3d3215ad7bf64d501f5bb29039e85",
+  "size": 3464992,
+  "notes": "v1.8.0: EPUB pages, page slider, go to page, bookmarks, highlights",
+  "publishedAt": "2026-10-04T01:40:06Z"
 }
