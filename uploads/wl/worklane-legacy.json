@@ -1,9 +1,9 @@
 {
   "versionCode": 11,
-  "versionName": "1.9.0",
-  "apk": "worklane-pkg-11.apk",
-  "sha256": "a14c7c48d96718bf3a81cacb6a312621d5e92ad42f11b3a828dd0f5a45358bca",
-  "size": 3500239,
+  "versionName": "1.9.0-legacy",
+  "apk": "worklane-legacy.apk",
+  "sha256": "a301fbdb418c07bdb30c3d341c6776e7d157d3f0282509aac9c92786d4eedf00",
+  "size": 3528367,
   "notes": "Add bundled Let's Encrypt root certificates (public; .crt so *.pem ignore rule doesn't drop them)",
   "publishedAt": "2026-10-04T04:38:58Z"
 }
