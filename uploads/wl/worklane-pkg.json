@@ -1,9 +1,9 @@
 {
-  "versionCode": 9,
-  "versionName": "1.8.0",
-  "apk": "worklane-pkg-9.apk",
-  "sha256": "a279de154a476dbb2a32dfa032582659add3d3215ad7bf64d501f5bb29039e85",
-  "size": 3464992,
-  "notes": "v1.8.0: EPUB pages, page slider, go to page, bookmarks, highlights",
-  "publishedAt": "2026-10-04T01:40:06Z"
+  "versionCode": 10,
+  "versionName": "1.8.1",
+  "apk": "worklane-pkg-10.apk",
+  "sha256": "27267391f1762d84313882618e24bc085639e9ec55622ba162b340097794e102",
+  "size": 3495422,
+  "notes": "v1.8.1: include 32-bit ARM (armeabi-v7a) so it installs on older phones",
+  "publishedAt": "2026-10-04T03:40:03Z"
 }
