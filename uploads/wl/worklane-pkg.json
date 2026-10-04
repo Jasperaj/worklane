@@ -1,9 +1,9 @@
 {
-  "versionCode": 14,
-  "versionName": "1.11.0",
-  "apk": "worklane-pkg-14.apk",
-  "sha256": "9ecf39cb86626eb9ddda1d8adc03adc320fd22b218077db0da56660959125d0a",
-  "size": 3516608,
-  "notes": "v1.11.0: real book names for FullLength books, EPUB + reader sync",
-  "publishedAt": "2026-10-04T16:03:23Z"
+  "versionCode": 15,
+  "versionName": "1.11.1",
+  "apk": "worklane-pkg-15.apk",
+  "sha256": "bcbee1697f978db2c52b85ac46d87fc761f30a81eb2d0c59db78346d8d959fb7",
+  "size": 3516618,
+  "notes": "v1.11.1: fix EPUB crash on Android 5-7",
+  "publishedAt": "2026-10-04T16:20:58Z"
 }
