@@ -1,9 +1,9 @@
 {
-  "versionCode": 11,
-  "versionName": "1.9.0",
-  "apk": "worklane-pkg-11.apk",
-  "sha256": "a14c7c48d96718bf3a81cacb6a312621d5e92ad42f11b3a828dd0f5a45358bca",
-  "size": 3500239,
-  "notes": "Add bundled Let's Encrypt root certificates (public; .crt so *.pem ignore rule doesn't drop them)",
-  "publishedAt": "2026-10-04T04:38:58Z"
+  "versionCode": 12,
+  "versionName": "1.9.1",
+  "apk": "worklane-pkg-12.apk",
+  "sha256": "c8759a5b125ab855852dcbb4c6a03a5fcb99e94837869fa32b88fcb0c2b52ad9",
+  "size": 3500238,
+  "notes": "v1.9.1: fix crash on Android 5-6 when browsing (core library desugaring)",
+  "publishedAt": "2026-10-04T14:33:33Z"
 }
