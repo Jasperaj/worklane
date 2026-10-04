@@ -1,9 +1,9 @@
 {
-  "versionCode": 13,
-  "versionName": "1.10.0-legacy",
+  "versionCode": 14,
+  "versionName": "1.11.0-legacy",
   "apk": "worklane-legacy.apk",
-  "sha256": "0a165c3875097f0fdf14d170f1b0c7152549fc24aa3dadc6ec9c00315d776169",
-  "size": 3674725,
-  "notes": "v1.10.0: accounts + sync across devices",
-  "publishedAt": "2026-10-04T14:49:01Z"
+  "sha256": "29b5ff577d518839c61915be79833cb1055cc7cc2d39080410bef9c877aa044c",
+  "size": 3683099,
+  "notes": "v1.11.0: real book names for FullLength books, EPUB + reader sync",
+  "publishedAt": "2026-10-04T16:03:23Z"
 }

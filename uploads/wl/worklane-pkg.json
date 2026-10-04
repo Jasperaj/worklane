@@ -1,9 +1,9 @@
 {
-  "versionCode": 13,
-  "versionName": "1.10.0",
-  "apk": "worklane-pkg-13.apk",
-  "sha256": "77d3fc4de947a6e1b8f5d5b52e6cbcbe6a7dbfae01fbeaf6c56e29db59384fdc",
-  "size": 3516612,
-  "notes": "v1.10.0: accounts + sync across devices",
-  "publishedAt": "2026-10-04T14:49:01Z"
+  "versionCode": 14,
+  "versionName": "1.11.0",
+  "apk": "worklane-pkg-14.apk",
+  "sha256": "9ecf39cb86626eb9ddda1d8adc03adc320fd22b218077db0da56660959125d0a",
+  "size": 3516608,
+  "notes": "v1.11.0: real book names for FullLength books, EPUB + reader sync",
+  "publishedAt": "2026-10-04T16:03:23Z"
 }
