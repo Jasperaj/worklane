@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /archive/
+Disallow: /ird_toolkit_web/
+Disallow: /blog/post-template.html
 
 Sitemap: https://worklane.com.np/sitemap.xml
