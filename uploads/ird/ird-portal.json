@@ -1,0 +1,9 @@
+{
+  "versionCode": 70,
+  "versionName": "1.3.70",
+  "apk": "ird-portal-70.apk",
+  "sha256": "c1b3f52384c9c212f345f111a745fb8d6ca66d5873c7c63edd594526416ec0b9",
+  "size": 26393105,
+  "notes": "Fix voucher crash on phone; trimester VAT; Annex 10; phone-size layout",
+  "publishedAt": "2026-10-07T02:37:13Z"
+}
