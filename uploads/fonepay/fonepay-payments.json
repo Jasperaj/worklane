@@ -1,9 +1,9 @@
 {
-  "versionCode": 1100020,
-  "versionName": "2.0.20",
-  "apk": "fonepay-payments-1100020.apk",
-  "sha256": "a745d4c2288133c62c1a201da35d0ddb974b5ef9b9a3b6540220c268be1fdc22",
-  "size": 37459736,
-  "notes": "Publish in-app updates to worklane.com.np instead of a separate repo",
-  "publishedAt": "2026-10-07T18:07:13Z"
+  "versionCode": 1100022,
+  "versionName": "2.0.22",
+  "apk": "fonepay-payments-1100022.apk",
+  "sha256": "96a7a499acac4ba335699889fa1f71ab770bf382e4734072a65071902fdc593a",
+  "size": 37411188,
+  "notes": "Publish the signed build to the in-app update channel (worklane.com.np)",
+  "publishedAt": "2026-10-08T00:47:53Z"
 }
