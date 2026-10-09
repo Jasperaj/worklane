@@ -1,9 +1,9 @@
 {
-  "versionCode": 73,
-  "versionName": "1.3.73",
-  "apk": "ird-portal-73.apk",
-  "sha256": "a493ec0107e9532174a2627e588c9568783fcc2faed1974fddef6ee4b5499fc6",
-  "size": 26487313,
-  "notes": "Merge pull request #1 from Jasperaj/claude/vigilant-fermat-jm4fi1",
-  "publishedAt": "2026-10-09T06:16:13Z"
+  "versionCode": 74,
+  "versionName": "1.3.74",
+  "apk": "ird-portal-74.apk",
+  "sha256": "2d0b48b95f1a5e505d68546f3f8f8339d5a2022fa5258ab8f38df80d004d635e",
+  "size": 26495505,
+  "notes": "Merge pull request #2 from Jasperaj/claude/vigilant-fermat-jm4fi1",
+  "publishedAt": "2026-10-09T17:06:12Z"
 }
