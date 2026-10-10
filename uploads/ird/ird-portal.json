@@ -1,9 +1,9 @@
 {
-  "versionCode": 76,
-  "versionName": "1.3.76",
-  "apk": "ird-portal-76.apk",
-  "sha256": "a770717b4bf7d7d2e770580de127ff5b1feb336515bc31b04220c31ebc70002f",
-  "size": 26507793,
-  "notes": "Merge pull request #3 from Jasperaj/claude/wizardly-cerf-lgrfqh",
-  "publishedAt": "2026-10-10T19:47:21Z"
+  "versionCode": 77,
+  "versionName": "1.3.77",
+  "apk": "ird-portal-77.apk",
+  "sha256": "b09816e2fe16ba724c328b75386f0bea5a2e0d6f78b2512273636aaab2d2b58c",
+  "size": 26511889,
+  "notes": "Merge pull request #4 from Jasperaj/claude/wizardly-cerf-lgrfqh",
+  "publishedAt": "2026-10-10T20:38:55Z"
 }
