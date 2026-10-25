@@ -1,8 +1,8 @@
 {
-  "versionCode": 17,
-  "versionName": "1.6.1",
-  "apkUrl": "https://worklane.com.np/uploads/hisab/hisab-khata-1.6.1.apk",
-  "sha256": "8c00149d34cffa110e1be85af07d33c472ea6a98e68775e9216ae43e92e76564",
-  "notes": "CI: strip CR/LF from signing secrets",
+  "versionCode": 18,
+  "versionName": "1.6.2",
+  "apkUrl": "https://worklane.com.np/uploads/hisab/hisab-khata-1.6.2.apk",
+  "sha256": "d547b9b4b2bee9408aa26338703831424c21fa0d357f19b1a0e8e067c012b62c",
+  "notes": "Rename to Hisab Kitab; Daraz refunds on Home and without a sale; private Sheet access; audit trail, closing check, density, report ranges",
   "minSupportedVersionCode": 0
 }
