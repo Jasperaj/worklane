@@ -1,8 +1,8 @@
 {
-  "versionCode": 18,
-  "versionName": "1.6.2",
-  "apkUrl": "https://worklane.com.np/uploads/hisab/hisab-khata-1.6.2.apk",
-  "sha256": "d547b9b4b2bee9408aa26338703831424c21fa0d357f19b1a0e8e067c012b62c",
-  "notes": "Rename to Hisab Kitab; Daraz refunds on Home and without a sale; private Sheet access; audit trail, closing check, density, report ranges",
+  "versionCode": 19,
+  "versionName": "1.7.0",
+  "apkUrl": "https://worklane.com.np/uploads/hisab/hisab-khata-1.7.0.apk",
+  "sha256": "28d1c910662929cf10fd0c0d15c8c6418fd49d0d8dafbd7ab20c304911c4c42b",
+  "notes": "Hisab Kitab Cloud (Pro add-on): paid server-side storage instead of Google Drive; show why Drive access fails",
   "minSupportedVersionCode": 0
 }
